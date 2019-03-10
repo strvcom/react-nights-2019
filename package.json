@@ -12,10 +12,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "format": "prettier --write '*/**/*.{js,css,md,json}'"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
+    "format": "prettier --write '*/**/*.{js,css,md,json}'",
+    "lint:js": "eslint . --ignore-path .gitignore --fix"
   },
   "browserslist": [
     ">0.2%",
@@ -24,6 +22,8 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "@strv/eslint-config-react": "^1.0.1",
+    "eslint-config-prettier": "^4.1.0",
     "prettier": "^1.16.4"
   }
 }
