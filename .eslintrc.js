@@ -28,4 +28,8 @@ module.exports = {
       jsx: true,
     },
   },
+  rules: {
+    'react/no-did-mount-set-state': 0,
+    'prefer-named-capture-group': 0,
+  },
 }
