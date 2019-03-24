@@ -35,6 +35,7 @@
   "dependencies": {
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
+    "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8"
   },
   "devDependencies": {
