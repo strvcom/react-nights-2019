@@ -1,14 +1,16 @@
 import React, { Component } from 'react'
-import { Route } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 
 import { ProductList } from './pages/ProductList'
+import { ProductDetail } from './pages/ProductDetail'
 
 class App extends Component {
   render() {
     return (
-      <div>
+      <Switch>
         <Route path="/" exact component={ProductList} />
-      </div>
+        <Route path="/:productId" component={ProductDetail} />
+      </Switch>
     )
   }
 }
