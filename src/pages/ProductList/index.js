@@ -1,28 +1,7 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
-import config from '../../config'
-
-const getToken = () =>
-  fetch(`${config.apiUrl}/oauth/token`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      grant_type: 'client_credentials',
-      client_id: config.clientId,
-      scope: config.scope,
-    }),
-  }).then(res => res.json())
-
-const getProducts = access_token =>
-  fetch(`${config.apiUrl}/api/skus`, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${access_token}`,
-    },
-  }).then(res => res.json())
+import { getProducts } from '../../api/get-products'
 
 class ProductList extends Component {
   state = {
@@ -30,8 +9,7 @@ class ProductList extends Component {
     products: {},
   }
   async componentDidMount() {
-    const { access_token } = await getToken()
-    const products = await getProducts(access_token)
+    const products = await getProducts()
 
     this.setState({
       isLoading: false,
@@ -52,7 +30,9 @@ class ProductList extends Component {
         {data && (
           <ul>
             {data.map(({ id, attributes: item }) => (
-              <li key={id}>{item.name}</li>
+              <li key={id}>
+                <Link to={`/${id}`}>{item.name}</Link>
+              </li>
             ))}
           </ul>
         )}
