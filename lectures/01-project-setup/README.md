@@ -1,4 +1,4 @@
-# Project setup lecture summary
+# Project Setup
 
 - [Presentation](https://docs.google.com/presentation/d/1iNExpCZh-o2tQgrQyUIhZr5VSXgN3rWe9bCs4k4t_2c)
 - [Video](https://www.youtube.com/watch?v=mThOdIxdblg)
