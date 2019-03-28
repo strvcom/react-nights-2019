@@ -2,8 +2,8 @@
 
 # Introduction
 
-This repository serves as an online course for learning React. It’s here to help those who want to learn more about nodejs and backend to develop a backend API.
+This repository serves as an online course for learning React.
 
 ## Lecture
 
-[Lectures](https://github.com/strvcom/nodejs-nights-2018/tree/master/lectures) contain a brief theoretical overview of what was discussed in that lecture. Including video recording.
+[Lectures](https://github.com/strvcom/react-nights-2019/tree/master/lectures) contain a brief theoretical overview of what was discussed in that lecture. Including video recording.
