@@ -1,15 +1,20 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+
+import ProductListComponent from './components/ProductList'
+import Layout from '../../components/Layout'
+import Loader from '../../components/Loader'
+import { H1 } from '../../components/Typography'
 
 import { getProducts } from '../../api/get-products'
 
 class ProductList extends Component {
   state = {
     isLoading: true,
-    products: {},
+    products: [],
   }
+
   async componentDidMount() {
-    const products = await getProducts()
+    let products = await getProducts()
 
     this.setState({
       isLoading: false,
@@ -18,25 +23,14 @@ class ProductList extends Component {
   }
 
   render() {
-    const {
-      isLoading,
-      products: { data },
-    } = this.state
+    const { isLoading, products } = this.state
 
     return (
-      <div>
-        <h1>E-Commerce app</h1>
-        {isLoading && <div>Loading ...</div>}
-        {data && (
-          <ul>
-            {data.map(({ id, attributes: item }) => (
-              <li key={id}>
-                <Link to={`/${id}`}>{item.name}</Link>
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
+      <Layout>
+        <H1 textAlign="center">E-Commerce app</H1>
+        {isLoading && <Loader />}
+        {products && <ProductListComponent products={products} />}
+      </Layout>
     )
   }
 }
