@@ -1,10 +1,18 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
-import Layout from '../../components/Layout'
 import Loader from '../../components/Loader'
 import { H1 } from '../../components/Typography'
 import { getProductById } from '../../api/get-product'
+
+import {
+  Wrapper,
+  ImgWrapper,
+  Img,
+  DetailsWrapper,
+  Description,
+  Price,
+} from './styled'
 
 class ProductDetail extends Component {
   state = {
@@ -14,6 +22,7 @@ class ProductDetail extends Component {
   fetchProduct = async productId => {
     this.setState({ isLoading: true })
     const product = await getProductById(productId)
+
     this.setState({ isLoading: false, product })
   }
 
@@ -33,11 +42,22 @@ class ProductDetail extends Component {
     const { isLoading, product } = this.state
 
     return (
-      <Layout>
+      <Wrapper>
         {isLoading && <Loader />}
-        {product && <H1>{product.attributes.name}</H1>}
-        <Link to="/">Back</Link>
-      </Layout>
+        {product && (
+          <>
+            <ImgWrapper>
+              <Img src={product.data.attributes.image_url} />
+            </ImgWrapper>
+            <DetailsWrapper>
+              <H1 textAlign="center">{product.data.attributes.name}</H1>
+              <Price>{product.included[0].attributes.formatted_amount}</Price>
+              <Description>{product.data.attributes.description}</Description>
+              <Link to="/">Back</Link>
+            </DetailsWrapper>
+          </>
+        )}
+      </Wrapper>
     )
   }
 }
