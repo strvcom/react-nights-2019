@@ -17,7 +17,7 @@ class Products extends Component {
     this.props.loadProducts(products)
   }
 
-  handleAddToCart = (productId) => {
+  handleAddToCart = productId => {
     this.props.addProduct(productId)
   }
 
