@@ -53,7 +53,7 @@ const newUsers = [...users, user] // right
 
 ```js
 const users.pop() // wrong
-const newUsers = users.filter(u => u.id !=== user.id) // right
+const newUsers = users.filter(u => u.id !== user.id) // right
 ```
 
 **Update item**
