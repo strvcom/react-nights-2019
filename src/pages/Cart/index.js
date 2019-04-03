@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
+import Button from '../../components/Button'
 import Layout from '../../components/Layout'
 import { H1 } from '../../components/Typography'
+import { removeProduct } from '../../store/cartItems/actions'
 
 class CartView extends Component {
   render() {
@@ -12,7 +14,15 @@ class CartView extends Component {
         <ul>
           {this.props.items.map(item => (
             <li key={item.product.id}>
-              {item.product.name} - {item.quantity}
+              <p>
+                {item.product.name} - {item.quantity}
+              </p>
+              <Button
+                type="button"
+                onClick={() => this.props.removeProduct(item.product.id)}
+              >
+                Remove
+              </Button>
             </li>
           ))}
         </ul>
@@ -28,6 +38,13 @@ const mapStateToProps = state => ({
   })),
 })
 
-const Cart = connect(mapStateToProps)(CartView)
+const actionCreators = {
+  removeProduct,
+}
+
+const Cart = connect(
+  mapStateToProps,
+  actionCreators
+)(CartView)
 
 export { Cart }
