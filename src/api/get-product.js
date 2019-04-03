@@ -13,5 +13,12 @@ export const getProductById = async id => {
     }
   )
   const { data, included } = await response.json()
-  return { data, included }
+  const product = {
+    id: data.id,
+    ...data.attributes,
+    price: included.find(
+      price => price.id === data.relationships.prices.data[0].id
+    ).attributes,
+  }
+  return product
 }

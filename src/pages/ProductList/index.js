@@ -17,10 +17,8 @@ class Products extends Component {
   }
 
   async componentDidMount() {
-    if (this.props.products.length === 0) {
-      const products = await getProducts()
-      this.props.loadProducts(products)
-    }
+    const products = await getProducts()
+    this.props.loadProducts(products)
 
     this.setState({
       isLoading: false,
