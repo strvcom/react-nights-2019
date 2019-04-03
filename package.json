@@ -37,8 +37,10 @@
   "dependencies": {
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
+    "react-redux": "^6.0.1",
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8",
+    "redux": "^4.0.1",
     "sanitize.css": "^8.0.0",
     "styled-components": "^4.2.0",
     "styled-system": "^4.0.8"
