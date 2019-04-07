@@ -29,6 +29,7 @@ class Layout extends Component {
           </HeaderSection>
           <HeaderSection>
             <StyledLink to="/cart">My Cart</StyledLink>|
+            <StyledLink to="/login">Log In</StyledLink>
             <StyledLink to="/signup">Sign Up</StyledLink>
           </HeaderSection>
         </Header>
