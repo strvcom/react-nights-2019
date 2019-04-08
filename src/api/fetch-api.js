@@ -7,7 +7,7 @@ export const fetchAPI = async (url, options) => {
   const response = await fetch(`${config.apiUrl}/${url}`, {
     method: 'GET',
     headers: {
-      'Content-Type': 'application/json',
+      'Content-Type': 'application/vnd.api+json',
       Authorization: `Bearer ${token}`,
     },
     ...options,

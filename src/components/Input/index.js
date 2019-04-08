@@ -1,20 +1,22 @@
 import React from 'react'
+import { Field } from 'formik'
 
 import { Wrapper, Label, StyledInput, StyledError } from './styled'
 
-const Input = ({ error, label, name, onChange, type = 'text', value }) => (
-  <Wrapper>
-    <Label htmlFor={name}>{label}</Label>
-    <StyledInput
-      hasError={!!error}
-      id={name}
-      name={name}
-      onChange={onChange}
-      type={type}
-      value={value}
-    />
-    {!!error && <StyledError>{error}</StyledError>}
-  </Wrapper>
-)
+const Input = ({ error, isTouched, label, name, type = 'text' }) => {
+  const hasError = isTouched && Boolean(error)
+  return (
+    <Wrapper>
+      <Label htmlFor={name}>{label}</Label>
+      <Field
+        name={name}
+        render={({ field }) => (
+          <StyledInput {...field} id={name} type={type} hasError={hasError} />
+        )}
+      />
+      {hasError && <StyledError>{error}</StyledError>}
+    </Wrapper>
+  )
+}
 
 export default Input

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Formik } from 'formik'
 
-import { createCustomer } from '../../api/create-customer'
+import { createCustomer } from '../../api/customers/create-customer'
 import Layout from '../../components/Layout'
 import { H1 } from '../../components/Typography'
 import Form, { GlobalFormError } from '../../components/Form'
@@ -40,7 +40,7 @@ class SignUp extends Component {
   renderSuccess() {
     return (
       <Layout>
-        <H1 textAlign="center">{`You've signed up!`}</H1>
+        <H1 textAlign="center">You&#8217;ve signed up!</H1>
       </Layout>
     )
   }
@@ -58,49 +58,38 @@ class SignUp extends Component {
           validationSchema={schema}
           onSubmit={this.handleSubmit}
         >
-          {({
-            errors,
-            handleChange,
-            handleSubmit,
-            isSubmitting,
-            touched,
-            values,
-          }) => (
+          {({ errors, handleSubmit, isSubmitting, touched }) => (
             <Form onSubmit={handleSubmit}>
-              {!!globalError && (
+              {Boolean(globalError) && (
                 <GlobalFormError>{globalError}</GlobalFormError>
               )}
               <Input
                 name="firstName"
                 type="text"
                 label="First name"
-                value={values.firstName}
-                onChange={handleChange}
-                error={touched.firstName && errors.firstName}
+                isTouched={touched.firstName}
+                error={errors.firstName}
               />
               <Input
                 name="email"
                 type="email"
                 label="Email address"
-                value={values.email}
-                onChange={handleChange}
-                error={touched.email && errors.email}
+                isTouched={touched.email}
+                error={errors.email}
               />
               <Input
                 name="password"
                 type="password"
                 label="Password"
-                value={values.password}
-                onChange={handleChange}
-                error={touched.password && errors.password}
+                isTouched={touched.password}
+                error={errors.password}
               />
               <Input
                 name="passwordConfirm"
                 type="password"
                 label="Confirm password"
-                value={values.passwordConfirm}
-                onChange={handleChange}
-                error={touched.passwordConfirm && errors.passwordConfirm}
+                isTouched={touched.passwordConfirm}
+                error={errors.passwordConfirm}
               />
               <Button type="submit" disabled={isSubmitting}>
                 {isSubmitting ? 'Signing Up...' : 'Sign Up'}
