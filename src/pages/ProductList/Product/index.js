@@ -12,7 +12,7 @@ const Product = ({ node, onAddToCart }) => (
         <Title>{node.name}</Title>
       </TitleWrap>
       <Price>{node.price.formatted_amount}</Price>
-      <Button onClick={evt => onAddToCart(node.id, evt)}>Add to Cart</Button>
+      <Button onClick={event => { event.preventDefault(); onAddToCart(node.id) }}>Add to Cart</Button>
     </Link>
   </Wrapper>
 )

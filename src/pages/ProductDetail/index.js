@@ -8,7 +8,7 @@ import Layout from '../../components/Layout'
 import { H1 } from '../../components/Typography'
 import { getProductById } from '../../api/get-product'
 import { loadProduct } from '../../store/products/actions'
-import { addProduct } from '../../store/cartItems/actions'
+import { addProduct } from '../../store/cart/actions'
 
 import {
   Wrapper,

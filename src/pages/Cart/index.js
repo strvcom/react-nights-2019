@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import Button from '../../components/Button'
 import Layout from '../../components/Layout'
 import { H1 } from '../../components/Typography'
-import { removeProduct } from '../../store/cartItems/actions'
+import { removeProduct } from '../../store/cart/actions'
 
 class CartView extends Component {
   render() {
@@ -32,8 +32,8 @@ class CartView extends Component {
 }
 
 const mapStateToProps = state => ({
-  items: Object.keys(state.cartItems).map(productId => ({
-    quantity: state.cartItems[productId],
+  items: Object.keys(state.cart).map(productId => ({
+    quantity: state.cart[productId],
     product: state.products.find(p => p.id === productId),
   })),
 })
