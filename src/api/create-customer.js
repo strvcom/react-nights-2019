@@ -1,15 +1,8 @@
-import { getToken } from './get-token'
-import config from '../config'
+import { fetchAPI } from './fetch-api'
 
 export const createCustomer = async ({ email, password, firstName }) => {
-  const token = await getToken()
-
-  const response = await fetch(`${config.apiUrl}/api/customers`, {
+  const response = await fetchAPI('/api/customers', {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/vnd.api+json',
-      Authorization: `Bearer ${token}`,
-    },
     body: JSON.stringify({
       data: {
         type: 'customers',
