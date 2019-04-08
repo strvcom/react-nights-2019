@@ -20,15 +20,9 @@ import {
 } from './styled'
 
 class ProductView extends Component {
-  state = {
-    isLoading: true,
-  }
-
   fetchProduct = async productId => {
-    this.setState({ isLoading: true })
     const product = await getProductById(productId)
     this.props.loadProduct(product)
-    this.setState({ isLoading: false })
   }
 
   componentDidMount() {
@@ -44,27 +38,27 @@ class ProductView extends Component {
   }
 
   render() {
+    const { product } = this.props
     return (
       <Layout>
         <Wrapper>
-          {this.state.isLoading && <Loader />}
-          {this.props.product && (
+          {product ? (
             <>
               <ImgWrapper>
-                <Img src={this.props.product.image_url} />
+                <Img src={product.image_url} />
               </ImgWrapper>
               <DetailsWrapper>
-                <H1 textAlign="center">{this.props.product.name}</H1>
-                <Price>{this.props.product.price.formatted_amount}</Price>
-                <Description>{this.props.product.description}</Description>
-                <Button
-                  onClick={() => this.props.addProduct(this.props.product.id)}
-                >
+                <H1 textAlign="center">{product.name}</H1>
+                <Price>{product.price.formatted_amount}</Price>
+                <Description>{product.description}</Description>
+                <Button onClick={() => this.props.addProduct(product.id)}>
                   Add to Cart
                 </Button>
                 <Link to="/">Back</Link>
               </DetailsWrapper>
             </>
+          ) : (
+            <Loader />
           )}
         </Wrapper>
       </Layout>
