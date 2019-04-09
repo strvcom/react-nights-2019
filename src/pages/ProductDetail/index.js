@@ -1,9 +1,14 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
 
+import Button from '../../components/Button'
 import Loader from '../../components/Loader'
+import Layout from '../../components/Layout'
 import { H1 } from '../../components/Typography'
 import { getProductById } from '../../api/get-product'
+import { loadProduct } from '../../store/products/actions'
+import { addProduct } from '../../store/cart/actions'
 
 import {
   Wrapper,
@@ -14,16 +19,10 @@ import {
   Price,
 } from './styled'
 
-class ProductDetail extends Component {
-  state = {
-    product: null,
-  }
-
+class ProductView extends Component {
   fetchProduct = async productId => {
-    this.setState({ isLoading: true })
     const product = await getProductById(productId)
-
-    this.setState({ isLoading: false, product })
+    this.props.loadProduct(product)
   }
 
   componentDidMount() {
@@ -39,27 +38,46 @@ class ProductDetail extends Component {
   }
 
   render() {
-    const { isLoading, product } = this.state
-
+    const { product } = this.props
     return (
-      <Wrapper>
-        {isLoading && <Loader />}
-        {product && (
-          <>
-            <ImgWrapper>
-              <Img src={product.data.attributes.image_url} />
-            </ImgWrapper>
-            <DetailsWrapper>
-              <H1 textAlign="center">{product.data.attributes.name}</H1>
-              <Price>{product.included[0].attributes.formatted_amount}</Price>
-              <Description>{product.data.attributes.description}</Description>
-              <Link to="/">Back</Link>
-            </DetailsWrapper>
-          </>
-        )}
-      </Wrapper>
+      <Layout>
+        <Wrapper>
+          {product ? (
+            <>
+              <ImgWrapper>
+                <Img src={product.image_url} />
+              </ImgWrapper>
+              <DetailsWrapper>
+                <H1 textAlign="center">{product.name}</H1>
+                <Price>{product.price.formatted_amount}</Price>
+                <Description>{product.description}</Description>
+                <Button onClick={() => this.props.addProduct(product.id)}>
+                  Add to Cart
+                </Button>
+                <Link to="/">Back</Link>
+              </DetailsWrapper>
+            </>
+          ) : (
+            <Loader />
+          )}
+        </Wrapper>
+      </Layout>
     )
   }
 }
+
+const mapStateToProps = (state, ownProps) => ({
+  product: state.products.find(p => p.id === ownProps.match.params.productId),
+})
+
+const actionCreators = {
+  loadProduct,
+  addProduct,
+}
+
+const ProductDetail = connect(
+  mapStateToProps,
+  actionCreators
+)(ProductView)
 
 export { ProductDetail }

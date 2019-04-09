@@ -1,5 +1,6 @@
 import config from '../config'
 import { getToken } from './get-token'
+import { formatProduct } from './utils'
 
 export const getProducts = async () => {
   const token = await getToken()
@@ -13,12 +14,5 @@ export const getProducts = async () => {
   })
 
   const { data, included } = await response.json()
-
-  return data.map(product => ({
-    ...product.attributes,
-    id: product.id,
-    price: included.find(
-      price => price.id === product.relationships.prices.data[0].id
-    ).attributes,
-  }))
+  return data.map(product => formatProduct(product, included))
 }

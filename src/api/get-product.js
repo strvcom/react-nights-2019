@@ -1,5 +1,6 @@
 import { getToken } from './get-token'
 import config from '../config'
+import { formatProduct } from './utils'
 
 export const getProductById = async id => {
   const token = await getToken()
@@ -13,5 +14,5 @@ export const getProductById = async id => {
     }
   )
   const { data, included } = await response.json()
-  return { data, included }
+  return formatProduct(data, included)
 }
