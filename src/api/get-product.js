@@ -1,8 +1,8 @@
-import { fetchAPI } from './fetch-api'
+import { api } from './api-client'
 import { formatProduct } from './utils'
 
 export const getProductById = async id => {
-  const { data, included } = await fetchAPI(`/api/skus/${id}?include=prices`)
+  const { data, included } = await api(`/api/skus/${id}?include=prices`)
 
   return formatProduct(data, included)
 }

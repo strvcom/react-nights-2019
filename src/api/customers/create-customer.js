@@ -1,4 +1,4 @@
-import { fetchAPI } from '../fetch-api'
+import { api } from '../api-client'
 
 export const createCustomer = async ({ email, password, firstName }) => {
   const requestBody = {
@@ -14,7 +14,7 @@ export const createCustomer = async ({ email, password, firstName }) => {
     },
   }
 
-  const response = await fetchAPI('/api/customers', {
+  const response = await api('/api/customers', {
     method: 'POST',
     body: JSON.stringify(requestBody),
   })
