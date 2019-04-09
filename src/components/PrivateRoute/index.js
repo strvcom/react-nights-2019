@@ -2,7 +2,7 @@ import React from 'react'
 import { Route, Redirect } from 'react-router-dom'
 
 // TODO: connect to global state
-const isAuthenticated = true
+const isAuthenticated = false
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
   return (
