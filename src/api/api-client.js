@@ -1,8 +1,13 @@
 import config from '../config'
-import { getAccessToken } from './get-access-token'
+import { getGuestToken } from './get-guest-token'
+import { getToken } from '../utils/token'
 
 export const api = async (url, options) => {
-  const token = await getAccessToken()
+  let token = getToken()
+
+  if (token) {
+    token = await getGuestToken()
+  }
 
   const response = await fetch(`${config.apiUrl}${url}`, {
     method: 'GET',
