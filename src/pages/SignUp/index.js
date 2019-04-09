@@ -12,7 +12,6 @@ import schema from './schema'
 class SignUp extends Component {
   state = {
     globalError: '',
-    hasSignedUp: false,
   }
 
   initialValues = {
@@ -26,9 +25,7 @@ class SignUp extends Component {
     try {
       setSubmitting(true)
       await createCustomer(values)
-      this.setState({
-        hasSignedUp: true,
-      })
+      this.props.history.push('/account')
     } catch (error) {
       this.setState({
         globalError: error.message,
@@ -37,18 +34,8 @@ class SignUp extends Component {
     setSubmitting(false)
   }
 
-  renderSuccess() {
-    return (
-      <Layout>
-        <H1 textAlign="center">You&#8217;ve signed up!</H1>
-      </Layout>
-    )
-  }
-
   render() {
-    const { hasSignedUp, globalError } = this.state
-
-    if (hasSignedUp) return this.renderSuccess()
+    const { globalError } = this.state
 
     return (
       <Layout>
