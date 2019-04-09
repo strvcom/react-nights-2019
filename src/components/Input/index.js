@@ -3,20 +3,21 @@ import { Field } from 'formik'
 
 import { Wrapper, Label, StyledInput, StyledError } from './styled'
 
-const Input = ({ error, isTouched, label, name, type = 'text' }) => {
-  const hasError = isTouched && Boolean(error)
-  return (
-    <Wrapper>
-      <Label htmlFor={name}>{label}</Label>
-      <Field
-        name={name}
-        render={({ field }) => (
+const Input = ({ label, name, type = 'text' }) => (
+  <Field
+    name={name}
+    render={({ field, form }) => {
+      const { errors, touched } = form
+      const hasError = touched[name] && Boolean(errors[name])
+      return (
+        <Wrapper>
+          <Label htmlFor={name}>{label}</Label>
           <StyledInput {...field} id={name} type={type} hasError={hasError} />
-        )}
-      />
-      {hasError && <StyledError>{error}</StyledError>}
-    </Wrapper>
-  )
-}
+          {hasError && <StyledError>{errors[name]}</StyledError>}
+        </Wrapper>
+      )
+    }}
+  />
+)
 
 export default Input

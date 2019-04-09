@@ -58,40 +58,20 @@ class SignUp extends Component {
           validationSchema={schema}
           onSubmit={this.handleSubmit}
         >
-          {({ errors, handleSubmit, isSubmitting, touched }) => (
+          {({ handleSubmit, isSubmitting }) => (
             <Form onSubmit={handleSubmit}>
               {Boolean(globalError) && (
                 <GlobalFormError>{globalError}</GlobalFormError>
               )}
-              <Input
-                name="firstName"
-                type="text"
-                label="First name"
-                isTouched={touched.firstName}
-                error={errors.firstName}
-              />
-              <Input
-                name="email"
-                type="email"
-                label="Email address"
-                isTouched={touched.email}
-                error={errors.email}
-              />
-              <Input
-                name="password"
-                type="password"
-                label="Password"
-                isTouched={touched.password}
-                error={errors.password}
-              />
+              <Input name="firstName" label="First name" />
+              <Input name="email" type="email" label="Email address" />
+              <Input name="password" type="password" label="Password" />
               <Input
                 name="passwordConfirm"
                 type="password"
                 label="Confirm password"
-                isTouched={touched.passwordConfirm}
-                error={errors.passwordConfirm}
               />
-              <Button type="submit" disabled={isSubmitting}>
+              <Button disabled={isSubmitting}>
                 {isSubmitting ? 'Signing Up...' : 'Sign Up'}
               </Button>
             </Form>
