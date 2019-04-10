@@ -4,11 +4,7 @@ import { connect } from 'react-redux'
 import Button from '../../components/Button'
 import Layout from '../../components/Layout'
 import { H1 } from '../../components/Typography'
-<<<<<<< HEAD
 import { removeProduct } from '../../store/cart/actions'
-=======
-import { removeProduct } from '../../store/cartItems/actions'
->>>>>>> Week 3: Homework
 
 class CartView extends Component {
   render() {
