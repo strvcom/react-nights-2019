@@ -7,12 +7,16 @@ const Wrapper = styled.div`
 `
 
 const Header = styled.header`
-  padding: 3rem;
+  display: flex;
   border-bottom: 0.1rem solid gainsboro;
+  justify-content: space-between;
+  padding: 3rem;
 `
 
+const HeaderSection = styled.div``
+
 const StyledLink = styled(Link)`
-  margin-right: 1rem;
+  margin: 0 1rem;
 `
 
 class Layout extends Component {
@@ -20,8 +24,14 @@ class Layout extends Component {
     return (
       <Fragment>
         <Header>
-          <StyledLink to="/">All Products</StyledLink>
-          <StyledLink to="/cart">My Cart</StyledLink>
+          <HeaderSection>
+            <StyledLink to="/">All Products</StyledLink>
+          </HeaderSection>
+          <HeaderSection>
+            <StyledLink to="/cart">My Cart</StyledLink>|
+            <StyledLink to="/account">My Account</StyledLink>|
+            <StyledLink to="/signup">Sign Up</StyledLink>
+          </HeaderSection>
         </Header>
         <Wrapper>{this.props.children}</Wrapper>
       </Fragment>

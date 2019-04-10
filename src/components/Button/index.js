@@ -2,7 +2,9 @@ import styled from 'styled-components/macro'
 import theme from '../../common/theme'
 
 const Button = styled.button`
-  background: ${theme.color.red};
+  background: ${({ disabled }) =>
+    disabled ? theme.color.gray : theme.color.red};
+  cursor: ${({ disabled }) => (disabled ? 'default' : 'pointer')};
   padding: 1rem;
   margin-top: 0.5rem;
   border: none;
