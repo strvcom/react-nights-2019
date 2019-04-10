@@ -26,5 +26,7 @@ module.exports = {
     'react/no-did-mount-set-state': 1,
     'react/prop-types': 0,
     'no-shadow': [2, { allow: ['name'] }],
+    // let's enforce this approach a bit
+    'import/no-default-export': 1,
   },
 }

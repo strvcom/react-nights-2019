@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 import theme from '../../common/theme'
 
-const Form = styled.form`
+export const Form = styled.form`
   display: flex;
   flex-direction: column;
   margin: 1.4rem auto;
@@ -17,5 +17,3 @@ export const GlobalFormError = styled.div`
   padding: 1rem;
   text-align: center;
 `
-
-export default Form

@@ -3,7 +3,7 @@ import { Field } from 'formik'
 
 import { Wrapper, Label, StyledInput, StyledError } from './styled'
 
-const Input = ({ label, name, type = 'text' }) => (
+export const Input = ({ label, name, type = 'text' }) => (
   <Field
     name={name}
     render={({ field, form }) => {
@@ -19,5 +19,3 @@ const Input = ({ label, name, type = 'text' }) => (
     }}
   />
 )
-
-export default Input

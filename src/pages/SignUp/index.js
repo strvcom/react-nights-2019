@@ -4,10 +4,10 @@ import { Formik } from 'formik'
 import { createCustomer } from '../../api/customers/create-customer'
 import Layout from '../../components/Layout'
 import { H1 } from '../../components/Typography'
-import Form, { GlobalFormError } from '../../components/Form'
-import Input from '../../components/Input'
+import { Form, GlobalFormError } from '../../components/Form'
+import { Input } from '../../components/Input'
 import Button from '../../components/Button'
-import schema from './schema'
+import { schema } from './schema'
 
 class SignUp extends Component {
   state = {
