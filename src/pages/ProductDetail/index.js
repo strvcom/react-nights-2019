@@ -6,7 +6,7 @@ import Button from '../../components/Button'
 import Loader from '../../components/Loader'
 import Layout from '../../components/Layout'
 import { H1 } from '../../components/Typography'
-import { getProductById } from '../../api/get-product'
+import { getProductById } from '../../api/products/get-product'
 import { loadProduct } from '../../store/products/actions'
 import { addProduct } from '../../store/cart/actions'
 

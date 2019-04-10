@@ -5,7 +5,7 @@ import Layout from '../../components/Layout'
 import Loader from '../../components/Loader'
 import { H1 } from '../../components/Typography'
 
-import { getProducts } from '../../api/get-products'
+import { getProducts } from '../../api/products/get-products'
 import { addProduct } from '../../store/cart/actions'
 import { loadProducts } from '../../store/products/actions'
 import Product from './Product'
