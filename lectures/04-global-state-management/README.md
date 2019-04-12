@@ -1,7 +1,7 @@
 # Global state management
 
 - [Presentation](https://docs.google.com/presentation/d/1YItCqFTK-_SzD8sO_uTrae9tw_naE29pl287QITvu1Y/edit?usp=sharing)
-- [Video]()
+- [Video](http://youtu.be/1okwf-6Ujug)
 
 ## Immutability examples
 
