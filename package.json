@@ -36,6 +36,8 @@
   ],
   "dependencies": {
     "formik": "^1.5.2",
+    "qs": "^6.7.0",
+    "ramda": "^0.26.1",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-redux": "^6.0.1",
