@@ -26,7 +26,7 @@ const PrivateRoute = ({ isAuthenticated, component: Component, ...rest }) => {
 }
 
 const mapStateToProps = state => ({
-  isAuthenticated: Object.keys(state.user).length !== 0,
+  isAuthenticated: Object.keys(state.customer).length !== 0,
 })
 
 const WithConnect = connect(mapStateToProps)(PrivateRoute)

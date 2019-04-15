@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react'
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 
-import { logout } from '../../store/user/actions'
+import { logout } from '../../store/customer/actions'
 import { removeToken } from '../../utils/token'
 import { Wrapper, Header, HeaderSection, HeaderLink } from './styled'
 
@@ -46,7 +46,7 @@ class Layout extends Component {
 }
 
 const mapStateToProps = state => ({
-  isAuthenticated: Object.keys(state.user).length !== 0,
+  isAuthenticated: Object.keys(state.customer).length !== 0,
 })
 
 const mapDispatchToProps = {
