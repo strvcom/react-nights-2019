@@ -1,6 +1,10 @@
 import React, { Component, Fragment } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
+import { connect } from 'react-redux'
 import styled from 'styled-components'
+
+import { logout } from '../../store/user/actions'
+import { removeToken } from '../../utils/token'
 
 const Wrapper = styled.div`
   padding: 2rem;
@@ -20,7 +24,14 @@ const StyledLink = styled(Link)`
 `
 
 class Layout extends Component {
+  handleLogout = () => {
+    this.props.logout()
+    removeToken()
+    this.props.history.push('/')
+  }
+
   render() {
+    const { isAuthenticated } = this.props
     return (
       <Fragment>
         <Header>
@@ -29,9 +40,21 @@ class Layout extends Component {
           </HeaderSection>
           <HeaderSection>
             <StyledLink to="/cart">My Cart</StyledLink>|
-            <StyledLink to="/account">My Account</StyledLink>|
-            <StyledLink to="/login">Log In</StyledLink>
+            {isAuthenticated && (
+              <>
+                <StyledLink to="/account">My Account</StyledLink>|
+              </>
+            )}
+            <StyledLink to="/login">Log In</StyledLink> |
             <StyledLink to="/signup">Sign Up</StyledLink>
+            {isAuthenticated && (
+              <>
+                |
+                <StyledLink as="button" onClick={this.handleLogout}>
+                  Logout
+                </StyledLink>
+              </>
+            )}
           </HeaderSection>
         </Header>
         <Wrapper>{this.props.children}</Wrapper>
@@ -40,4 +63,11 @@ class Layout extends Component {
   }
 }
 
-export default Layout
+const mapStateToProps = state => ({
+  isAuthenticated: Object.keys(state.user).length !== 0,
+})
+
+export default connect(
+  mapStateToProps,
+  { logout }
+)(withRouter(Layout))
