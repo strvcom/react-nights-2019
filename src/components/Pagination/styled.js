@@ -1,13 +1,14 @@
 import styled from 'styled-components'
 
 const List = styled.ul`
-  list-style: none;
-  width: 100%;
-  text-align: center;
+  align-items: center;
   display: flex;
   flex-direction: row;
-  align-items: center;
   justify-content: center;
+  list-style: none;
+  padding: 0;
+  text-align: center;
+  width: 100%;
 `
 
 const ListItem = styled.li`
