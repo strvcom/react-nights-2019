@@ -1,7 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import { useGetProducts } from '../../api/use-get-pruducts'
+import { getProducts } from '../../api/products/get-products'
+import { useApi } from '../../api/use-api'
 
 import Layout from '../../components/Layout'
 import Loader from '../../components/Loader'
@@ -15,7 +16,10 @@ import { ProductsWrap } from './styled'
 const Products = ({ match, addProduct }) => {
   const { page } = match.params
 
-  const { res, isLoading } = useGetProducts(page)
+  const { data: res, isLoading } = useApi(
+    () => getProducts({ page: { number: page } }),
+    page
+  )
 
   const handleAddToCart = productId => addProduct(productId)
 
