@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
 import { Formik } from 'formik'
+import { connect } from 'react-redux'
 
-import { getCustomerToken } from '../../api/customers/get-customer-token'
 import Layout from '../../components/Layout'
 import { H1 } from '../../components/Typography'
 import { Form, GlobalFormError } from '../../components/Form'
 import { Input } from '../../components/Input'
 import Button from '../../components/Button'
+import { login } from '../../store/user/actions'
+import { getCustomerToken } from '../../api/customers/get-customer-token'
+import { getCustomer } from '../../api/customers/get-customer'
 import { schema } from './schema'
 
 class LogIn extends Component {
@@ -22,10 +25,12 @@ class LogIn extends Component {
   handleSubmit = async ({ email, password }, { setSubmitting }) => {
     try {
       setSubmitting(true)
-      await getCustomerToken({
+      const { ownerId } = await getCustomerToken({
         username: email,
         password,
       })
+      const customer = await getCustomer(ownerId)
+      this.props.login(customer)
       this.props.history.push('/account')
     } catch (error) {
       this.setState({
@@ -40,7 +45,7 @@ class LogIn extends Component {
 
     return (
       <Layout>
-        <H1 textAlign="center">log In</H1>
+        <H1 textAlign="center">Log In</H1>
         <Formik
           initialValues={this.initialValues}
           validationSchema={schema}
@@ -64,4 +69,13 @@ class LogIn extends Component {
   }
 }
 
-export { LogIn }
+const mapDispatchToProps = {
+  login,
+}
+
+const WithConnect = connect(
+  null,
+  mapDispatchToProps
+)(LogIn)
+
+export { WithConnect as LogIn }

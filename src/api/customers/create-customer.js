@@ -25,9 +25,10 @@ export const createCustomer = async ({ email, password, firstName }) => {
       data: { attributes },
     } = response
 
-    await getCustomerToken({ username: email, password })
+    const { ownerId } = await getCustomerToken({ username: email, password })
 
     return {
+      ownerId,
       username: attributes.email,
       firstName: attributes.metadata.firstName,
     }
