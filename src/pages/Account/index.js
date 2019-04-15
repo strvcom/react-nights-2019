@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import Layout from '../../components/Layout'
 import { H1 } from '../../components/Typography'
 
-const Account = ({ customer }) => (
+const AccountPage = ({ customer }) => (
   <Layout>
     <H1>Welcome {customer.attributes.metadata.firstName}</H1>
   </Layout>
@@ -14,6 +14,4 @@ const mapStateToProps = state => ({
   customer: state.customer,
 })
 
-const WithConnect = connect(mapStateToProps)(Account)
-
-export { WithConnect as Account }
+export const Account = connect(mapStateToProps)(AccountPage)

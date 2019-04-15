@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react'
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 
-import { logout } from '../../store/customer/actions'
+import * as customerActions from '../../store/customer/actions'
 import { removeToken } from '../../utils/token'
 import { Wrapper, Header, HeaderSection, HeaderLink } from './styled'
 
@@ -50,7 +50,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = {
-  logout,
+  logout: customerActions.logout,
 }
 
 export default withRouter(

@@ -7,12 +7,12 @@ import { H1 } from '../../components/Typography'
 import { Form, GlobalFormError } from '../../components/Form'
 import { Input } from '../../components/Input'
 import Button from '../../components/Button'
-import { login } from '../../store/customer/actions'
+import * as customerActions from '../../store/customer/actions'
 import { getCustomerToken } from '../../api/customers/get-customer-token'
 import { getCustomer } from '../../api/customers/get-customer'
 import { schema } from './schema'
 
-class LogIn extends Component {
+class LogInPage extends Component {
   state = {
     globalError: '',
   }
@@ -70,12 +70,10 @@ class LogIn extends Component {
 }
 
 const mapDispatchToProps = {
-  login,
+  login: customerActions.login,
 }
 
-const WithConnect = connect(
+export const LogIn = connect(
   null,
   mapDispatchToProps
-)(LogIn)
-
-export { WithConnect as LogIn }
+)(LogInPage)
