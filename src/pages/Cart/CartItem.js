@@ -1,4 +1,3 @@
-// @flow
 import * as React from 'react'
 
 import { getProductById } from '../../api/products/get-product'

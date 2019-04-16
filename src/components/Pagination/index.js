@@ -1,4 +1,3 @@
-// @flow
 import * as React from 'react'
 import range from 'ramda/src/range'
 import map from 'ramda/src/map'
