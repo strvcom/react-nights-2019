@@ -1,6 +1,6 @@
+import qs from 'qs'
 import { api } from '../api-client'
 import { formatProduct } from './utils/format-product'
-import qs from 'qs'
 
 export const getProducts = async urlQuery => {
   const { data, meta, included } = await api(

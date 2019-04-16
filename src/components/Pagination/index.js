@@ -1,8 +1,9 @@
 import * as React from 'react'
 import range from 'ramda/src/range'
 import map from 'ramda/src/map'
-import { List, ListItem } from './styled'
 import { Link } from 'react-router-dom'
+
+import { List, ListItem } from './styled'
 
 const renderPaginationItem = number => (
   <ListItem key={number}>
