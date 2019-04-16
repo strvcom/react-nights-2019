@@ -9,7 +9,7 @@ import Button from '../../components/Button'
 import Loader from '../../components/Loader'
 import Layout from '../../components/Layout'
 import { H1 } from '../../components/Typography'
-import { addProduct as addProductAction } from '../../store/cart/actions'
+import * as cartActions from '../../store/cart/actions'
 
 import {
   Wrapper,
@@ -53,13 +53,13 @@ const ProductView = ({ match, addProduct }) => {
   )
 }
 
-const actionCreators = {
-  addProduct: addProductAction,
+const mapDispatchToProps = {
+  addProduct: cartActions.addProduct,
 }
 
 const ProductDetail = connect(
   null,
-  actionCreators
+  mapDispatchToProps
 )(ProductView)
 
 export { ProductDetail }

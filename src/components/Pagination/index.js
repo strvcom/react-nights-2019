@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 
 const renderPaginationItem = number => (
   <ListItem key={number}>
-    <Link to={`/list/${number}`}>{number}</Link>
+    <Link to={`/?page=${number}`}>{number}</Link>
   </ListItem>
 )
 

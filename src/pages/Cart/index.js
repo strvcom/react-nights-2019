@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 import Layout from '../../components/Layout'
 import { H1 } from '../../components/Typography'
-import { removeProduct as removeProductAction } from '../../store/cart/actions'
+import * as cartActions from '../../store/cart/actions'
 import { CartItem } from './CartItem'
 
 const CartView = ({ items, removeProduct }) => {
@@ -31,13 +31,13 @@ const mapStateToProps = state => ({
   })),
 })
 
-const actionCreators = {
-  removeProduct: removeProductAction,
+const mapDispatchToProps = {
+  removeProduct: cartActions.removeProduct,
 }
 
 const Cart = connect(
   mapStateToProps,
-  actionCreators
+  mapDispatchToProps
 )(CartView)
 
 export { Cart }

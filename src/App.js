@@ -1,5 +1,5 @@
 import React from 'react'
-import { Switch, Route, Redirect } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 import { Provider } from 'react-redux'
 
 import GlobalStyles from './globalStyles'
@@ -23,9 +23,8 @@ const App = () => (
     <React.Fragment>
       <GlobalStyles />
       <Switch>
-        <Route path="/" exact render={() => <Redirect to="list/1" />} />
-        <Route path="/list/:page" exact component={ProductList} />
-        <Route path="/detail/:productId" component={ProductDetail} />
+        <Route path="/" exact component={ProductList} />
+        <Route path="/product/:productId" component={ProductDetail} />
         <Route path="/cart" component={Cart} />
         <Route path="/signup" component={SignUp} />
         <Route path="/login" component={LogIn} />
