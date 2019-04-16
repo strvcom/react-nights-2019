@@ -8,6 +8,8 @@ const useApi = (fn, resolveCondition = []) => {
     setLoading(true)
     fn(...args)
       .then(returnedData => setData(returnedData))
+      // eslint-disable-next-line no-console
+      .catch(console.error)
       .finally(() => setLoading(false))
   }
 
