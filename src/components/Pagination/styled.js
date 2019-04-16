@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const List = styled.ul`
+export const List = styled.ul`
   align-items: center;
   display: flex;
   flex-direction: row;
@@ -11,8 +11,6 @@ const List = styled.ul`
   width: 100%;
 `
 
-const ListItem = styled.li`
+export const ListItem = styled.li`
   margin: 5px;
 `
-
-export { List, ListItem }
