@@ -8,10 +8,6 @@ import { Form, GlobalFormError } from '../../components/Form'
 import { Input } from '../../components/Input'
 import Button from '../../components/Button'
 import * as customerActions from '../../store/customer/actions'
-import * as routes from '../../routes'
-
-import { getCustomerToken } from '../../api/customers/get-customer-token'
-import { getCustomer } from '../../api/customers/get-customer'
 import { schema } from './schema'
 
 const initialValues = {
@@ -25,16 +21,16 @@ const LogInPage = ({ login, history }) => {
   const handleSubmit = async ({ email, password }, { setSubmitting }) => {
     try {
       setSubmitting(true)
-      const { ownerId } = await getCustomerToken({
+
+      await this.props.login({
         username: email,
         password,
+        push: this.props.history.push,
       })
-      const customer = await getCustomer(ownerId)
-      login(customer)
-      history.push(routes.ACCOUNT)
     } catch (error) {
       setGlobalError(error.message)
     }
+
     setSubmitting(false)
   }
 
