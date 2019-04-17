@@ -1,14 +1,16 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
+
+import { getProductById } from '../../api/products/get-product'
+import { useApi } from '../../api/use-api'
 
 import Button from '../../components/Button'
 import Loader from '../../components/Loader'
 import Layout from '../../components/Layout'
 import { H1 } from '../../components/Typography'
-import { getProductById } from '../../api/products/get-product'
-import { loadProduct } from '../../store/products/actions'
-import { addProduct } from '../../store/cart/actions'
+import * as cartActions from '../../store/cart/actions'
+import * as routes from '../../routes'
 
 import {
   Wrapper,
@@ -19,65 +21,45 @@ import {
   Price,
 } from './styled'
 
-class ProductView extends Component {
-  fetchProduct = async productId => {
-    const product = await getProductById(productId)
-    this.props.loadProduct(product)
-  }
+const ProductView = ({ match, addProduct }) => {
+  const { productId } = match.params
 
-  componentDidMount() {
-    const { productId } = this.props.match.params
-    this.fetchProduct(productId)
-  }
+  const { data: product, isLoading } = useApi(() => getProductById(productId), [
+    productId,
+  ])
 
-  componentDidUpdate(prevProps) {
-    const { productId } = this.props.match.params
-    if (prevProps.match.params.productId !== productId) {
-      this.fetchProduct(productId)
-    }
-  }
-
-  render() {
-    const { product } = this.props
-    return (
-      <Layout>
-        <Wrapper>
-          {product ? (
-            <>
-              <ImgWrapper>
-                <Img src={product.image_url} />
-              </ImgWrapper>
-              <DetailsWrapper>
-                <H1 textAlign="center">{product.name}</H1>
-                <Price>{product.price.formatted_amount}</Price>
-                <Description>{product.description}</Description>
-                <Button onClick={() => this.props.addProduct(product.id)}>
-                  Add to Cart
-                </Button>
-                <Link to="/">Back</Link>
-              </DetailsWrapper>
-            </>
-          ) : (
-            <Loader />
-          )}
-        </Wrapper>
-      </Layout>
-    )
-  }
+  return (
+    <Layout>
+      <Wrapper>
+        {isLoading && <Loader />}
+        {product && (
+          <>
+            <ImgWrapper>
+              <Img src={product.image_url} />
+            </ImgWrapper>
+            <DetailsWrapper>
+              <H1 textAlign="center">{product.name}</H1>
+              <Price>{product.price.formatted_amount}</Price>
+              <Description>{product.description}</Description>
+              <Button onClick={() => addProduct(product.id)}>
+                Add to Cart
+              </Button>
+              <Link to={routes.PRODUCT_LIST}>Back</Link>
+            </DetailsWrapper>
+          </>
+        )}
+      </Wrapper>
+    </Layout>
+  )
 }
 
-const mapStateToProps = (state, ownProps) => ({
-  product: state.products.find(p => p.id === ownProps.match.params.productId),
-})
-
-const actionCreators = {
-  loadProduct,
-  addProduct,
+const mapDispatchToProps = {
+  addProduct: cartActions.addProduct,
 }
 
 const ProductDetail = connect(
-  mapStateToProps,
-  actionCreators
+  null,
+  mapDispatchToProps
 )(ProductView)
 
 export { ProductDetail }

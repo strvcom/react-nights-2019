@@ -3,6 +3,8 @@ import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 import * as customerActions from '../../store/customer/actions'
+import * as routes from '../../routes'
+
 import { removeToken } from '../../utils/token'
 import { removeCustomer } from '../../utils/customer'
 import { Wrapper, Header, HeaderSection, HeaderLink } from './styled'
@@ -12,7 +14,7 @@ class Layout extends Component {
     this.props.logout()
     removeToken()
     removeCustomer()
-    this.props.history.push('/')
+    this.props.history.push(routes.HOMEPAGE)
   }
 
   render() {
@@ -22,21 +24,21 @@ class Layout extends Component {
       <Fragment>
         <Header>
           <HeaderSection>
-            <HeaderLink to="/">All Products</HeaderLink>
+            <HeaderLink to={routes.PRODUCT_LIST}>All Products</HeaderLink>
           </HeaderSection>
           <HeaderSection>
-            <HeaderLink to="/cart">My Cart</HeaderLink>|
+            <HeaderLink to={routes.CART}>My Cart</HeaderLink>|
             {isAuthenticated ? (
               <>
-                <HeaderLink to="/account">My Account</HeaderLink>|
+                <HeaderLink to={routes.ACCOUNT}>My Account</HeaderLink>|
                 <HeaderLink as="button" onClick={this.handleLogout}>
                   Logout
                 </HeaderLink>
               </>
             ) : (
               <>
-                <HeaderLink to="/login">Log In</HeaderLink> |
-                <HeaderLink to="/signup">Sign Up</HeaderLink>
+                <HeaderLink to={routes.LOGIN}>Log In</HeaderLink> |
+                <HeaderLink to={routes.SIGN_UP}>Sign Up</HeaderLink>
               </>
             )}
           </HeaderSection>
