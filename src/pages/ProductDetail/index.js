@@ -10,6 +10,7 @@ import Loader from '../../components/Loader'
 import Layout from '../../components/Layout'
 import { H1 } from '../../components/Typography'
 import * as cartActions from '../../store/cart/actions'
+import * as routes from '../../routes'
 
 import {
   Wrapper,
@@ -44,7 +45,7 @@ const ProductView = ({ match, addProduct }) => {
               <Button onClick={() => addProduct(product.id)}>
                 Add to Cart
               </Button>
-              <Link to="/">Back</Link>
+              <Link to={routes.PRODUCT_LIST}>Back</Link>
             </DetailsWrapper>
           </>
         )}

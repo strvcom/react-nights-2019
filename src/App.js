@@ -1,5 +1,5 @@
 import React from 'react'
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, Redirect } from 'react-router-dom'
 import { Provider } from 'react-redux'
 
 import GlobalStyles from './globalStyles'
@@ -13,6 +13,7 @@ import { NotFound } from './pages/NotFound'
 import { PrivateRoute } from './components/PrivateRoute'
 import { getCustomer } from './utils/customer'
 import { configureStore } from './store'
+import * as routes from './routes'
 
 const store = configureStore({
   customer: getCustomer(),
@@ -23,12 +24,17 @@ const App = () => (
     <React.Fragment>
       <GlobalStyles />
       <Switch>
-        <Route path="/" exact component={ProductList} />
-        <Route path="/product/:productId" component={ProductDetail} />
-        <Route path="/cart" component={Cart} />
-        <Route path="/signup" component={SignUp} />
-        <Route path="/login" component={LogIn} />
-        <PrivateRoute path="/account" component={Account} />
+        <Route
+          path={routes.HOMEPAGE}
+          exact
+          render={() => <Redirect to={routes.PRODUCT_LIST} />}
+        />
+        <Route path={routes.PRODUCT_LIST} exact component={ProductList} />
+        <Route path={routes.PRODUCT_DETAIL} component={ProductDetail} />
+        <Route path={routes.CART} component={Cart} />
+        <Route path={routes.SIGN_UP} component={SignUp} />
+        <Route path={routes.LOGIN} component={LogIn} />
+        <PrivateRoute path={routes.ACCOUNT} component={Account} />
         <Route component={NotFound} />
       </Switch>
     </React.Fragment>

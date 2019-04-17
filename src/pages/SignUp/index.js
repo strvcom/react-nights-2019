@@ -8,6 +8,8 @@ import { Form, GlobalFormError } from '../../components/Form'
 import { Input } from '../../components/Input'
 import Button from '../../components/Button'
 import * as customerActions from '../../store/customer/actions'
+import * as routes from '../../routes'
+
 import { createCustomer } from '../../api/customers/create-customer'
 import { getCustomer } from '../../api/customers/get-customer'
 import { schema } from './schema'
@@ -30,7 +32,7 @@ class SignUpPage extends Component {
       const { ownerId } = await createCustomer(values)
       const customer = await getCustomer(ownerId)
       this.props.login(customer)
-      this.props.history.push('/account')
+      this.props.history.push(routes.ACCOUNT)
     } catch (error) {
       this.setState({
         globalError: error.message,
