@@ -19,7 +19,7 @@ const Products = ({ match, location, addProduct }) => {
 
   const { data: res, isLoading } = useApi(
     () => getProducts({ page: { number: page } }),
-    page
+    [page]
   )
 
   const handleAddToCart = productId => addProduct(productId)

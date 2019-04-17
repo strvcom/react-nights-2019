@@ -24,10 +24,9 @@ import {
 const ProductView = ({ match, addProduct }) => {
   const { productId } = match.params
 
-  const { data: product, isLoading } = useApi(
-    () => getProductById(productId),
-    productId
-  )
+  const { data: product, isLoading } = useApi(() => getProductById(productId), [
+    productId,
+  ])
 
   return (
     <Layout>
