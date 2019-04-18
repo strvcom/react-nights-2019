@@ -1,5 +1,6 @@
 import config from '../../config'
 import { setToken } from '../../utils/token'
+import { setRefreshToken } from '../../utils/refresh-token'
 
 export const getCustomerToken = async ({ username, password }) => {
   const response = await fetch(`${config.apiUrl}/oauth/token`, {
@@ -18,8 +19,9 @@ export const getCustomerToken = async ({ username, password }) => {
 
   switch (response.status) {
     case 200: {
-      const { owner_id, access_token } = await response.json()
+      const { owner_id, access_token, refresh_token } = await response.json()
       setToken(access_token)
+      setRefreshToken(refresh_token)
 
       return { ownerId: owner_id, access_token }
     }
