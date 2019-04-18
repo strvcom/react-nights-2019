@@ -17,6 +17,7 @@ export const refreshCustomerToken = async () => {
       grant_type: 'refresh_token',
       refresh_token: refreshToken,
       client_id: config.clientId,
+      client_secret: config.clientSecret,
     }),
   })
 
