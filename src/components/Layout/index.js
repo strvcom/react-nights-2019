@@ -6,6 +6,7 @@ import * as customerActions from '../../store/customer/actions'
 import * as routes from '../../routes'
 
 import { removeToken } from '../../utils/token'
+import { removeRefreshToken } from '../../utils/refresh-token'
 import { removeCustomer } from '../../utils/customer'
 import { Wrapper, Header, HeaderSection, HeaderLink } from './styled'
 
@@ -13,6 +14,7 @@ const Layout = ({ logout, isAuthenticated, history, children }) => {
   const handleLogout = () => {
     logout()
     removeToken()
+    removeRefreshToken()
     removeCustomer()
     history.push(routes.HOMEPAGE)
   }
