@@ -219,12 +219,34 @@ exports[`[pages] ProductsList when products loaded should render correctly 1`] =
           class="c1"
         >
           <a
-            href="/products?page=1"
+            href="/products?page=1&size=25"
           >
             1
           </a>
         </li>
       </ul>
+      <select>
+        <option
+          value="10"
+        >
+          10
+        </option>
+        <option
+          value="25"
+        >
+          25
+        </option>
+        <option
+          value="50"
+        >
+          50
+        </option>
+        <option
+          value="100"
+        >
+          100
+        </option>
+      </select>
       .c7 {
   background: #ef0d33;
   cursor: pointer;
@@ -592,12 +614,34 @@ exports[`[pages] ProductsList when products loaded should render correctly 1`] =
           class="c5"
         >
           <a
-            href="/products?page=1"
+            href="/products?page=1&size=25"
           >
             1
           </a>
         </li>
       </ul>
+      <select>
+        <option
+          value="10"
+        >
+          10
+        </option>
+        <option
+          value="25"
+        >
+          25
+        </option>
+        <option
+          value="50"
+        >
+          50
+        </option>
+        <option
+          value="100"
+        >
+          100
+        </option>
+      </select>
       <ul
         class="c6"
       >

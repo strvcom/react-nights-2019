@@ -48,10 +48,15 @@ export const mockAuthorizedRequest = () =>
     })
 
 export const mockFetchProducts = () =>
-  mockUnauthorizedRequest().get(`${config.apiUrl}/api/skus?include=prices`, {
-    status: 200,
-    body: PRODUCTS,
-  })
+  mockUnauthorizedRequest().get(
+    `${
+      config.apiUrl
+    }/api/skus?include=prices&page%5Bnumber%5D=1&page%5Bsize%5D=25`,
+    {
+      status: 200,
+      body: PRODUCTS,
+    }
+  )
 
 export const mockFetchProduct = () =>
   mockUnauthorizedRequest().get(`${config.apiUrl}/api/skus/1?include=prices`, {
