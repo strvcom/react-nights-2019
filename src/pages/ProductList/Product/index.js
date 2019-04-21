@@ -27,4 +27,4 @@ const Product = ({ node, onAddToCart }) => (
   </Wrapper>
 )
 
-export default Product
+export { Product }
