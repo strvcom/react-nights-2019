@@ -19,8 +19,8 @@ const store = configureStore({
   customer: getCustomer(),
 })
 
-const App = () => (
-  <Provider store={store}>
+const App = ({ customStore }) => (
+  <Provider store={customStore || store}>
     <React.Fragment>
       <GlobalStyles />
       <Switch>
