@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import qs from 'qs'
 
@@ -11,18 +11,26 @@ import { H1 } from '../../components/Typography'
 import { Pagination } from '../../components/Pagination'
 
 import * as cartActions from '../../store/cart/actions'
-import Product from './Product'
+import { Product } from './Product'
 import { ProductsWrap } from './styled'
 
-const Products = ({ match, location, addProduct }) => {
-  const { page } = qs.parse(location.search.substr(1))
+const Products = ({ match, location, addProduct, history }) => {
+  const { page = 1, size: initialSize = 25 } = qs.parse(
+    location.search.substr(1)
+  )
+  const [size, setSize] = useState(initialSize)
 
   const { data: res, isLoading } = useApi(
-    () => getProducts({ page: { number: page } }),
-    [page]
+    () => getProducts({ page: { number: page, size } }),
+    [page, size]
   )
 
   const handleAddToCart = productId => addProduct(productId)
+  const handleSizeChange = event => {
+    const newSize = event.target.value
+    setSize(newSize)
+    history.push(`/products?page=${page}&size=${newSize}`)
+  }
 
   return (
     <Layout>
@@ -33,6 +41,8 @@ const Products = ({ match, location, addProduct }) => {
           <Pagination
             pages={res.meta.page_count}
             activePage={match.params.page}
+            size={size}
+            onSizeChange={handleSizeChange}
           />
           <ProductsWrap>
             {res.data.map(product => (
