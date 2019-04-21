@@ -6,6 +6,7 @@ import { App } from '../../../App'
 import { renderWithRouter } from '../../../utilsTest/render'
 import * as routes from '../../../routes'
 import { mockSignUp201, mockSignUp422 } from '../../../utilsTest/mockHelpers'
+import { USER } from '../../../utilsTest/mockData'
 
 const fillInSignUpForm = renderer => {
   const firstNameInput = renderer.container.querySelector(
@@ -20,10 +21,10 @@ const fillInSignUpForm = renderer => {
   )
   const formSubmitButton = renderer.container.querySelector('button')
 
-  fireEvent.change(firstNameInput, { target: { value: 'michal' } })
-  fireEvent.change(emailInput, { target: { value: 'michal@test.com' } })
-  fireEvent.change(passwordInput, { target: { value: 'Heslo1234' } })
-  fireEvent.change(passwordConfirmInput, { target: { value: 'Heslo1234' } })
+  fireEvent.change(firstNameInput, { target: { value: USER.firstName } })
+  fireEvent.change(emailInput, { target: { value: USER.email } })
+  fireEvent.change(passwordInput, { target: { value: USER.password } })
+  fireEvent.change(passwordConfirmInput, { target: { value: USER.password } })
 
   return { formSubmitButton }
 }
@@ -61,7 +62,7 @@ describe('[pages] SignUp', () => {
 
         fireEvent.click(formSubmitButton)
         const HTMLDivElement = await waitForElement(() =>
-          renderer.getByText('Welcome Michal')
+          renderer.getByText(`Welcome ${USER.firstName}`)
         )
         expect(HTMLDivElement).toBeTruthy()
       })

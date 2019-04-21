@@ -60,3 +60,10 @@ export const PRODUCT = {
   data: FIRST_PRODUCT,
   included: INCLUDES,
 }
+
+export const USER = {
+  id: 1,
+  email: 'michal@test.com',
+  firstName: 'Michal',
+  password: 'Heslo1234',
+}

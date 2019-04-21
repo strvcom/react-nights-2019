@@ -5,6 +5,7 @@ import { App } from '../../../App'
 import * as routes from '../../../routes'
 import { renderWithRouter } from '../../../utilsTest/render'
 import { configureStore } from '../../../store'
+import { USER } from '../../../utilsTest/mockData'
 
 describe('[pages] Account', () => {
   describe('when not logged in', () => {
@@ -21,7 +22,7 @@ describe('[pages] Account', () => {
         customer: {
           attributes: {
             metadata: {
-              firstName: 'Michal',
+              firstName: USER.firstName,
             },
           },
         },
@@ -31,7 +32,7 @@ describe('[pages] Account', () => {
         <App customStore={store} />,
         routes.ACCOUNT
       )
-      const H1HtmlElement = renderer.getByText('Welcome Michal')
+      const H1HtmlElement = renderer.getByText(`Welcome ${USER.firstName}`)
       expect(H1HtmlElement).toBeTruthy()
     })
   })

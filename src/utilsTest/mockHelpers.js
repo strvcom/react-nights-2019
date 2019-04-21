@@ -1,6 +1,6 @@
 import fetchMock from 'fetch-mock'
 import config from '../config'
-import { PRODUCTS, PRODUCT } from './mockData'
+import { PRODUCTS, PRODUCT, USER } from './mockData'
 
 export const mockUnauthorizedRequest = () =>
   fetchMock.restore().post(`${config.apiUrl}/oauth/token`, {
@@ -24,22 +24,24 @@ export const mockAuthorizedRequest = () =>
         owner_type: 'customer',
       },
     })
-    .get(`${config.apiUrl}/api/customers/1`, {
+    .get(`${config.apiUrl}/api/customers/${USER.id}`, {
       status: 200,
       body: {
         data: {
-          id: '1',
+          id: USER.id,
           type: 'customers',
           links: {
-            self: 'https://the-amber-brand-12.commercelayer.io/api/customers/1',
+            self: `https://the-amber-brand-12.commercelayer.io/api/customers/${
+              USER.id
+            }`,
           },
           attributes: {
-            email: 'michal@test.com',
+            email: USER.email,
             status: 'prospect',
             created_at: '2019-04-21T15:02:29.631Z',
             updated_at: '2019-04-21T15:02:29.631Z',
             reference: null,
-            metadata: { firstName: 'Michal' },
+            metadata: { firstName: USER.firstName },
           },
         },
       },
@@ -82,18 +84,20 @@ export const mockSignUp201 = () =>
     status: 201,
     body: {
       data: {
-        id: '1',
+        id: USER.id,
         type: 'customers',
         links: {
-          self: 'https://the-amber-brand-12.commercelayer.io/api/customers/1',
+          self: `https://the-amber-brand-12.commercelayer.io/api/customers/${
+            USER.id
+          }`,
         },
         attributes: {
-          email: 'michal@test.com',
+          email: USER.email,
           status: 'prospect',
           created_at: '2019-04-21T15:02:29.631Z',
           updated_at: '2019-04-21T15:02:29.631Z',
           reference: null,
-          metadata: { firstName: 'Michal' },
+          metadata: { firstName: USER.firstName },
         },
       },
     },
