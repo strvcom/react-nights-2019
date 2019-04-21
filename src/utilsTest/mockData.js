@@ -67,3 +67,44 @@ export const USER = {
   firstName: 'Michal',
   password: 'Heslo1234',
 }
+
+export const TOKEN = {
+  access_token: 'accessToken',
+  token_type: 'bearer',
+  expires_in: 7200,
+  refresh_token: 'refreshToken',
+  scope: 'market:335',
+  created_at: 1555858950,
+  owner_id: 1,
+  owner_type: 'customer',
+}
+
+export const LOGIN_DATA = {
+  id: USER.id,
+  type: 'customers',
+  links: {
+    self: `https://the-amber-brand-12.commercelayer.io/api/customers/${
+      USER.id
+    }`,
+  },
+  attributes: {
+    email: USER.email,
+    status: 'prospect',
+    created_at: '2019-04-21T15:02:29.631Z',
+    updated_at: '2019-04-21T15:02:29.631Z',
+    reference: null,
+    metadata: { firstName: USER.firstName },
+  },
+}
+
+export const ERROR_EMAIL_ALREADY_TAKEN = {
+  title: 'has already been taken',
+  detail: 'email - has already been taken',
+  code: 'VALIDATION_ERROR',
+  source: { pointer: '/data/attributes/email' },
+  status: '422',
+  meta: {
+    error: 'taken',
+    value: 'test@test.com',
+  },
+}

@@ -4,6 +4,7 @@ import 'jest-styled-components'
 
 import Button from '../index'
 
+// This is just an example how to test components
 describe('[components] Button', () => {
   it('should render correctly', () => {
     const renderer = render(<Button>My Button</Button>)

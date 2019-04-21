@@ -1,6 +1,7 @@
 import reducer, { initialState } from './reducer'
 import { addProduct, removeProduct } from './actions'
 
+// This is just an example how to test reducers
 describe('[reducer] Cart', () => {
   const productId = 1
 
