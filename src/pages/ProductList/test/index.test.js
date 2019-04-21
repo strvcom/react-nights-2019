@@ -3,13 +3,14 @@ import { waitForElement } from 'react-testing-library'
 import 'jest-styled-components'
 
 import { App } from '../../../App'
+import * as routes from '../../../routes'
 import { renderWithRouter } from '../../../utilsTest/render'
 import { mockFetchProducts } from '../../../utilsTest/mockHelpers'
 
 describe('[pages] ProductsList', () => {
   describe('when loading', () => {
     it('should render correctly', () => {
-      const renderer = renderWithRouter(<App />, '/')
+      const renderer = renderWithRouter(<App />, routes.PRODUCT_LIST)
       expect(renderer.baseElement).toMatchSnapshot()
     })
   })
@@ -18,7 +19,7 @@ describe('[pages] ProductsList', () => {
     mockFetchProducts()
 
     it('should render correctly', async () => {
-      const renderer = renderWithRouter(<App />, '/')
+      const renderer = renderWithRouter(<App />, routes.PRODUCT_LIST)
       await waitForElement(() => renderer.container.querySelector('ul'))
       expect(renderer.baseElement).toMatchSnapshot()
     })

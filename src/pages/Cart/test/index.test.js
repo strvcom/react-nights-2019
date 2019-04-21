@@ -3,6 +3,7 @@ import { waitForElement } from 'react-testing-library'
 import 'jest-styled-components'
 
 import { App } from '../../../App'
+import * as routes from '../../../routes'
 import { renderWithRouter } from '../../../utilsTest/render'
 import { mockFetchProduct } from '../../../utilsTest/mockHelpers'
 import { configureStore } from '../../../store'
@@ -11,7 +12,7 @@ import { getCustomer } from '../../../utils/customer'
 describe('[pages] Cart', () => {
   describe('when loading', () => {
     it('should render correctly', () => {
-      const renderer = renderWithRouter(<App />, '/cart')
+      const renderer = renderWithRouter(<App />, routes.CART)
       expect(renderer.baseElement).toMatchSnapshot()
     })
   })
@@ -28,7 +29,10 @@ describe('[pages] Cart', () => {
         },
       })
 
-      const renderer = renderWithRouter(<App customStore={store} />, '/cart')
+      const renderer = renderWithRouter(
+        <App customStore={store} />,
+        routes.CART
+      )
       await waitForElement(() => renderer.container.querySelector('p'))
       expect(renderer.baseElement).toMatchSnapshot()
     })
