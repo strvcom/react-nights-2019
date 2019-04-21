@@ -30,12 +30,13 @@ class LogInPage extends Component {
         push: this.props.history.push,
       })
     } catch (error) {
+      console.log(error)
       this.setState({
         globalError: error.message,
       })
+    } finally {
+      setSubmitting(false)
     }
-
-    setSubmitting(false)
   }
 
   render() {
