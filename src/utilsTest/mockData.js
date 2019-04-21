@@ -55,3 +55,8 @@ export const PRODUCTS = {
     record_count: 2,
   },
 }
+
+export const PRODUCT = {
+  data: FIRST_PRODUCT,
+  included: INCLUDES,
+}
