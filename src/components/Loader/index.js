@@ -2,7 +2,7 @@ import React from 'react'
 import { LoaderWrap, StyledLoader, Circular, Path } from './styled'
 
 const Loader = props => (
-  <LoaderWrap {...props}>
+  <LoaderWrap data-testid="loader" {...props}>
     <StyledLoader>
       <Circular viewBox="25 25 50 50">
         <Path
