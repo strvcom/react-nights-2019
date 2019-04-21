@@ -33,7 +33,7 @@ const PrivateRouteComponent = ({
 }
 
 const mapStateToProps = state => ({
-  isAuthenticated: isEmpty(state.customer),
+  isAuthenticated: !isEmpty(state.customer),
 })
 
 export const PrivateRoute = connect(mapStateToProps)(PrivateRouteComponent)
