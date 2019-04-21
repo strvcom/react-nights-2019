@@ -11,6 +11,15 @@
     "lint:js": "eslint . --ignore-path .gitignore --fix",
     "lint:css": "stylelint 'src/**/*.js'"
   },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!/node_modules/",
+      "!src/index.js",
+      "!src/serviceWorker.js",
+      "!src/store/index.js"
+    ]
+  },
   "lint-staged": {
     "*.js": [
       "eslint --fix",
