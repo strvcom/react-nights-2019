@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import toPairs from 'ramda/src/toPairs'
 
 import Layout from '../../components/Layout'
 import { H1 } from '../../components/Typography'
@@ -25,8 +26,8 @@ const CartView = ({ items, removeProduct }) => {
 }
 
 const mapStateToProps = state => ({
-  items: Object.keys(state.cart).map(productId => ({
-    quantity: state.cart[productId],
+  items: toPairs(state.cart).map(([productId, quantity]) => ({
+    quantity,
     product: { id: productId },
   })),
 })

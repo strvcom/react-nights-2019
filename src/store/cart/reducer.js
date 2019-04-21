@@ -1,3 +1,4 @@
+import omit from 'ramda/src/omit'
 import { ADD_PRODUCT, REMOVE_PRODUCT } from './actions'
 
 const reducer = (state = {}, action) => {
@@ -8,9 +9,7 @@ const reducer = (state = {}, action) => {
         [action.payload]: (state[action.payload] || 0) + 1,
       }
     case REMOVE_PRODUCT: {
-      const nextState = Object.assign({}, state)
-      delete nextState[action.payload]
-      return nextState
+      return omit([action.payload], state)
     }
     default:
       return state
