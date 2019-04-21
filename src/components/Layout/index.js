@@ -18,7 +18,7 @@ class Layout extends Component {
   }
 
   render() {
-    const { isAuthenticated } = this.props
+    const { isAuthenticated, dataTestId, children } = this.props
 
     return (
       <Fragment>
@@ -43,7 +43,7 @@ class Layout extends Component {
             )}
           </HeaderSection>
         </Header>
-        <Wrapper>{this.props.children}</Wrapper>
+        <Wrapper data-testid={dataTestId}>{children}</Wrapper>
       </Fragment>
     )
   }

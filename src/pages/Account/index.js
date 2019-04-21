@@ -5,7 +5,7 @@ import Layout from '../../components/Layout'
 import { H1 } from '../../components/Typography'
 
 const AccountPage = ({ customer }) => (
-  <Layout>
+  <Layout dataTestId="account-page">
     <H1>Welcome {customer.attributes.metadata.firstName}</H1>
   </Layout>
 )

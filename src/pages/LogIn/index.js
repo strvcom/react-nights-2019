@@ -46,7 +46,7 @@ class LogInPage extends Component {
     const { globalError } = this.state
 
     return (
-      <Layout>
+      <Layout dataTestId="login-page">
         <H1 textAlign="center">Log In</H1>
         <Formik
           initialValues={this.initialValues}
