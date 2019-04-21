@@ -29,9 +29,9 @@ const LogInPage = ({ login, history }) => {
       })
     } catch (error) {
       setGlobalError(error.message)
+    } finally {
+      setSubmitting(false)
     }
-
-    setSubmitting(false)
   }
 
   return (

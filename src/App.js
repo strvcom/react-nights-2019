@@ -1,6 +1,7 @@
 import React from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
 import { Provider } from 'react-redux'
+import { ToastContainer } from 'react-toastify'
 
 import GlobalStyles from './globalStyles'
 import { ProductList } from './pages/ProductList'
@@ -23,6 +24,7 @@ const App = () => (
   <Provider store={store}>
     <React.Fragment>
       <GlobalStyles />
+      <ToastContainer />
       <Switch>
         <Route
           path={routes.HOMEPAGE}
