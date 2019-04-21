@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import qs from 'qs'
+import compose from 'ramda/src/compose'
+import prop from 'ramda/src/prop'
+import tail from 'ramda/src/tail'
 
 import { getProducts } from '../../api/products/get-products'
 import { useApi } from '../../api/use-api'
@@ -14,10 +17,14 @@ import * as cartActions from '../../store/cart/actions'
 import { Product } from './Product'
 import { ProductsWrap } from './styled'
 
+const getUrlParams = compose(
+  qs.parse,
+  tail,
+  prop('search')
+)
+
 const Products = ({ match, location, addProduct, history }) => {
-  const { page = 1, size: initialSize = 25 } = qs.parse(
-    location.search.substr(1)
-  )
+  const { page = 1, size: initialSize = 25 } = getUrlParams(location)
   const [size, setSize] = useState(initialSize)
 
   const { data: res, isLoading } = useApi(
