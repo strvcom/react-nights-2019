@@ -27,7 +27,7 @@ export const refreshCustomerToken = async () => {
       setToken(access_token)
       setRefreshToken(refresh_token)
 
-      return { accessToken: access_token, refreshToken: refresh_token }
+      return access_token
     }
     default:
       // TODO: should we throw error instead?
