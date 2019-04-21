@@ -4,6 +4,7 @@ import 'jest-styled-components'
 
 import { App } from '../../../App'
 import { renderWithRouter } from '../../../utilsTest/render'
+import { mockFetchProducts } from '../../../utilsTest/mockHelpers'
 
 describe('[pages] ProductsList', () => {
   describe('when loading', () => {
@@ -13,8 +14,9 @@ describe('[pages] ProductsList', () => {
     })
   })
 
-  // TODO: Keep in mind that we are working with live API
   describe('when products loaded', () => {
+    mockFetchProducts()
+
     it('should render correctly', async () => {
       const renderer = renderWithRouter(<App />, '/')
       await waitForElement(() => renderer.container.querySelector('ul'))
