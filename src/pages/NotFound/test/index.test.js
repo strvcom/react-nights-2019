@@ -1,14 +1,13 @@
 import React from 'react'
-import { render } from 'react-testing-library'
 import 'jest-styled-components'
 
 import { App } from '../../../App'
+import { renderWithRouter } from '../../../utilsTest/render'
 
 describe('[pages] NotFound', () => {
-  // !! FAILING TEST !!
-  // Error: Uncaught [Error: Invariant failed: You should not use <Switch> outside a <Router>]
   it('should render correctly', () => {
-    const renderer = render(<App />)
-    console.log(renderer.debug())
+    const renderer = renderWithRouter(<App />, '/not-implemented')
+    const HTMLDivElement = renderer.getByText("Sorry, page doesn't exist")
+    expect(HTMLDivElement).toBeTruthy()
   })
 })
