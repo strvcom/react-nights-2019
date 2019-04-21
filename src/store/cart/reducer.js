@@ -1,6 +1,8 @@
 import { ADD_PRODUCT, REMOVE_PRODUCT } from './actions'
 
-const reducer = (state = {}, action) => {
+export const initialState = {}
+
+const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_PRODUCT:
       return {
