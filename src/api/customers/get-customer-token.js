@@ -1,6 +1,7 @@
 import config from '../../config'
 import { setToken } from '../../utils/token'
 import { setRefreshToken } from '../../utils/refresh-token'
+import { AsyncValidationError } from '../../utils/errors'
 
 export const getCustomerToken = async ({ username, password }) => {
   const response = await fetch(`${config.apiUrl}/oauth/token`, {
@@ -26,7 +27,7 @@ export const getCustomerToken = async ({ username, password }) => {
       return { ownerId: owner_id, access_token }
     }
     case 401:
-      throw new Error('Email or password are incorrect')
+      throw new AsyncValidationError('Email or password are incorrect')
     default:
       throw new Error('Unexpected error')
   }

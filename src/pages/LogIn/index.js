@@ -8,11 +8,12 @@ import { Form, GlobalFormError } from '../../components/Form'
 import { Input } from '../../components/Input'
 import Button from '../../components/Button'
 import * as customerActions from '../../store/customer/actions'
+import { AsyncValidationError } from '../../utils/errors'
 import { schema } from './schema'
 
 class LogInPage extends Component {
   state = {
-    globalError: '',
+    formAsyncError: '',
   }
 
   initialValues = {
@@ -29,18 +30,20 @@ class LogInPage extends Component {
         password,
         push: this.props.history.push,
       })
-    } catch (error) {
-      console.log(error)
-      this.setState({
-        globalError: error.message,
-      })
+    } catch (e) {
+      if (e instanceof AsyncValidationError) {
+        this.setState({
+          formAsyncError: e.message,
+        })
+      }
+      // TODO: handle other errors
     } finally {
       setSubmitting(false)
     }
   }
 
   render() {
-    const { globalError } = this.state
+    const { formAsyncError } = this.state
 
     return (
       <Layout>
@@ -52,8 +55,8 @@ class LogInPage extends Component {
         >
           {({ handleSubmit, isSubmitting }) => (
             <Form onSubmit={handleSubmit}>
-              {Boolean(globalError) && (
-                <GlobalFormError>{globalError}</GlobalFormError>
+              {Boolean(formAsyncError) && (
+                <GlobalFormError>{formAsyncError}</GlobalFormError>
               )}
               <Input name="email" type="email" label="Email address" />
               <Input name="password" type="password" label="Password" />
