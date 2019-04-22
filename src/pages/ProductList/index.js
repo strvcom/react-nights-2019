@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import qs from 'qs'
 import compose from 'ramda/src/compose'
@@ -23,9 +23,11 @@ const getUrlParams = compose(
   prop('search')
 )
 
+const DEFAULT_SIZE = 25
+const DEFAULT_PAGE = 1
+
 const Products = ({ match, location, addProduct, history }) => {
-  const { page = 1, size: initialSize = 25 } = getUrlParams(location)
-  const [size, setSize] = useState(initialSize)
+  const { page = DEFAULT_PAGE, size = DEFAULT_SIZE } = getUrlParams(location)
 
   const { data: res, isLoading } = useApi(
     () => getProducts({ page: { number: page, size } }),
@@ -33,9 +35,7 @@ const Products = ({ match, location, addProduct, history }) => {
   )
 
   const handleAddToCart = productId => addProduct(productId)
-  const handleSizeChange = event => {
-    const newSize = event.target.value
-    setSize(newSize)
+  const handleSizeChange = newSize => {
     history.push(`/products?page=${page}&size=${newSize}`)
   }
 

@@ -24,7 +24,7 @@ const initialValues = {
 const SignUpPage = ({ login, history }) => {
   const [globalError, setGlobalError] = useState('')
 
-  const handleSubmitFn = async (values, { setSubmitting }) => {
+  const handleSubmit = async (values, { setSubmitting }) => {
     try {
       setSubmitting(true)
       const { ownerId } = await createCustomer(values)
@@ -43,10 +43,10 @@ const SignUpPage = ({ login, history }) => {
       <Formik
         initialValues={initialValues}
         validationSchema={schema}
-        onSubmit={handleSubmitFn}
+        onSubmit={handleSubmit}
       >
-        {({ handleSubmit, isSubmitting }) => (
-          <Form onSubmit={handleSubmit}>
+        {({ isSubmitting }) => (
+          <Form>
             {Boolean(globalError) && (
               <GlobalFormError>{globalError}</GlobalFormError>
             )}

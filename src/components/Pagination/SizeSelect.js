@@ -1,16 +1,25 @@
 import React from 'react'
 
-const options = [10, 25, 50, 100]
+const OPTIONS = [10, 25, 50, 100]
 
-const SizeSelect = ({ onChange, value }) => (
-  // eslint-disable-next-line jsx-a11y/no-onchange
-  <select onChange={onChange} value={value}>
-    {options.map(number => (
-      <option value={number} key={number}>
-        {number}
-      </option>
-    ))}
-  </select>
-)
+const SizeSelect = ({ onChange, value }) => {
+  const handleChange = event => {
+    const newValue = event.target.value
+
+    if (newValue !== value) {
+      onChange(newValue)
+    }
+  }
+
+  return (
+    <select onChange={handleChange} onBlur={handleChange} value={value}>
+      {OPTIONS.map(number => (
+        <option value={number} key={number}>
+          {number}
+        </option>
+      ))}
+    </select>
+  )
+}
 
 export { SizeSelect }

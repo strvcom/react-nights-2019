@@ -1,8 +1,9 @@
 import styled from 'styled-components'
+import { Form as FormikForm } from 'formik'
 
 import theme from '../../common/theme'
 
-export const Form = styled.form`
+export const Form = styled(FormikForm)`
   display: flex;
   flex-direction: column;
   margin: 1.4rem auto;
