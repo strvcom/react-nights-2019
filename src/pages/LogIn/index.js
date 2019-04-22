@@ -8,6 +8,7 @@ import { Form, GlobalFormError } from '../../components/Form'
 import { Input } from '../../components/Input'
 import Button from '../../components/Button'
 import * as customerActions from '../../store/customer/actions'
+import { AsyncValidationError } from '../../utils/errors'
 import { schema } from './schema'
 
 const initialValues = {
@@ -16,19 +17,22 @@ const initialValues = {
 }
 
 const LogInPage = ({ login, history }) => {
-  const [globalError, setGlobalError] = useState('')
+  const [formAsyncError, setFormAsyncError] = useState('')
 
   const handleSubmit = async ({ email, password }, { setSubmitting }) => {
     try {
       setSubmitting(true)
 
-      await this.props.login({
+      await login({
         username: email,
         password,
-        push: this.props.history.push,
+        push: history.push,
       })
     } catch (error) {
-      setGlobalError(error.message)
+      if (error instanceof AsyncValidationError) {
+        setFormAsyncError(error.message)
+      }
+      // TODO: handle other errors
     } finally {
       setSubmitting(false)
     }
@@ -44,8 +48,8 @@ const LogInPage = ({ login, history }) => {
       >
         {({ isSubmitting }) => (
           <Form>
-            {Boolean(globalError) && (
-              <GlobalFormError>{globalError}</GlobalFormError>
+            {Boolean(formAsyncError) && (
+              <GlobalFormError>{formAsyncError}</GlobalFormError>
             )}
             <Input name="email" type="email" label="Email address" />
             <Input name="password" type="password" label="Password" />

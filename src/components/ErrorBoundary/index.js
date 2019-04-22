@@ -7,7 +7,7 @@ export class ErrorBoundary extends React.Component {
       position: toast.POSITION.TOP_CENTER,
     })
 
-    console.log('Error boundary error', error, info)
+    console.error('Error boundary error', error, info)
   }
 
   render() {

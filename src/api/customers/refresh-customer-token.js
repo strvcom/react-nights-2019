@@ -30,7 +30,6 @@ export const refreshCustomerToken = async () => {
       return access_token
     }
     default:
-      // TODO: should we throw error instead?
-      throw response
+      throw new Error('Cannot refresh customer token')
   }
 }
