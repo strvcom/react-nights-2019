@@ -62,7 +62,7 @@ describe('[pages] SignUp', () => {
 
         fireEvent.click(formSubmitButton)
         const HTMLDivElement = await waitForElement(() =>
-          renderer.getByText(`Welcome ${USER.firstName}`)
+          renderer.getByTestId('account-page')
         )
         expect(HTMLDivElement).toBeTruthy()
       })
