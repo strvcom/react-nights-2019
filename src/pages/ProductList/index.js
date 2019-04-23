@@ -16,6 +16,7 @@ import { Pagination } from '../../components/Pagination'
 import * as cartActions from '../../store/cart/actions'
 import { Product } from './Product'
 import { ProductsWrap } from './styled'
+import { PAGE_DEFAULT, PAGE_SIZE_DEFAULT } from '../../constants'
 
 const getUrlParams = compose(
   qs.parse,
@@ -23,11 +24,10 @@ const getUrlParams = compose(
   prop('search')
 )
 
-const DEFAULT_SIZE = 25
-const DEFAULT_PAGE = 1
-
 const Products = ({ match, location, addProduct, history }) => {
-  const { page = DEFAULT_PAGE, size = DEFAULT_SIZE } = getUrlParams(location)
+  const { page = PAGE_DEFAULT, size = PAGE_SIZE_DEFAULT } = getUrlParams(
+    location
+  )
 
   const { data: res, isLoading } = useApi(
     () => getProducts({ page: { number: page, size } }),

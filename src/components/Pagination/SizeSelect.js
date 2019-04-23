@@ -1,6 +1,5 @@
 import React from 'react'
-
-const OPTIONS = [10, 25, 50, 100]
+import { PAGE_SIZE_OPTIONS } from '../../constants'
 
 const SizeSelect = ({ onChange, value }) => {
   const handleChange = event => {
@@ -13,7 +12,7 @@ const SizeSelect = ({ onChange, value }) => {
 
   return (
     <select onChange={handleChange} onBlur={handleChange} value={value}>
-      {OPTIONS.map(number => (
+      {PAGE_SIZE_OPTIONS.map(number => (
         <option value={number} key={number}>
           {number}
         </option>
