@@ -2,6 +2,7 @@
 /* eslint-disable no-await-in-loop */
 
 import config from '../config'
+import { LOGOUT } from '../routes'
 import { getGuestToken } from './get-guest-token'
 import { refreshCustomerToken } from './customers/refresh-customer-token'
 import { getToken } from '../utils/token'
@@ -42,10 +43,16 @@ export const api = async (url, options) => {
       response = await makeRequest(url, options, token)
     }
 
+    // Here is a place to handle special cases
+    // CASE: second 401 we need to logout
+    if (response && response.status === 401) {
+      window.location.assign(LOGOUT)
+    }
+
     // If everything went fine just return the result
     return response.json()
   } catch (e) {
-    // TODO: redirect to login
-    console.log('redirecting')
+    // Place to handle global api errors
+    throw e
   }
 }

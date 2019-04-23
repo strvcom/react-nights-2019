@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Formik } from 'formik'
 import { connect } from 'react-redux'
+import { toast } from 'react-toastify'
 
 import Layout from '../../components/Layout'
 import { H1 } from '../../components/Typography'
@@ -35,8 +36,12 @@ class LogInPage extends Component {
         this.setState({
           formAsyncError: e.message,
         })
+      } else {
+        toast.error(
+          `There was an error while logging in, please try again later!`
+        )
+        // This would be nice place to log errors to some external service
       }
-      // TODO: handle other errors
     } finally {
       setSubmitting(false)
     }
