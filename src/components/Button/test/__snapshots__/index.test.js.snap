@@ -11,27 +11,17 @@ exports[`[components] Button should render correctly 1`] = `
   color: #fff;
 }
 
-<body>
-  <div>
-    <button
-      class="c0"
-    >
-      My Button
-    </button>
-  </div>
-</body>
+<div>
+  <button
+    class="c0"
+  >
+    My Button
+  </button>
+</div>
 `;
 
 exports[`[components] Button when disabled should render correctly 1`] = `
-<body>
-  <div>
-    <button
-      class="Button-sc-2y5gim-0 iFNPkt"
-    >
-      My Button
-    </button>
-  </div>
-  .c0 {
+.c0 {
   background: #e5e5e5;
   cursor: default;
   padding: 1rem;
@@ -42,12 +32,11 @@ exports[`[components] Button when disabled should render correctly 1`] = `
 }
 
 <div>
-    <button
-      class="c0"
-      disabled=""
-    >
-      My Button
-    </button>
-  </div>
-</body>
+  <button
+    class="c0"
+    disabled=""
+  >
+    My Button
+  </button>
+</div>
 `;

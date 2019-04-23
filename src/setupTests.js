@@ -1,3 +1,8 @@
+import { cleanup } from 'react-testing-library'
+
+// automatically unmount and cleanup DOM after the test is finished.
+afterEach(cleanup)
+
 // https://github.com/kentcdodds/react-testing-library/issues/281#issuecomment-480349256
 // this is just a little hack to silence a warning that we'll get until react
 // fixes this: https://github.com/facebook/react/pull/14853

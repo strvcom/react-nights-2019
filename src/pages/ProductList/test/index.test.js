@@ -6,12 +6,13 @@ import { App } from '../../../App'
 import * as routes from '../../../routes'
 import { renderWithRouter } from '../../../utilsTest/render'
 import { mockFetchProducts } from '../../../utilsTest/mockHelpers'
+import { PRODUCTS } from '../../../utilsTest/mockData'
 
 describe('[pages] ProductsList', () => {
   describe('when loading', () => {
     it('should render correctly', () => {
       const renderer = renderWithRouter(<App />, routes.PRODUCT_LIST)
-      expect(renderer.baseElement).toMatchSnapshot()
+      expect(renderer.container).toMatchSnapshot()
     })
   })
 
@@ -20,8 +21,10 @@ describe('[pages] ProductsList', () => {
 
     it('should render correctly', async () => {
       const renderer = renderWithRouter(<App />, routes.PRODUCT_LIST)
-      await waitForElement(() => renderer.container.querySelector('ul'))
-      expect(renderer.baseElement).toMatchSnapshot()
+      await waitForElement(() => renderer.getByTestId('product-in-list'))
+      expect(renderer.getAllByTestId('product-in-list').length).toEqual(
+        PRODUCTS.data.length
+      )
     })
   })
 })

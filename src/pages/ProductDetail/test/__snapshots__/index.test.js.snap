@@ -63,244 +63,81 @@ exports[`[pages] ProductDetail when loading should render correctly 1`] = `
   flex: 1;
 }
 
-<body>
-  <div>
-    <header
-      class="c0"
-    >
-      <div
-        class=""
-      >
-        <a
-          class="c1"
-          href="/products"
-        >
-          All Products
-        </a>
-      </div>
-      <div
-        class=""
-      >
-        <a
-          class="c1"
-          href="/cart"
-        >
-          My Cart
-        </a>
-        |
-        <a
-          class="c1"
-          href="/login"
-        >
-          Log In
-        </a>
-         |
-        <a
-          class="c1"
-          href="/signup"
-        >
-          Sign Up
-        </a>
-      </div>
-    </header>
+<div>
+  <header
+    class="c0"
+  >
     <div
-      class="c2"
+      class=""
+    >
+      <a
+        class="c1"
+        href="/products"
+      >
+        All Products
+      </a>
+    </div>
+    <div
+      class=""
+    >
+      <a
+        class="c1"
+        href="/cart"
+      >
+        My Cart
+      </a>
+      |
+      <a
+        class="c1"
+        href="/login"
+      >
+        Log In
+      </a>
+       |
+      <a
+        class="c1"
+        href="/signup"
+      >
+        Sign Up
+      </a>
+    </div>
+  </header>
+  <div
+    class="c2"
+  >
+    <div
+      class="c3"
     >
       <div
-        class="c3"
+        class="c4"
+        data-testid="loader"
       >
         <div
-          class="c4"
-          data-testid="loader"
+          class="c5"
         >
-          <div
-            class="c5"
+          <svg
+            class="c6"
+            viewBox="25 25 50 50"
           >
-            <svg
-              class="c6"
-              viewBox="25 25 50 50"
-            >
-              <circle
-                class="c7"
-                cx="50"
-                cy="50"
-                fill="none"
-                r="20"
-                stroke-miterlimit="10"
-                stroke-width="4"
-              />
-            </svg>
-          </div>
+            <circle
+              class="c7"
+              cx="50"
+              cy="50"
+              fill="none"
+              r="20"
+              stroke-miterlimit="10"
+              stroke-width="4"
+            />
+          </svg>
         </div>
       </div>
     </div>
   </div>
-</body>
+</div>
 `;
 
 exports[`[pages] ProductDetail when product loaded should render correctly 1`] = `
-<body>
-  <div>
-    <header
-      class="sc-bwzfXH kuSkvH"
-    >
-      <div
-        class="sc-htpNat KtFsv"
-      >
-        <a
-          class="sc-bxivhb cHbCFb"
-          href="/products"
-        >
-          All Products
-        </a>
-      </div>
-      <div
-        class="sc-htpNat KtFsv"
-      >
-        <a
-          class="sc-bxivhb cHbCFb"
-          href="/cart"
-        >
-          My Cart
-        </a>
-        |
-        <a
-          class="sc-bxivhb cHbCFb"
-          href="/login"
-        >
-          Log In
-        </a>
-         |
-        <a
-          class="sc-bxivhb cHbCFb"
-          href="/signup"
-        >
-          Sign Up
-        </a>
-      </div>
-    </header>
-    <div
-      class="sc-bdVaJa eGntFc"
-    >
-      <div
-        class="sc-VigVT gucGdA"
-      >
-        .c0 {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: white;
-}
-
-.c1 {
-  height: 400px;
-}
-
-<div
-          class="c0"
-        >
-          <img
-            class="c1"
-            src="https://img.commercelayer.io/skus/1.png"
-          />
-        </div>
-        .c1 {
-  font-family: circular,serif;
-  font-weight: 400;
-  color: #ef0d33;
-  text-transform: uppercase;
-  text-align: center;
-}
-
-.c4 {
-  background: #ef0d33;
-  cursor: pointer;
-  padding: 1rem;
-  margin-top: 0.5rem;
-  border: none;
-  border-radius: 5px;
-  color: #fff;
-}
-
-.c0 {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  max-width: 40%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: #f9f9f9;
-  padding: 0 3rem;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .c2 {
-  font-size: 2.4rem;
-  color: #ef0d33;
-}
-
-.c3 {
-  margin: 2rem 0;
-  text-align: center;
-}
-
-<div
-          class="c0"
-        >
-          <h1
-            class="c1"
-          >
-            First Test Product
-          </h1>
-          <span
-            class="c2"
-          >
-            $10
-          </span>
-          <span
-            class="c3"
-          >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pellentesque in neque vitae tincidunt. In gravida eu ipsum non condimentum. Curabitur libero leo, gravida a dictum vestibulum, sollicitudin vel quam.
-          </span>
-          <button
-            class="c4"
-          >
-            Add to Cart
-          </button>
-          <a
-            href="/products"
-          >
-            Back
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-  .c2 {
   padding: 2rem;
 }
 
@@ -407,89 +244,88 @@ exports[`[pages] ProductDetail when product loaded should render correctly 1`] =
 }
 
 <div>
-    <header
-      class="c0"
+  <header
+    class="c0"
+  >
+    <div
+      class=""
+    >
+      <a
+        class="c1"
+        href="/products"
+      >
+        All Products
+      </a>
+    </div>
+    <div
+      class=""
+    >
+      <a
+        class="c1"
+        href="/cart"
+      >
+        My Cart
+      </a>
+      |
+      <a
+        class="c1"
+        href="/login"
+      >
+        Log In
+      </a>
+       |
+      <a
+        class="c1"
+        href="/signup"
+      >
+        Sign Up
+      </a>
+    </div>
+  </header>
+  <div
+    class="c2"
+  >
+    <div
+      class="c3"
     >
       <div
-        class=""
+        class="c4"
       >
+        <img
+          class="c5"
+          src="https://img.commercelayer.io/skus/1.png"
+        />
+      </div>
+      <div
+        class="c6"
+      >
+        <h1
+          class="c7"
+        >
+          First Test Product
+        </h1>
+        <span
+          class="c8"
+        >
+          $10
+        </span>
+        <span
+          class="c9"
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pellentesque in neque vitae tincidunt. In gravida eu ipsum non condimentum. Curabitur libero leo, gravida a dictum vestibulum, sollicitudin vel quam.
+        </span>
+        <button
+          class="c10"
+        >
+          Add to Cart
+        </button>
         <a
-          class="c1"
           href="/products"
         >
-          All Products
+          Back
         </a>
-      </div>
-      <div
-        class=""
-      >
-        <a
-          class="c1"
-          href="/cart"
-        >
-          My Cart
-        </a>
-        |
-        <a
-          class="c1"
-          href="/login"
-        >
-          Log In
-        </a>
-         |
-        <a
-          class="c1"
-          href="/signup"
-        >
-          Sign Up
-        </a>
-      </div>
-    </header>
-    <div
-      class="c2"
-    >
-      <div
-        class="c3"
-      >
-        <div
-          class="c4"
-        >
-          <img
-            class="c5"
-            src="https://img.commercelayer.io/skus/1.png"
-          />
-        </div>
-        <div
-          class="c6"
-        >
-          <h1
-            class="c7"
-          >
-            First Test Product
-          </h1>
-          <span
-            class="c8"
-          >
-            $10
-          </span>
-          <span
-            class="c9"
-          >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pellentesque in neque vitae tincidunt. In gravida eu ipsum non condimentum. Curabitur libero leo, gravida a dictum vestibulum, sollicitudin vel quam.
-          </span>
-          <button
-            class="c10"
-          >
-            Add to Cart
-          </button>
-          <a
-            href="/products"
-          >
-            Back
-          </a>
-        </div>
       </div>
     </div>
   </div>
-</body>
+</div>
 `;

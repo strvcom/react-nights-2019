@@ -13,7 +13,7 @@ describe('[pages] Cart', () => {
   describe('when loading', () => {
     it('should render correctly', () => {
       const renderer = renderWithRouter(<App />, routes.CART)
-      expect(renderer.baseElement).toMatchSnapshot()
+      expect(renderer.container).toMatchSnapshot()
     })
   })
 
@@ -31,7 +31,7 @@ describe('[pages] Cart', () => {
 
       const renderer = renderWithRouter(<App store={store} />, routes.CART)
       await waitForElement(() => renderer.container.querySelector('p'))
-      expect(renderer.baseElement).toMatchSnapshot()
+      expect(renderer.container).toMatchSnapshot()
     })
   })
 })

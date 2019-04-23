@@ -16,7 +16,7 @@ describe('[pages] ProductDetail', () => {
         <App />,
         routes.getProductDetailRoute(productId)
       )
-      expect(renderer.baseElement).toMatchSnapshot()
+      expect(renderer.container).toMatchSnapshot()
     })
   })
 
@@ -29,7 +29,7 @@ describe('[pages] ProductDetail', () => {
         routes.getProductDetailRoute(productId)
       )
       await waitForElement(() => renderer.container.querySelector('img'))
-      expect(renderer.baseElement).toMatchSnapshot()
+      expect(renderer.container).toMatchSnapshot()
     })
   })
 })

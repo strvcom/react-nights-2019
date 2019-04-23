@@ -8,13 +8,13 @@ import Button from '../index'
 describe('[components] Button', () => {
   it('should render correctly', () => {
     const renderer = render(<Button>My Button</Button>)
-    expect(renderer.baseElement).toMatchSnapshot()
+    expect(renderer.container).toMatchSnapshot()
   })
 
   describe('when disabled', () => {
     it('should render correctly', () => {
       const renderer = render(<Button disabled>My Button</Button>)
-      expect(renderer.baseElement).toMatchSnapshot()
+      expect(renderer.container).toMatchSnapshot()
     })
   })
 })

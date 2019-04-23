@@ -29,113 +29,60 @@ exports[`[pages] Cart when loading should render correctly 1`] = `
   text-transform: uppercase;
 }
 
-<body>
-  <div>
-    <header
-      class="c0"
-    >
-      <div
-        class=""
-      >
-        <a
-          class="c1"
-          href="/products"
-        >
-          All Products
-        </a>
-      </div>
-      <div
-        class=""
-      >
-        <a
-          class="c1"
-          href="/cart"
-        >
-          My Cart
-        </a>
-        |
-        <a
-          class="c1"
-          href="/login"
-        >
-          Log In
-        </a>
-         |
-        <a
-          class="c1"
-          href="/signup"
-        >
-          Sign Up
-        </a>
-      </div>
-    </header>
+<div>
+  <header
+    class="c0"
+  >
     <div
-      class="c2"
+      class=""
     >
-      <h1
-        class="c3"
+      <a
+        class="c1"
+        href="/products"
       >
-        Your cart
-      </h1>
-      <ul />
+        All Products
+      </a>
     </div>
+    <div
+      class=""
+    >
+      <a
+        class="c1"
+        href="/cart"
+      >
+        My Cart
+      </a>
+      |
+      <a
+        class="c1"
+        href="/login"
+      >
+        Log In
+      </a>
+       |
+      <a
+        class="c1"
+        href="/signup"
+      >
+        Sign Up
+      </a>
+    </div>
+  </header>
+  <div
+    class="c2"
+  >
+    <h1
+      class="c3"
+    >
+      Your cart
+    </h1>
+    <ul />
   </div>
-</body>
+</div>
 `;
 
 exports[`[pages] Cart when products loaded should render correctly 1`] = `
-<body>
-  <div>
-    <header
-      class="sc-bwzfXH kuSkvH"
-    >
-      <div
-        class="sc-htpNat KtFsv"
-      >
-        <a
-          class="sc-bxivhb cHbCFb"
-          href="/products"
-        >
-          All Products
-        </a>
-      </div>
-      <div
-        class="sc-htpNat KtFsv"
-      >
-        <a
-          class="sc-bxivhb cHbCFb"
-          href="/cart"
-        >
-          My Cart
-        </a>
-        |
-        <a
-          class="sc-bxivhb cHbCFb"
-          href="/login"
-        >
-          Log In
-        </a>
-         |
-        <a
-          class="sc-bxivhb cHbCFb"
-          href="/signup"
-        >
-          Sign Up
-        </a>
-      </div>
-    </header>
-    <div
-      class="sc-bdVaJa eGntFc"
-    >
-      <h1
-        class="sc-htoDjs gUiwOs"
-      >
-        Your cart
-      </h1>
-      <ul />
-    </div>
-  </div>
-  .c2 {
+.c2 {
   padding: 2rem;
 }
 
@@ -174,68 +121,67 @@ exports[`[pages] Cart when products loaded should render correctly 1`] = `
 }
 
 <div>
-    <header
-      class="c0"
-    >
-      <div
-        class=""
-      >
-        <a
-          class="c1"
-          href="/products"
-        >
-          All Products
-        </a>
-      </div>
-      <div
-        class=""
-      >
-        <a
-          class="c1"
-          href="/cart"
-        >
-          My Cart
-        </a>
-        |
-        <a
-          class="c1"
-          href="/login"
-        >
-          Log In
-        </a>
-         |
-        <a
-          class="c1"
-          href="/signup"
-        >
-          Sign Up
-        </a>
-      </div>
-    </header>
+  <header
+    class="c0"
+  >
     <div
-      class="c2"
+      class=""
     >
-      <h1
-        class="c3"
+      <a
+        class="c1"
+        href="/products"
       >
-        Your cart
-      </h1>
-      <ul>
-        <li>
-          <p>
-            First Test Product
-             - 
-            1
-          </p>
-          <button
-            class="c4"
-            type="button"
-          >
-            Remove
-          </button>
-        </li>
-      </ul>
+        All Products
+      </a>
     </div>
+    <div
+      class=""
+    >
+      <a
+        class="c1"
+        href="/cart"
+      >
+        My Cart
+      </a>
+      |
+      <a
+        class="c1"
+        href="/login"
+      >
+        Log In
+      </a>
+       |
+      <a
+        class="c1"
+        href="/signup"
+      >
+        Sign Up
+      </a>
+    </div>
+  </header>
+  <div
+    class="c2"
+  >
+    <h1
+      class="c3"
+    >
+      Your cart
+    </h1>
+    <ul>
+      <li>
+        <p>
+          First Test Product
+           - 
+          1
+        </p>
+        <button
+          class="c4"
+          type="button"
+        >
+          Remove
+        </button>
+      </li>
+    </ul>
   </div>
-</body>
+</div>
 `;
