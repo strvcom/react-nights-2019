@@ -9,7 +9,8 @@
     "eject": "react-scripts eject",
     "format": "prettier --write '*/**/*.{js,css,md,json}'",
     "lint:js": "eslint . --ignore-path .gitignore --fix",
-    "lint:css": "stylelint 'src/**/*.js'"
+    "lint:css": "stylelint 'src/**/*.js'",
+    "cypress:open": "cypress open"
   },
   "jest": {
     "collectCoverageFrom": [
