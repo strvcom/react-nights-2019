@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Formik } from 'formik'
 import { connect } from 'react-redux'
+import { toast } from 'react-toastify'
 
 import Layout from '../../components/Layout'
 import { H1 } from '../../components/Typography'
@@ -31,8 +32,12 @@ const LogInPage = ({ login, history }) => {
     } catch (error) {
       if (error instanceof AsyncValidationError) {
         setFormAsyncError(error.message)
+      } else {
+        toast.error(
+          `There was an error while logging in, please try again later!`
+        )
+        // This would be nice place to log errors to some external service
       }
-      // TODO: handle other errors
     } finally {
       setSubmitting(false)
     }
