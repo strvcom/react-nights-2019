@@ -15,12 +15,12 @@ import { getCustomer } from './utils/customer'
 import { configureStore } from './store'
 import * as routes from './routes'
 
-const store = configureStore({
+const defaultStore = configureStore({
   customer: getCustomer(),
 })
 
-const App = ({ customStore }) => (
-  <Provider store={customStore || store}>
+const App = ({ store }) => (
+  <Provider store={store || defaultStore}>
     <React.Fragment>
       <GlobalStyles />
       <Switch>

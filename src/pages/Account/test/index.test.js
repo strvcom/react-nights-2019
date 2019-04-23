@@ -28,10 +28,7 @@ describe('[pages] Account', () => {
         },
       })
 
-      const renderer = renderWithRouter(
-        <App customStore={store} />,
-        routes.ACCOUNT
-      )
+      const renderer = renderWithRouter(<App store={store} />, routes.ACCOUNT)
       const H1HtmlElement = renderer.getByText(`Welcome ${USER.firstName}`)
       expect(H1HtmlElement).toBeTruthy()
     })

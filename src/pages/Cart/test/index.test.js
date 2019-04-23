@@ -29,10 +29,7 @@ describe('[pages] Cart', () => {
         },
       })
 
-      const renderer = renderWithRouter(
-        <App customStore={store} />,
-        routes.CART
-      )
+      const renderer = renderWithRouter(<App store={store} />, routes.CART)
       await waitForElement(() => renderer.container.querySelector('p'))
       expect(renderer.baseElement).toMatchSnapshot()
     })
