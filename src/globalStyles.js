@@ -2,6 +2,7 @@ import 'sanitize.css'
 import { createGlobalStyle } from 'styled-components'
 
 import theme from './common/theme'
+import 'react-toastify/dist/ReactToastify.css'
 
 const GlobalStyles = createGlobalStyle`
   @font-face {
