@@ -1,14 +1,22 @@
 import omit from 'ramda/src/omit'
-import ifElse from 'ramda/src/ifElse'
 import has from 'ramda/src/has'
-import over from 'ramda/src/over'
-import lensProp from 'ramda/src/lensProp'
+import evolve from 'ramda/src/evolve'
 import inc from 'ramda/src/inc'
 import assoc from 'ramda/src/assoc'
 import { ADD_PRODUCT, REMOVE_PRODUCT } from './actions'
 
-const addProductToCart = (prodId, state) =>
-  ifElse(has(prodId), over(lensProp(prodId), inc), assoc(prodId, 1))(state)
+const incrementProductCount = (productId, state) =>
+  evolve(
+    {
+      [productId]: inc,
+    },
+    state
+  )
+
+const addProductToCart = (productId, state) =>
+  has(productId, state)
+    ? incrementProductCount(productId, state)
+    : assoc(productId, 1, state)
 
 const reducer = (state = {}, action) => {
   switch (action.type) {
