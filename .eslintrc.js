@@ -5,7 +5,7 @@ module.exports = {
     'prettier',
     'prettier/react',
   ],
-  plugins: ['react-hooks'],
+  plugins: ['react-hooks', 'cypress'],
   root: true,
   env: {
     browser: true,
