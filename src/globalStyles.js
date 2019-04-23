@@ -1,4 +1,5 @@
 import 'sanitize.css'
+import 'react-toastify/dist/ReactToastify.css'
 import { createGlobalStyle } from 'styled-components'
 
 import theme from './common/theme'

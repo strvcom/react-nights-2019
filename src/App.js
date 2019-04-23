@@ -2,7 +2,6 @@ import React from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { ToastContainer, toast } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
 
 import GlobalStyles from './globalStyles'
 import { ProductList } from './pages/ProductList'
