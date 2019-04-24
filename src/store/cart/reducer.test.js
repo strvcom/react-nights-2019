@@ -10,12 +10,12 @@ describe('[reducer] Cart', () => {
     expect(state).toEqual(initialState)
   })
 
-  it('should handle ADD_PRODUCT', () => {
+  it('should handle addProduct', () => {
     const state = reducer(initialState, addProduct(productId))
     expect(state).toEqual({ [productId]: productId })
   })
 
-  it('should handle REMOVE_PRODUCT', () => {
+  it('should handle removeProduct', () => {
     const state = reducer(
       {
         [productId]: productId,

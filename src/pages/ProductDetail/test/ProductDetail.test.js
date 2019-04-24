@@ -6,31 +6,29 @@ import { App } from '../../../App'
 import * as routes from '../../../routes'
 import { renderWithRouter } from '../../../utilsTest/render'
 import { mockFetchProduct } from '../../../utilsTest/mockHelpers'
-import { configureStore } from '../../../store'
-import { getCustomer } from '../../../utils/customer'
 
-describe('[pages] Cart', () => {
+describe('[pages] ProductDetail', () => {
+  const productId = 1
+
   describe('when loading', () => {
     it('should render correctly', () => {
-      const renderer = renderWithRouter(<App />, routes.CART)
+      const renderer = renderWithRouter(
+        <App />,
+        routes.getProductDetailRoute(productId)
+      )
       expect(renderer.container).toMatchSnapshot()
     })
   })
 
-  describe('when products loaded', () => {
+  describe('when product loaded', () => {
     mockFetchProduct()
 
     it('should render correctly', async () => {
-      const productId = 1
-      const store = configureStore({
-        customer: getCustomer(),
-        cart: {
-          [productId]: productId,
-        },
-      })
-
-      const renderer = renderWithRouter(<App store={store} />, routes.CART)
-      await waitForElement(() => renderer.container.querySelector('p'))
+      const renderer = renderWithRouter(
+        <App />,
+        routes.getProductDetailRoute(productId)
+      )
+      await waitForElement(() => renderer.getByTestId('product-detail'))
       expect(renderer.container).toMatchSnapshot()
     })
   })

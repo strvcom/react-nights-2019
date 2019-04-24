@@ -17,7 +17,7 @@ describe('[pages] Account', () => {
   })
 
   describe('when logged in', () => {
-    it('should render private user account page', async () => {
+    it('should render private user account page', () => {
       const store = configureStore({
         customer: {
           attributes: {

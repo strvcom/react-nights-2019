@@ -21,14 +21,14 @@ const CartItem = ({ productId, quantity, removeProduct }) => {
     <li key={productId}>
       {isLoading && <Loader small />}
       {!isLoading && (
-        <React.Fragment>
+        <div data-testid="product-in-cart">
           <p>
             {getName(product)} - {quantity}
           </p>
           <Button type="button" onClick={() => removeProduct(productId)}>
             Remove
           </Button>
-        </React.Fragment>
+        </div>
       )}
     </li>
   )
