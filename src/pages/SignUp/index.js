@@ -8,10 +8,8 @@ import { Form, GlobalFormError } from '../../components/Form'
 import { Input } from '../../components/Input'
 import Button from '../../components/Button'
 import * as customerActions from '../../store/customer/actions'
-import * as routes from '../../routes'
 
 import { createCustomer } from '../../api/customers/create-customer'
-import { getCustomer } from '../../api/customers/get-customer'
 import { schema } from './schema'
 
 const initialValues = {
@@ -24,13 +22,18 @@ const initialValues = {
 const SignUpPage = ({ login, history }) => {
   const [globalError, setGlobalError] = useState('')
 
-  const handleSubmitFn = async (values, { setSubmitting }) => {
+  const handleSubmit = async (
+    { email, password, firstName },
+    { setSubmitting }
+  ) => {
     try {
       setSubmitting(true)
-      const { ownerId } = await createCustomer(values)
-      const customer = await getCustomer(ownerId)
-      login(customer)
-      history.push(routes.ACCOUNT)
+      await createCustomer({ email, password, firstName })
+      await login({
+        username: email,
+        password,
+        push: history.push,
+      })
     } catch (error) {
       setGlobalError(error.message)
     }
@@ -43,10 +46,10 @@ const SignUpPage = ({ login, history }) => {
       <Formik
         initialValues={initialValues}
         validationSchema={schema}
-        onSubmit={handleSubmitFn}
+        onSubmit={handleSubmit}
       >
-        {({ handleSubmit, isSubmitting }) => (
-          <Form onSubmit={handleSubmit}>
+        {({ isSubmitting }) => (
+          <Form>
             {Boolean(globalError) && (
               <GlobalFormError>{globalError}</GlobalFormError>
             )}

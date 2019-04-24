@@ -30,6 +30,9 @@ exports[`[pages] Cart when loading should render correctly 1`] = `
 }
 
 <div>
+  <div
+    class="Toastify"
+  />
   <header
     class="c0"
   >

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Formik } from 'formik'
 import { connect } from 'react-redux'
+import { toast } from 'react-toastify'
 
 import Layout from '../../components/Layout'
 import { H1 } from '../../components/Typography'
@@ -8,10 +9,7 @@ import { Form, GlobalFormError } from '../../components/Form'
 import { Input } from '../../components/Input'
 import Button from '../../components/Button'
 import * as customerActions from '../../store/customer/actions'
-import * as routes from '../../routes'
-
-import { getCustomerToken } from '../../api/customers/get-customer-token'
-import { getCustomer } from '../../api/customers/get-customer'
+import { AsyncValidationError } from '../../utils/errors'
 import { schema } from './schema'
 
 const initialValues = {
@@ -20,22 +18,29 @@ const initialValues = {
 }
 
 const LogInPage = ({ login, history }) => {
-  const [globalError, setGlobalError] = useState('')
+  const [formAsyncError, setFormAsyncError] = useState('')
 
-  const handleSubmitFn = async ({ email, password }, { setSubmitting }) => {
+  const handleSubmit = async ({ email, password }, { setSubmitting }) => {
     try {
       setSubmitting(true)
-      const { ownerId } = await getCustomerToken({
+
+      await login({
         username: email,
         password,
+        push: history.push,
       })
-      const customer = await getCustomer(ownerId)
-      login(customer)
-      history.push(routes.ACCOUNT)
     } catch (error) {
-      setGlobalError(error.message)
+      if (error instanceof AsyncValidationError) {
+        setFormAsyncError(error.message)
+      } else {
+        toast.error(
+          `There was an error while logging in, please try again later!`
+        )
+        // This would be nice place to log errors to some external service
+      }
+    } finally {
+      setSubmitting(false)
     }
-    setSubmitting(false)
   }
 
   return (
@@ -44,12 +49,12 @@ const LogInPage = ({ login, history }) => {
       <Formik
         initialValues={initialValues}
         validationSchema={schema}
-        onSubmit={handleSubmitFn}
+        onSubmit={handleSubmit}
       >
-        {({ handleSubmit, isSubmitting }) => (
-          <Form onSubmit={handleSubmit}>
-            {Boolean(globalError) && (
-              <GlobalFormError>{globalError}</GlobalFormError>
+        {({ isSubmitting }) => (
+          <Form>
+            {Boolean(formAsyncError) && (
+              <GlobalFormError>{formAsyncError}</GlobalFormError>
             )}
             <Input name="email" type="email" label="Email address" />
             <Input name="password" type="password" label="Password" />

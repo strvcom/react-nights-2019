@@ -33,7 +33,7 @@ export const mockFetchProducts = () =>
   mockUnauthorizedRequest().get(
     `${
       config.apiUrl
-    }/api/skus?include=prices&page%5Bnumber%5D=1&page%5Bsize%5D=25`,
+    }/api/skus?include=prices&page%5Bnumber%5D=1&page%5Bsize%5D=50`,
     {
       status: 200,
       body: PRODUCTS,

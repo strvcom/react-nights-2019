@@ -1,16 +1,24 @@
 import React from 'react'
+import { PAGE_SIZE_OPTIONS } from '../../constants'
 
-const options = [10, 25, 50, 100]
+const SizeSelect = ({ onChange, value }) => {
+  const handleChange = event => {
+    const newValue = event.target.value
 
-const SizeSelect = ({ onChange, value }) => (
-  // eslint-disable-next-line jsx-a11y/no-onchange
-  <select onChange={onChange} value={value}>
-    {options.map(number => (
-      <option value={number} key={number}>
-        {number}
-      </option>
-    ))}
-  </select>
-)
+    if (newValue !== value) {
+      onChange(newValue)
+    }
+  }
+
+  return (
+    <select onChange={handleChange} onBlur={handleChange} value={value}>
+      {PAGE_SIZE_OPTIONS.map(number => (
+        <option value={number} key={number}>
+          {number}
+        </option>
+      ))}
+    </select>
+  )
+}
 
 export { SizeSelect }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import qs from 'qs'
 import compose from 'ramda/src/compose'
@@ -16,6 +16,7 @@ import { Pagination } from '../../components/Pagination'
 import * as cartActions from '../../store/cart/actions'
 import { Product } from './Product'
 import { ProductsWrap } from './styled'
+import { PAGE_DEFAULT, PAGE_SIZE_DEFAULT } from '../../constants'
 
 const getUrlParams = compose(
   qs.parse,
@@ -24,8 +25,9 @@ const getUrlParams = compose(
 )
 
 const Products = ({ match, location, addProduct, history }) => {
-  const { page = 1, size: initialSize = 25 } = getUrlParams(location)
-  const [size, setSize] = useState(initialSize)
+  const { page = PAGE_DEFAULT, size = PAGE_SIZE_DEFAULT } = getUrlParams(
+    location
+  )
 
   const { data: res, isLoading } = useApi(
     () => getProducts({ page: { number: page, size } }),
@@ -33,9 +35,7 @@ const Products = ({ match, location, addProduct, history }) => {
   )
 
   const handleAddToCart = productId => addProduct(productId)
-  const handleSizeChange = event => {
-    const newSize = event.target.value
-    setSize(newSize)
+  const handleSizeChange = newSize => {
     history.push(`/products?page=${page}&size=${newSize}`)
   }
 
