@@ -1,5 +1,4 @@
 import { api } from '../api-client'
-import { getCustomerToken } from './get-customer-token'
 
 export const createCustomer = async ({ email, password, firstName }) => {
   const requestBody = {
@@ -20,19 +19,7 @@ export const createCustomer = async ({ email, password, firstName }) => {
     body: JSON.stringify(requestBody),
   })
 
-  if (!response.errors) {
-    const {
-      data: { attributes },
-    } = response
-
-    const { ownerId } = await getCustomerToken({ username: email, password })
-
-    return {
-      ownerId,
-      username: attributes.email,
-      firstName: attributes.metadata.firstName,
-    }
-  } else {
+  if (response.errors) {
     const firstError = response.errors[0]
     if (firstError.status === '422') {
       throw new Error('Email is already registered')
