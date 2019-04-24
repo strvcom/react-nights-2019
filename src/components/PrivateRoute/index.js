@@ -1,6 +1,7 @@
 import React from 'react'
 import { Route, Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
+import isEmpty from 'ramda/src/isEmpty'
 
 import * as routes from '../../routes'
 
@@ -32,7 +33,7 @@ const PrivateRouteComponent = ({
 }
 
 const mapStateToProps = state => ({
-  isAuthenticated: Object.keys(state.customer).length !== 0,
+  isAuthenticated: !isEmpty(state.customer),
 })
 
 export const PrivateRoute = connect(mapStateToProps)(PrivateRouteComponent)

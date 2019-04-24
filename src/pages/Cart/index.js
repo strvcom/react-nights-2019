@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import Layout from '../../components/Layout'
 import { H1 } from '../../components/Typography'
 import * as cartActions from '../../store/cart/actions'
+import * as cartSelectors from '../../store/cart/selectors'
 import { CartItem } from './CartItem'
 
 const CartView = ({ items, removeProduct }) => {
@@ -25,10 +26,7 @@ const CartView = ({ items, removeProduct }) => {
 }
 
 const mapStateToProps = state => ({
-  items: Object.keys(state.cart).map(productId => ({
-    quantity: state.cart[productId],
-    product: { id: productId },
-  })),
+  items: cartSelectors.getCartItems(state),
 })
 
 const mapDispatchToProps = {
