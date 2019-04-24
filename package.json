@@ -10,6 +10,7 @@
     "format": "prettier --write '*/**/*.{js,css,md,json}'",
     "lint:js": "eslint . --ignore-path .gitignore --fix",
     "lint:css": "stylelint 'src/**/*.js'",
+    "test:staged": "cross-env CI=true react-scripts test --env=jsdom --findRelatedTests",
     "cypress:open": "cypress open"
   },
   "jest": {
@@ -23,6 +24,7 @@
   },
   "lint-staged": {
     "*.js": [
+      "test:staged",
       "eslint --fix",
       "prettier --write",
       "stylelint",
