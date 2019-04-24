@@ -1,6 +1,4 @@
 import config from '../../config'
-import { setToken } from '../../utils/token'
-import { setRefreshToken } from '../../utils/refresh-token'
 import { AsyncValidationError } from '../../utils/errors'
 
 export const getCustomerToken = async ({ username, password }) => {
@@ -21,10 +19,8 @@ export const getCustomerToken = async ({ username, password }) => {
   switch (response.status) {
     case 200: {
       const { owner_id, access_token, refresh_token } = await response.json()
-      setToken(access_token)
-      setRefreshToken(refresh_token)
 
-      return { ownerId: owner_id, access_token }
+      return { ownerId: owner_id, access_token, refresh_token }
     }
     case 401:
       throw new AsyncValidationError('Email or password are incorrect')

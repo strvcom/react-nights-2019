@@ -2,8 +2,8 @@ import { getCustomerToken } from '../../api/customers/get-customer-token'
 import { getCustomer } from '../../api/customers/get-customer'
 import * as routes from '../../routes'
 
-import { removeToken } from '../../utils/token'
-import { removeRefreshToken } from '../../utils/refresh-token'
+import { setToken, removeToken } from '../../utils/token'
+import { setRefreshToken, removeRefreshToken } from '../../utils/refresh-token'
 import { removeCustomer } from '../../utils/customer'
 
 export const LOGIN_INIT = 'customer/LOGIN_INIT'
@@ -18,10 +18,13 @@ export const login = ({ username, password, push }) => async dispatch => {
     payload: { username, password },
   })
 
-  const { ownerId } = await getCustomerToken({
+  const { ownerId, access_token, refresh_token } = await getCustomerToken({
     username,
     password,
   })
+
+  setToken(access_token)
+  setRefreshToken(refresh_token)
 
   const customer = await getCustomer(ownerId)
 
