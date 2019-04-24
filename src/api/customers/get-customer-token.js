@@ -1,5 +1,5 @@
 import config from '../../config'
-import { setToken } from '../../utils/token'
+import { AsyncValidationError } from '../../utils/errors'
 
 export const getCustomerToken = async ({ username, password }) => {
   const response = await fetch(`${config.apiUrl}/oauth/token`, {
@@ -18,13 +18,12 @@ export const getCustomerToken = async ({ username, password }) => {
 
   switch (response.status) {
     case 200: {
-      const { owner_id, access_token } = await response.json()
-      setToken(access_token)
+      const { owner_id, access_token, refresh_token } = await response.json()
 
-      return { ownerId: owner_id, access_token }
+      return { ownerId: owner_id, access_token, refresh_token }
     }
     case 401:
-      throw new Error('Email or password are incorrect')
+      throw new AsyncValidationError('Email or password are incorrect')
     default:
       throw new Error('Unexpected error')
   }
