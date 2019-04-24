@@ -1,7 +1,7 @@
 # Authentication & Routing in depth
 
 - [Presentation](https://docs.google.com/presentation/d/1JCvCloP-MmZAFA6oY0tCUs6jVs_pIzUavwJMl5UYtPY/edit)
-- [Video]()
+- [Video](https://www.youtube.com/watch?v=V5URcw_KYFM)
 
 ## Homework
 
