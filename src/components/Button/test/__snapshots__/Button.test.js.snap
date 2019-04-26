@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[components] Button should render correctly 1`] = `
+.c0 {
+  background: #ef0d33;
+  cursor: pointer;
+  padding: 1rem;
+  margin-top: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+}
+
+<div>
+  <button
+    class="c0"
+  >
+    My Button
+  </button>
+</div>
+`;
+
+exports[`[components] Button when disabled should render correctly 1`] = `
+.c0 {
+  background: #e5e5e5;
+  cursor: default;
+  padding: 1rem;
+  margin-top: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+}
+
+<div>
+  <button
+    class="c0"
+    disabled=""
+  >
+    My Button
+  </button>
+</div>
+`;

@@ -5,7 +5,7 @@ import * as routes from '../../routes'
 
 import { Wrapper, Header, HeaderSection, HeaderLink } from './styled'
 
-const Layout = ({ isAuthenticated, children }) => (
+const Layout = ({ isAuthenticated, children, dataTestId }) => (
   <Fragment>
     <Header>
       <HeaderSection>
@@ -26,7 +26,7 @@ const Layout = ({ isAuthenticated, children }) => (
         )}
       </HeaderSection>
     </Header>
-    <Wrapper>{children}</Wrapper>
+    <Wrapper data-testid={dataTestId}>{children}</Wrapper>
   </Fragment>
 )
 

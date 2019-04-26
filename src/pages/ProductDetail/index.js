@@ -33,7 +33,7 @@ const ProductView = ({ match, addProduct }) => {
       <Wrapper>
         {isLoading && <Loader />}
         {product && (
-          <>
+          <div data-testid="product-detail">
             <ImgWrapper>
               <Img src={product.image_url} />
             </ImgWrapper>
@@ -46,7 +46,7 @@ const ProductView = ({ match, addProduct }) => {
               </Button>
               <Link to={routes.PRODUCT_LIST}>Back</Link>
             </DetailsWrapper>
-          </>
+          </div>
         )}
       </Wrapper>
     </Layout>

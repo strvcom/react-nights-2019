@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[pages] Cart when loading should render correctly 1`] = `
+.c2 {
+  padding: 2rem;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 0.1rem solid gainsboro;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 3rem;
+}
+
+.c1 {
+  margin: 0 1rem;
+}
+
+.c3 {
+  font-family: circular,serif;
+  font-weight: 400;
+  color: #ef0d33;
+  text-transform: uppercase;
+}
+
+<div>
+  <div
+    class="Toastify"
+  />
+  <header
+    class="c0"
+  >
+    <div
+      class=""
+    >
+      <a
+        class="c1"
+        href="/products"
+      >
+        All Products
+      </a>
+    </div>
+    <div
+      class=""
+    >
+      <a
+        class="c1"
+        href="/cart"
+      >
+        My Cart
+      </a>
+      |
+      <a
+        class="c1"
+        href="/login"
+      >
+        Log In
+      </a>
+       |
+      <a
+        class="c1"
+        href="/signup"
+      >
+        Sign Up
+      </a>
+    </div>
+  </header>
+  <div
+    class="c2"
+  >
+    <h1
+      class="c3"
+    >
+      Your cart
+    </h1>
+    <ul />
+  </div>
+</div>
+`;

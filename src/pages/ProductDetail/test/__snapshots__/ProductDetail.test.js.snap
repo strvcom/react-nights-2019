@@ -1,0 +1,341 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[pages] ProductDetail when loading should render correctly 1`] = `
+.c2 {
+  padding: 2rem;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 0.1rem solid gainsboro;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 3rem;
+}
+
+.c1 {
+  margin: 0 1rem;
+}
+
+.c4 {
+  width: 100%;
+  padding: 5rem 0;
+  padding: 5rem 0;
+}
+
+.c5 {
+  width: 5rem;
+  height: 5rem;
+  margin: 0 auto;
+}
+
+.c6 {
+  -webkit-animation: cZxgpV 2s linear infinite;
+  animation: cZxgpV 2s linear infinite;
+  height: 100%;
+  -webkit-transform-origin: center center;
+  -ms-transform-origin: center center;
+  transform-origin: center center;
+  width: 100%;
+}
+
+.c7 {
+  stroke: #ef0d33;
+  stroke-dasharray: 1,200;
+  stroke-dashoffset: 0;
+  -webkit-animation: iwIXhf 1.5s ease-in-out infinite;
+  animation: iwIXhf 1.5s ease-in-out infinite;
+  stroke-linecap: round;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+<div>
+  <div
+    class="Toastify"
+  />
+  <header
+    class="c0"
+  >
+    <div
+      class=""
+    >
+      <a
+        class="c1"
+        href="/products"
+      >
+        All Products
+      </a>
+    </div>
+    <div
+      class=""
+    >
+      <a
+        class="c1"
+        href="/cart"
+      >
+        My Cart
+      </a>
+      |
+      <a
+        class="c1"
+        href="/login"
+      >
+        Log In
+      </a>
+       |
+      <a
+        class="c1"
+        href="/signup"
+      >
+        Sign Up
+      </a>
+    </div>
+  </header>
+  <div
+    class="c2"
+  >
+    <div
+      class="c3"
+    >
+      <div
+        class="c4"
+        data-testid="loader"
+      >
+        <div
+          class="c5"
+        >
+          <svg
+            class="c6"
+            viewBox="25 25 50 50"
+          >
+            <circle
+              class="c7"
+              cx="50"
+              cy="50"
+              fill="none"
+              r="20"
+              stroke-miterlimit="10"
+              stroke-width="4"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`[pages] ProductDetail when product loaded should render correctly 1`] = `
+.c2 {
+  padding: 2rem;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 0.1rem solid gainsboro;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 3rem;
+}
+
+.c1 {
+  margin: 0 1rem;
+}
+
+.c7 {
+  font-family: circular,serif;
+  font-weight: 400;
+  color: #ef0d33;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.c10 {
+  background: #ef0d33;
+  cursor: pointer;
+  padding: 1rem;
+  margin-top: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.c4 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: white;
+}
+
+.c5 {
+  height: 400px;
+}
+
+.c6 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  max-width: 40%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #f9f9f9;
+  padding: 0 3rem;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c8 {
+  font-size: 2.4rem;
+  color: #ef0d33;
+}
+
+.c9 {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+<div>
+  <div
+    class="Toastify"
+  />
+  <header
+    class="c0"
+  >
+    <div
+      class=""
+    >
+      <a
+        class="c1"
+        href="/products"
+      >
+        All Products
+      </a>
+    </div>
+    <div
+      class=""
+    >
+      <a
+        class="c1"
+        href="/cart"
+      >
+        My Cart
+      </a>
+      |
+      <a
+        class="c1"
+        href="/login"
+      >
+        Log In
+      </a>
+       |
+      <a
+        class="c1"
+        href="/signup"
+      >
+        Sign Up
+      </a>
+    </div>
+  </header>
+  <div
+    class="c2"
+  >
+    <div
+      class="c3"
+    >
+      <div
+        data-testid="product-detail"
+      >
+        <div
+          class="c4"
+        >
+          <img
+            class="c5"
+            src="https://img.commercelayer.io/skus/1.png"
+          />
+        </div>
+        <div
+          class="c6"
+        >
+          <h1
+            class="c7"
+          >
+            First Test Product
+          </h1>
+          <span
+            class="c8"
+          >
+            $10
+          </span>
+          <span
+            class="c9"
+          >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pellentesque in neque vitae tincidunt. In gravida eu ipsum non condimentum. Curabitur libero leo, gravida a dictum vestibulum, sollicitudin vel quam.
+          </span>
+          <button
+            class="c10"
+          >
+            Add to Cart
+          </button>
+          <a
+            href="/products"
+          >
+            Back
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

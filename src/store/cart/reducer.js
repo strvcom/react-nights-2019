@@ -18,7 +18,9 @@ const addProductToCart = (productId, state) =>
     ? incrementProductCount(productId, state)
     : assoc(productId, 1, state)
 
-const reducer = (state = {}, action) => {
+export const initialState = {}
+
+const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_PRODUCT:
       return addProductToCart(action.payload, state)

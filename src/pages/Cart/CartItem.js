@@ -31,13 +31,17 @@ const CartItem = ({ productId, quantity, removeProduct }) => {
   return (
     <li key={productId}>
       {isLoading && <Loader small />}
-      <p>
-        {/* and finally here we try to get name from downloaded product */}
-        {getName(product)} - {quantity}
-      </p>
-      <Button type="button" onClick={() => removeProduct(productId)}>
-        Remove
-      </Button>
+      {!isLoading && (
+        <div data-testid="product-in-cart">
+          <p>
+            {/* and finally here we try to get name from downloaded product */}
+            {getName(product)} - {quantity}
+          </p>
+          <Button type="button" onClick={() => removeProduct(productId)}>
+            Remove
+          </Button>
+        </div>
+      )}
     </li>
   )
 }

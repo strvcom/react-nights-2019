@@ -8,6 +8,5 @@ class CustomError {
     this.message = message
   }
 }
-CustomError.prototype = Object.create(Error.prototype)
 
 export class AsyncValidationError extends CustomError {}
