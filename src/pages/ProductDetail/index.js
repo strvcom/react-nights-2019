@@ -38,7 +38,7 @@ const ProductView = ({ match, addProduct }) => {
               <Img src={product.image_url} />
             </ImgWrapper>
             <DetailsWrapper>
-              <H1 textAlign="center">{product.name}</H1>
+              <H1>{product.name}</H1>
               <Price>{product.price.formatted_amount}</Price>
               <Description>{product.description}</Description>
               <Button onClick={() => addProduct(product.id)}>

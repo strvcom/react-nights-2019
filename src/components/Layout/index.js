@@ -31,7 +31,7 @@ const Layout = ({ isAuthenticated, children, dataTestId }) => (
 )
 
 const mapStateToProps = state => ({
-  isAuthenticated: Object.keys(state.customer).length !== 0,
+  isAuthenticated: Boolean(state.customer),
 })
 
 export default connect(mapStateToProps)(Layout)

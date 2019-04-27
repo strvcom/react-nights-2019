@@ -1,6 +1,6 @@
 import { LOGOUT, LOGIN_SUCCESS } from './actions'
 
-const initialState = {}
+const initialState = null
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
