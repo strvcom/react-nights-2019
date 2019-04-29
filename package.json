@@ -9,6 +9,7 @@
     "eject": "react-scripts eject",
     "format": "prettier --write '*/**/*.{js,css,md,json}'",
     "lint:js": "eslint --ext .js,.ts,.tsx . --ignore-path .gitignore --fix",
+    "type-check": "tsc --skipLibCheck",
     "lint:css": "stylelint 'src/**/*.js'",
     "cypress:open": "cypress open"
   },
@@ -26,6 +27,13 @@
       "eslint --fix",
       "prettier --write",
       "stylelint",
+      "git add"
+    ],
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write",
+      "stylelint",
+      "tsc --skipLibCheck",
       "git add"
     ],
     "*.{json,md}": [
