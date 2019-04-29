@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-import Layout from '../../components/Layout'
 import Loader from '../../components/Loader'
 import { H1 } from '../../components/Typography'
 
@@ -12,18 +11,13 @@ import Product from './Product'
 import { ProductsWrap } from './styled'
 
 class Products extends Component {
-  async componentDidMount() {
-    const products = await getProducts()
-    this.props.loadProducts(products)
-  }
-
   handleAddToCart = productId => {
     this.props.addProduct(productId)
   }
 
   render() {
     return (
-      <Layout>
+      <>
         <H1 textAlign="center">E-Commerce app</H1>
         {this.props.products.length === 0 && <Loader />}
         <ProductsWrap>
@@ -35,7 +29,7 @@ class Products extends Component {
             />
           ))}
         </ProductsWrap>
-      </Layout>
+      </>
     )
   }
 }
@@ -53,5 +47,11 @@ const ProductList = connect(
   mapStateToProps,
   mapDispatchToProps
 )(Products)
+
+ProductList.getInitialProps = async props => {
+  const products = await getProducts()
+  props.store.dispatch(loadProducts(products))
+  return {}
+}
 
 export { ProductList }
