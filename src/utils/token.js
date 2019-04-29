@@ -1,11 +1,13 @@
+import { isBrowser } from './is-browser'
+
 export const getToken = () => {
-  return window.localStorage.getItem('token')
+  return isBrowser() && window.localStorage.getItem('rn/token')
 }
 
 export const setToken = token => {
-  window.localStorage.setItem('token', token)
+  isBrowser() && window.localStorage.setItem('rn/token', token)
 }
 
 export const removeToken = () => {
-  window.localStorage.removeItem('token')
+  isBrowser() && window.localStorage.removeItem('rn/token')
 }
