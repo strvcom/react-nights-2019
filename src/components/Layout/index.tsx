@@ -1,11 +1,16 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, SFC } from 'react'
 import { connect } from 'react-redux'
 
+import { AppState } from '../../store'
 import * as routes from '../../routes'
 
 import { Wrapper, Header, HeaderSection, HeaderLink } from './styled'
 
-const Layout = ({ isAuthenticated, children, dataTestId }) => (
+type Props = ReturnType<typeof mapStateToProps> & {
+  dataTestId?: string
+}
+
+const Layout: SFC<Props> = ({ isAuthenticated, children, dataTestId }) => (
   <Fragment>
     <Header>
       <HeaderSection>
@@ -30,7 +35,7 @@ const Layout = ({ isAuthenticated, children, dataTestId }) => (
   </Fragment>
 )
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state: AppState) => ({
   isAuthenticated: Boolean(state.customer),
 })
 
