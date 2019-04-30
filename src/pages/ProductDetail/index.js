@@ -18,35 +18,30 @@ import {
   Price,
 } from './styled'
 
-const ProductView = props => {
-  const { product } = props
-  return (
-    <>
-      <Wrapper>
-        {product ? (
-          <>
-            <ImgWrapper>
-              <Img src={product.image_url} />
-            </ImgWrapper>
-            <DetailsWrapper>
-              <H1 textAlign="center">{product.name}</H1>
-              <Price>{product.price.formatted_amount}</Price>
-              <Description>{product.description}</Description>
-              <Button onClick={() => props.addProduct(product.id)}>
-                Add to Cart
-              </Button>
-              <Link href="/">
-                <a>Back</a>
-              </Link>
-            </DetailsWrapper>
-          </>
-        ) : (
-          <Loader />
-        )}
-      </Wrapper>
-    </>
-  )
-}
+const ProductView = ({ product, ...props }) => (
+  <Wrapper>
+    {product ? (
+      <>
+        <ImgWrapper>
+          <Img src={product.image_url} />
+        </ImgWrapper>
+        <DetailsWrapper>
+          <H1 textAlign="center">{product.name}</H1>
+          <Price>{product.price.formatted_amount}</Price>
+          <Description>{product.description}</Description>
+          <Button onClick={() => props.addProduct(product.id)}>
+            Add to Cart
+          </Button>
+          <Link href="/">
+            <a>Back</a>
+          </Link>
+        </DetailsWrapper>
+      </>
+    ) : (
+      <Loader />
+    )}
+  </Wrapper>
+)
 
 const mapStateToProps = (state, ownProps) => ({
   product: state.products.find(p => p.id === ownProps.query.id),
