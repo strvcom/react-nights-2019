@@ -24,7 +24,7 @@ app
       if (err) {
         throw err
       }
-      console.log('> Ready on http://localhost:' + PORT) // eslint-disable-line
+      console.log('> Ready on http://localhost:' + PORT) // eslint-disable-line no-console
     })
   })
   .catch(ex => {
