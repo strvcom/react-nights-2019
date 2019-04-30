@@ -1,4 +1,4 @@
-import React, { SFC } from 'react'
+import React, { FC } from 'react'
 import { Link, RouteComponentProps } from 'react-router-dom'
 import { connect } from 'react-redux'
 
@@ -23,7 +23,7 @@ import {
 
 type Props = typeof mapDispatchToProps & RouteComponentProps<{ productId: string }>
 
-const ProductView: SFC<Props> = ({ match, addProduct }) => {
+const ProductView: FC<Props> = ({ match, addProduct }) => {
   const { productId } = match.params
 
   const { data: product, isLoading } = useApi(() => getProductById(productId), [

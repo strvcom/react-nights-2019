@@ -1,4 +1,4 @@
-import React, { Fragment, SFC } from 'react'
+import React, { Fragment, FC } from 'react'
 import { connect } from 'react-redux'
 
 import { AppState } from '../../store'
@@ -10,7 +10,7 @@ type Props = ReturnType<typeof mapStateToProps> & {
   dataTestId?: string
 }
 
-const Layout: SFC<Props> = ({ isAuthenticated, children, dataTestId }) => (
+const Layout: FC<Props> = ({ isAuthenticated, children, dataTestId }) => (
   <Fragment>
     <Header>
       <HeaderSection>
