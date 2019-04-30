@@ -1,6 +1,6 @@
 /* eslint-disable no-constant-condition */
 /* eslint-disable no-await-in-loop */
-
+import fetch from 'isomorphic-fetch'
 import config from '../config'
 import { LOGOUT } from '../routes'
 import { getGuestToken } from './get-guest-token'

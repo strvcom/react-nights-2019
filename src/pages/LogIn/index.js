@@ -27,12 +27,12 @@ const LogInPage = ({ login, history }) => {
       await login({
         username: email,
         password,
-        push: history.push,
       })
     } catch (error) {
       if (error instanceof AsyncValidationError) {
         setFormAsyncError(error.message)
       } else {
+        debugger
         toast.error(
           `There was an error while logging in, please try again later!`
         )
@@ -44,7 +44,7 @@ const LogInPage = ({ login, history }) => {
   }
 
   return (
-    <Layout dataTestId="login-page">
+    <main dataTestId="login-page">
       <H1 textAlign="center">Log In</H1>
       <Formik
         initialValues={initialValues}
@@ -64,7 +64,7 @@ const LogInPage = ({ login, history }) => {
           </Form>
         )}
       </Formik>
-    </Layout>
+    </main>
   )
 }
 

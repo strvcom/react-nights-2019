@@ -32,7 +32,6 @@ const SignUpPage = ({ login, history }) => {
       await login({
         username: email,
         password,
-        push: history.push,
       })
     } catch (error) {
       setGlobalError(error.message)

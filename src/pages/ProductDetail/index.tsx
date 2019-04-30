@@ -21,7 +21,8 @@ import {
   Price,
 } from './styled'
 
-type Props = typeof mapDispatchToProps & RouteComponentProps<{ productId: string }>
+type Props = typeof mapDispatchToProps &
+  RouteComponentProps<{ productId: string }>
 
 const ProductView: FC<Props> = ({ match, addProduct }) => {
   const { productId } = match.params
