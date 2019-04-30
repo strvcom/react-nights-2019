@@ -5,15 +5,14 @@ import compose from 'ramda/src/compose'
 import prop from 'ramda/src/prop'
 import tail from 'ramda/src/tail'
 
-import { getProducts } from '../../api/products/get-products'
-import { useApi } from '../../api/use-api'
-
 import Layout from '../../components/Layout'
 import Loader from '../../components/Loader'
 import { H1 } from '../../components/Typography'
 import { Pagination } from '../../components/Pagination'
 
 import * as cartActions from '../../store/cart/actions'
+import * as productsActions from '../../store/products/actions'
+
 import { Product } from './Product'
 import { ProductsWrap } from './styled'
 import { PAGE_DEFAULT, PAGE_SIZE_DEFAULT } from '../../constants'
@@ -24,54 +23,95 @@ const getUrlParams = compose(
   prop('search')
 )
 
-const Products = ({ match, location, addProduct, history }) => {
-  const { page = PAGE_DEFAULT, size = PAGE_SIZE_DEFAULT } = getUrlParams(
-    location
-  )
+class Products extends React.Component {
+  constructor(props) {
+    super(props)
 
-  const { data: res, isLoading } = useApi(
-    () => getProducts({ page: { number: page, size } }),
-    [page, size]
-  )
+    const { page = PAGE_DEFAULT, size = PAGE_SIZE_DEFAULT } = getUrlParams(
+      this.props.location
+    )
 
-  const handleAddToCart = productId => addProduct(productId)
-  const handleSizeChange = newSize => {
-    history.push(`/products?page=${page}&size=${newSize}`)
+    this.state = {
+      page,
+      size,
+    }
   }
 
-  return (
-    <Layout>
-      <H1 textAlign="center">E-Commerce app</H1>
-      {isLoading && <Loader />}
-      {res && (
-        <>
-          <Pagination
-            pages={res.meta.page_count}
-            activePage={match.params.page}
-            size={size}
-            onSizeChange={handleSizeChange}
-          />
-          <ProductsWrap>
-            {res.data.map(product => (
-              <Product
-                key={product.id}
-                node={product}
-                onAddToCart={handleAddToCart}
-              />
-            ))}
-          </ProductsWrap>
-        </>
-      )}
-    </Layout>
-  )
+  componentDidMount() {
+    const { page, size } = this.state
+    this.loadProducts(page, size)
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.location !== prevProps.location) {
+      const { page = PAGE_DEFAULT, size = PAGE_SIZE_DEFAULT } = getUrlParams(
+        this.props.location
+      )
+
+      if (page !== this.state.page || size !== this.state.size) {
+        this.loadProducts(page, size)
+        this.setState({
+          page,
+          size,
+        })
+      }
+    }
+  }
+
+  loadProducts(page, size) {
+    this.props.loadProducts({ page: { number: page, size } })
+  }
+
+  handleAddToCart = productId => this.props.addProduct(productId)
+
+  handleSizeChange = newSize => {
+    const { page } = this.state
+    this.props.history.push(`/products?page=${page}&size=${newSize}`)
+  }
+
+  render() {
+    const { size } = this.state
+    const { products } = this.props
+
+    return (
+      <Layout>
+        <H1 textAlign="center">E-Commerce app</H1>
+        {products.isProductListLoading && <Loader />}
+        {products.data && (
+          <>
+            <Pagination
+              pages={products.meta.page_count}
+              activePage={this.props.match.params.page}
+              size={size}
+              onSizeChange={this.handleSizeChange}
+            />
+            <ProductsWrap>
+              {products.data.map(product => (
+                <Product
+                  key={product.id}
+                  node={product}
+                  onAddToCart={this.handleAddToCart}
+                />
+              ))}
+            </ProductsWrap>
+          </>
+        )}
+      </Layout>
+    )
+  }
 }
+
+const mapStateToProps = state => ({
+  products: state.products,
+})
 
 const mapDispatchToProps = {
   addProduct: cartActions.addProduct,
+  loadProducts: productsActions.loadProducts,
 }
 
 const ProductList = connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(Products)
 
