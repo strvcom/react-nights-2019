@@ -1,13 +1,11 @@
 import { useState, useEffect } from 'react'
 
-const useApi = <T>(fn: (...arg: any[]) => Promise<T>, resolveCondition: ReadonlyArray<any> = []) => {
-  const [data, setData] = useState<T>(null!)
+const useApi = <T>(
+  fn: (...arg: any[]) => Promise<T>,
+  resolveCondition: ReadonlyArray<any> = []
+) => {
+  const [data, setData] = useState<T | null>(null)
   const [isLoading, setLoading] = useState(false)
-
-  if (!Array.isArray(resolveCondition)) {
-    // eslint-disable-next-line no-console
-    console.error('Passed resolve condition for useEffect hook is not an Array')
-  }
 
   const request = (...args: any[]) => {
     setLoading(true)

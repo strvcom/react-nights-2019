@@ -33,7 +33,7 @@
       "eslint --fix",
       "prettier --write",
       "stylelint",
-      "tsc --skipLibCheck",
+      "yarn type-check",
       "git add"
     ],
     "*.{json,md}": [
