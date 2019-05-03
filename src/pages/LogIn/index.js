@@ -3,7 +3,6 @@ import { Formik } from 'formik'
 import { connect } from 'react-redux'
 import { toast } from 'react-toastify'
 
-import Layout from '../../components/Layout'
 import { H1 } from '../../components/Typography'
 import { Form, GlobalFormError } from '../../components/Form'
 import { Input } from '../../components/Input'
@@ -17,7 +16,7 @@ const initialValues = {
   password: '',
 }
 
-const LogInPage = ({ login, history }) => {
+const LogInPage = ({ login }) => {
   const [formAsyncError, setFormAsyncError] = useState('')
 
   const handleSubmit = async ({ email, password }, { setSubmitting }) => {
@@ -32,7 +31,6 @@ const LogInPage = ({ login, history }) => {
       if (error instanceof AsyncValidationError) {
         setFormAsyncError(error.message)
       } else {
-        debugger
         toast.error(
           `There was an error while logging in, please try again later!`
         )
@@ -44,7 +42,7 @@ const LogInPage = ({ login, history }) => {
   }
 
   return (
-    <main dataTestId="login-page">
+    <main data-test-id="login-page">
       <H1 textAlign="center">Log In</H1>
       <Formik
         initialValues={initialValues}
