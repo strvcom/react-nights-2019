@@ -1,5 +1,5 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { FC } from 'react'
+import { Link, RouteComponentProps } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 import { getProductById } from '../../api/products/get-product'
@@ -21,7 +21,9 @@ import {
   Price,
 } from './styled'
 
-const ProductView = ({ match, addProduct }) => {
+type Props = typeof mapDispatchToProps & RouteComponentProps<{ productId: string }>
+
+const ProductView: FC<Props> = ({ match, addProduct }) => {
   const { productId } = match.params
 
   const { data: product, isLoading } = useApi(() => getProductById(productId), [
@@ -38,7 +40,7 @@ const ProductView = ({ match, addProduct }) => {
               <Img src={product.image_url} />
             </ImgWrapper>
             <DetailsWrapper>
-              <H1 textAlign="center">{product.name}</H1>
+              <H1>{product.name}</H1>
               <Price>{product.price.formatted_amount}</Price>
               <Description>{product.description}</Description>
               <Button onClick={() => addProduct(product.id)}>
