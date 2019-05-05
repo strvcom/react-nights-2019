@@ -1,10 +1,11 @@
-import styled from 'styled-components/macro'
-import { Link as BaseLink } from 'react-router-dom'
+import React from 'react'
+import styled from 'styled-components'
+import BaseLink from 'next/link'
 import theme from '../../../common/theme'
 
 export const Wrapper = styled.li``
 
-export const Link = styled(BaseLink)`
+export const StyledLink = styled.a`
   text-decoration: none;
   color: initial;
   background-color: ${theme.color.white};
@@ -16,6 +17,12 @@ export const Link = styled(BaseLink)`
   margin-bottom: 1rem;
   width: 35rem;
 `
+
+export const Link = props => (
+  <BaseLink href={props.href} as={props.as}>
+    <StyledLink href={props.href}>{props.children}</StyledLink>
+  </BaseLink>
+)
 
 export const ImgWrap = styled.div`
   height: 16rem;

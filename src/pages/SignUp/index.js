@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { Formik } from 'formik'
 import { connect } from 'react-redux'
 
-import Layout from '../../components/Layout'
 import { H1 } from '../../components/Typography'
 import { Form, GlobalFormError } from '../../components/Form'
 import { Input } from '../../components/Input'
@@ -19,7 +18,7 @@ const initialValues = {
   passwordConfirm: '',
 }
 
-const SignUpPage = ({ login, history }) => {
+const SignUpPage = ({ login }) => {
   const [globalError, setGlobalError] = useState('')
 
   const handleSubmit = async (
@@ -32,7 +31,6 @@ const SignUpPage = ({ login, history }) => {
       await login({
         username: email,
         password,
-        push: history.push,
       })
     } catch (error) {
       setGlobalError(error.message)
@@ -41,7 +39,7 @@ const SignUpPage = ({ login, history }) => {
   }
 
   return (
-    <Layout dataTestId="signup-page">
+    <main data-test-id="signup-page">
       <H1 textAlign="center">Sign Up</H1>
       <Formik
         initialValues={initialValues}
@@ -67,7 +65,7 @@ const SignUpPage = ({ login, history }) => {
           </Form>
         )}
       </Formik>
-    </Layout>
+    </main>
   )
 }
 

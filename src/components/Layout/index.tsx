@@ -14,19 +14,19 @@ const Layout: FC<Props> = ({ isAuthenticated, children, dataTestId }) => (
   <Fragment>
     <Header>
       <HeaderSection>
-        <HeaderLink to={routes.PRODUCT_LIST}>All Products</HeaderLink>
+        <HeaderLink href={routes.PRODUCT_LIST}>All Products</HeaderLink>
       </HeaderSection>
       <HeaderSection>
-        <HeaderLink to={routes.CART}>My Cart</HeaderLink>|
+        <HeaderLink href={routes.CART}>My Cart</HeaderLink>|
         {isAuthenticated ? (
           <>
-            <HeaderLink to={routes.ACCOUNT}>My Account</HeaderLink>|
-            <HeaderLink to={routes.LOGOUT}>Logout</HeaderLink>
+            <HeaderLink href={routes.ACCOUNT}>My Account</HeaderLink>|
+            <HeaderLink href={routes.LOGOUT}>Logout</HeaderLink>
           </>
         ) : (
           <>
-            <HeaderLink to={routes.LOGIN}>Log In</HeaderLink> |
-            <HeaderLink to={routes.SIGN_UP}>Sign Up</HeaderLink>
+            <HeaderLink href={routes.LOGIN}>Log In</HeaderLink> |
+            <HeaderLink href={routes.SIGN_UP}>Sign Up</HeaderLink>
           </>
         )}
       </HeaderSection>

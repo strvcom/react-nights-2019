@@ -9,7 +9,7 @@ import { CartItem } from './CartItem'
 
 const CartView = ({ items, removeProduct }) => {
   return (
-    <Layout>
+    <main>
       <H1>Your cart</H1>
       <ul>
         {items.map(item => (
@@ -21,7 +21,7 @@ const CartView = ({ items, removeProduct }) => {
           />
         ))}
       </ul>
-    </Layout>
+    </main>
   )
 }
 

@@ -1,11 +1,13 @@
+import { isBrowser } from './is-browser'
+
 export const getRefreshToken = () => {
-  return window.localStorage.getItem('refreshtoken')
+  return isBrowser() && window.localStorage.getItem('refreshtoken')
 }
 
 export const setRefreshToken = refreshToken => {
-  window.localStorage.setItem('refreshtoken', refreshToken)
+  isBrowser() && window.localStorage.setItem('refreshtoken', refreshToken)
 }
 
 export const removeRefreshToken = () => {
-  window.localStorage.removeItem('refreshtoken')
+  isBrowser() && window.localStorage.removeItem('refreshtoken')
 }

@@ -1,4 +1,5 @@
 import { ThunkDispatch } from 'redux-thunk'
+import Router from 'next/router'
 import { getCustomerToken } from '../../api/customers/get-customer-token'
 import { getCustomer } from '../../api/customers/get-customer'
 import * as routes from '../../routes'
@@ -15,14 +16,11 @@ export const LOGOUT = 'customer/LOGOUT' as 'customer/LOGOUT'
 type LoginPayload = {
   username: string
   password: string
-  push: (path: string) => void
 }
 
-type LogoutPayload = {
-  push: (path: string) => void
-}
-
-export type CustomerAction = ReturnType<typeof loginInit | typeof loginSuccess | typeof logoutSuccess>
+export type CustomerAction = ReturnType<
+  typeof loginInit | typeof loginSuccess | typeof logoutSuccess
+>
 
 type Dispatch = ThunkDispatch<{}, {}, CustomerAction>
 
@@ -42,7 +40,9 @@ const logoutSuccess = () => ({
   type: LOGOUT,
 })
 
-export const login = ({ username, password, push }: LoginPayload) => async (dispatch: Dispatch) => {
+export const login = ({ username, password }: LoginPayload) => async (
+  dispatch: Dispatch
+) => {
   dispatch(loginInit(username, password))
 
   const { ownerId, access_token, refresh_token } = await getCustomerToken({
@@ -57,15 +57,15 @@ export const login = ({ username, password, push }: LoginPayload) => async (disp
 
   dispatch(loginSuccess(customer))
 
-  push(routes.ACCOUNT)
+  Router.push(routes.ACCOUNT)
 }
 
-export const logout = ({ push }: LogoutPayload) => (dispatch: Dispatch) => {
+export const logout = () => (dispatch: Dispatch) => {
   removeToken()
   removeRefreshToken()
   removeCustomer()
 
-  push(routes.HOMEPAGE)
+  Router.push(routes.HOMEPAGE)
 
   dispatch(logoutSuccess())
 }

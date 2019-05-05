@@ -1,5 +1,7 @@
 /* eslint-disable no-constant-condition */
 /* eslint-disable no-await-in-loop */
+import fetch from 'isomorphic-fetch'
+import Router from 'next/router'
 
 import config from '../config'
 import { LOGOUT } from '../routes'
@@ -46,7 +48,7 @@ export const api = async (url, options) => {
     // Here is a place to handle special cases
     // CASE: second 401 we need to logout
     if (response && response.status === 401) {
-      window.location.assign(LOGOUT)
+      Router.push(LOGOUT)
     }
 
     // If everything went fine just return the result

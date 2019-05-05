@@ -1,13 +1,10 @@
+    
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { logout } from '../../store/customer/actions'
 
-const LogoutPage = ({ logoutAction, history }) => {
-  useEffect(() =>
-    logoutAction({
-      push: history.push,
-    })
-  )
+const LogoutPage = ({ logoutAction }) => {
+  useEffect(() => logoutAction())
 
   return <span>Logging out</span>
 }
