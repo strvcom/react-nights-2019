@@ -20,7 +20,7 @@ export const StyledLink = styled.a`
 
 export const Link = props => (
   <BaseLink href={props.href} as={props.as}>
-    <StyledLink>{props.children}</StyledLink>
+    <StyledLink href={props.href}>{props.children}</StyledLink>
   </BaseLink>
 )
 
