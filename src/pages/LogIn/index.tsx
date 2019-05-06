@@ -1,5 +1,5 @@
 import React, { useState, FC } from 'react'
-import { Formik, FormikBag, FormikActions } from 'formik'
+import { Formik, FormikActions } from 'formik'
 import { connect } from 'react-redux'
 import { toast } from 'react-toastify'
 
@@ -21,12 +21,15 @@ type Values = {
   password: string
 }
 
-type Props = typeof mapDispatchToProps
+type Props = ReturnType<typeof mapDispatchToProps>
 
 const LogInPage: FC<Props> = ({ login }) => {
   const [formAsyncError, setFormAsyncError] = useState('')
 
-  const handleSubmit = async ({ email, password }: Values, { setSubmitting }: FormikActions<Values>) => {
+  const handleSubmit = async (
+    { email, password }: Values,
+    { setSubmitting }: FormikActions<Values>
+  ) => {
     try {
       setSubmitting(true)
 
@@ -73,9 +76,10 @@ const LogInPage: FC<Props> = ({ login }) => {
   )
 }
 
-const mapDispatchToProps = {
-  login: customerActions.login,
-}
+const mapDispatchToProps = (dispatch: customerActions.Dispatch) => ({
+  login: (payload: customerActions.LoginPayload) =>
+    dispatch(customerActions.login(payload)),
+})
 
 export const LogIn = connect(
   null,

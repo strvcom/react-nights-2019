@@ -20,13 +20,19 @@ const getNameFallback = flip(propOr)('name')
 // const getNameFallback = (fallback, product) => product && product.name ? product.name : fallback
 // but it is less variable
 
-const CartItem = ({ productId, quantity, removeProduct }) => {
+interface Props {
+  productId: string
+  quantity: number
+  removeProduct: (id: string) => void
+}
+
+const CartItem = ({ productId, quantity, removeProduct }: Props) => {
   const { data: product, isLoading } = useApi(() => getProductById(productId), [
     productId,
   ])
 
   // Here we provide default fallback - productId passed as prop
-  const getName = getNameFallback(productId)
+  const name = getNameFallback(productId, product)
 
   return (
     <li key={productId}>
@@ -35,7 +41,7 @@ const CartItem = ({ productId, quantity, removeProduct }) => {
         <div data-testid="product-in-cart">
           <p>
             {/* and finally here we try to get name from downloaded product */}
-            {getName(product)} - {quantity}
+            {name} - {quantity}
           </p>
           <Button type="button" onClick={() => removeProduct(productId)}>
             Remove

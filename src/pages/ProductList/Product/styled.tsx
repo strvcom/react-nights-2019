@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 import styled from 'styled-components'
 import BaseLink from 'next/link'
 import theme from '../../../common/theme'
@@ -18,7 +18,12 @@ export const StyledLink = styled.a`
   width: 35rem;
 `
 
-export const Link = props => (
+interface LinkProps {
+  href: string
+  as: string
+}
+
+export const Link: FC<LinkProps> = props => (
   <BaseLink href={props.href} as={props.as}>
     <StyledLink href={props.href}>{props.children}</StyledLink>
   </BaseLink>

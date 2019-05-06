@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, FC } from 'react'
 import { Formik } from 'formik'
 import { connect } from 'react-redux'
 
@@ -18,12 +18,24 @@ const initialValues = {
   passwordConfirm: '',
 }
 
-const SignUpPage = ({ login }) => {
+type Props = ReturnType<typeof mapDispatchToProps>
+
+interface Submit {
+  email: string
+  password: string
+  firstName: string
+}
+
+interface FormProps {
+  setSubmitting: (submitting: boolean) => void
+}
+
+const SignUpPage: FC<Props> = ({ login }) => {
   const [globalError, setGlobalError] = useState('')
 
   const handleSubmit = async (
-    { email, password, firstName },
-    { setSubmitting }
+    { email, password, firstName }: Submit,
+    { setSubmitting }: FormProps
   ) => {
     try {
       setSubmitting(true)
@@ -69,9 +81,10 @@ const SignUpPage = ({ login }) => {
   )
 }
 
-const mapDispatchToProps = {
-  login: customerActions.login,
-}
+const mapDispatchToProps = (dispatch: customerActions.Dispatch) => ({
+  login: (payload: customerActions.LoginPayload) =>
+    dispatch(customerActions.login(payload)),
+})
 
 export const SignUp = connect(
   null,

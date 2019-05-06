@@ -1,13 +1,15 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import Layout from '../../components/Layout'
 import { H1 } from '../../components/Typography'
+import { AppState } from '../../store'
 import * as cartActions from '../../store/cart/actions'
 import * as cartSelectors from '../../store/cart/selectors'
 import { CartItem } from './CartItem'
 
-const CartView = ({ items, removeProduct }) => {
+type Props = ReturnType<typeof mapStateToProps> & typeof mapDispatchToProps
+
+const CartView = ({ items, removeProduct }: Props) => {
   return (
     <main>
       <H1>Your cart</H1>
@@ -25,7 +27,7 @@ const CartView = ({ items, removeProduct }) => {
   )
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state: AppState) => ({
   items: cartSelectors.getCartItems(state),
 })
 

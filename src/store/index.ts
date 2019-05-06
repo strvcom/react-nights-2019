@@ -14,6 +14,7 @@ const reducer = combineReducers({
   customer,
 })
 
+export type AppStore = ReturnType<typeof configureStore>
 export type AppState = ReturnType<typeof reducer>
 
 // this variable will be set if you have redux-dev-tools extension installed in your browser

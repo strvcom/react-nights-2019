@@ -3,10 +3,16 @@ import React from 'react'
 import Button from '../../../components/Button'
 import { kebabCase } from '../../../utils/kebab-case'
 import * as routes from '../../../routes'
+import { ProductType } from '../../../common/types'
 
 import { Wrapper, ImgWrap, Img, TitleWrap, Title, Price, Link } from './styled'
 
-const Product = ({ node, onAddToCart }) => (
+interface Props {
+  node: ProductType
+  onAddToCart: (id: string) => void
+}
+
+const Product = ({ node, onAddToCart }: Props) => (
   <Wrapper data-testid="product-in-list">
     <Link
       href={`/product?id=${node.id}`}

@@ -1,16 +1,20 @@
 import React, { useEffect, FC } from 'react'
 import { connect } from 'react-redux'
-import { logout } from '../../store/customer/actions'
+import { logout, Dispatch } from '../../store/customer/actions'
 
-type Props = typeof mapDispatchToProps
+type Props = ReturnType<typeof mapDispatchToProps>
 
 const LogoutPage: FC<Props> = ({ logoutAction }) => {
-  useEffect(() => logoutAction())
+  useEffect(() => {
+    logoutAction()
+  })
 
   return <span>Logging out</span>
 }
 
-const mapDispatchToProps = { logoutAction: logout }
+const mapDispatchToProps = (dispatch: Dispatch) => ({
+  logoutAction: () => dispatch(logout),
+})
 
 export const Logout = connect(
   null,

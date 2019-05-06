@@ -13,7 +13,7 @@ export const LOGIN_INIT = 'customer/LOGIN_INIT' as 'customer/LOGIN_INIT'
 export const LOGIN_SUCCESS = 'customer/LOGIN_SUCCESS' as 'customer/LOGIN_SUCCESS'
 export const LOGOUT = 'customer/LOGOUT' as 'customer/LOGOUT'
 
-type LoginPayload = {
+export type LoginPayload = {
   username: string
   password: string
 }
@@ -22,7 +22,7 @@ export type CustomerAction = ReturnType<
   typeof loginInit | typeof loginSuccess | typeof logoutSuccess
 >
 
-type Dispatch = ThunkDispatch<{}, {}, CustomerAction>
+export type Dispatch = ThunkDispatch<{}, {}, CustomerAction>
 
 const loginInit = (username: string, password: string) => ({
   type: LOGIN_INIT,

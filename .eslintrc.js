@@ -35,4 +35,11 @@ module.exports = {
     'no-use-before-define': 'warn',
     '@typescript-eslint/no-use-before-define': 'warn',
   },
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
+    },
+  },
 }
