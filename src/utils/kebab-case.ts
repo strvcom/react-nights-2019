@@ -1,4 +1,4 @@
-export const kebabCase = string =>
+export const kebabCase = (string: string) =>
   string
     .toLowerCase()
     .trim()

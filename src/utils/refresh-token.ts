@@ -4,7 +4,7 @@ export const getRefreshToken = () => {
   return isBrowser() && window.localStorage.getItem('refreshtoken')
 }
 
-export const setRefreshToken = refreshToken => {
+export const setRefreshToken = (refreshToken: string) => {
   isBrowser() && window.localStorage.setItem('refreshtoken', refreshToken)
 }
 

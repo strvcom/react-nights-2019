@@ -1,6 +1,12 @@
 import { api } from '../api-client'
 
-export const createCustomer = async ({ email, password, firstName }) => {
+type CreatePayload = {
+  email: string
+  password: string
+  firstName: string
+}
+
+export const createCustomer = async ({ email, password, firstName }: CreatePayload) => {
   const requestBody = {
     data: {
       type: 'customers',

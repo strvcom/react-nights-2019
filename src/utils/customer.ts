@@ -1,3 +1,4 @@
+import { CustomerType } from '../common/types'
 import { isBrowser } from './is-browser'
 
 export const getCustomer = () => {
@@ -13,7 +14,7 @@ export const getCustomer = () => {
   return {}
 }
 
-export const setCustomer = customer => {
+export const setCustomer = (customer: CustomerType) => {
   isBrowser() &&
     window.localStorage.setItem('customer', JSON.stringify(customer))
 }

@@ -3,7 +3,10 @@
 // Workaround because Babel cannot extend default Error
 // https://stackoverflow.com/questions/31089801/extending-error-in-javascript-with-es6-syntax-babel
 class CustomError {
-  constructor(message) {
+  name: string
+  message: string
+
+  constructor(message: string) {
     this.name = 'CustomError'
     this.message = message
   }

@@ -10,7 +10,11 @@ import { refreshCustomerToken } from './customers/refresh-customer-token'
 import { getToken } from '../utils/token'
 import { getRefreshToken } from '../utils/refresh-token'
 
-const makeRequest = (url, options, token) =>
+type Options = {
+  [key: string]: any
+}
+
+const makeRequest = (url: string, options?: Options, token?: string) =>
   fetch(`${config.apiUrl}${url}`, {
     method: 'GET',
     headers: {
@@ -20,7 +24,7 @@ const makeRequest = (url, options, token) =>
     ...options,
   })
 
-export const api = async (url, options) => {
+export const api = async (url: string, options?: Options) => {
   // Grab the token from the store or from the API
   let token = getToken() || (await getGuestToken())
 

@@ -4,7 +4,7 @@ export const getToken = () => {
   return isBrowser() && window.localStorage.getItem('token')
 }
 
-export const setToken = token => {
+export const setToken = (token: string) => {
   isBrowser() && window.localStorage.setItem('token', token)
 }
 

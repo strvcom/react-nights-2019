@@ -1,7 +1,12 @@
 import config from '../../config'
 import { AsyncValidationError } from '../../utils/errors'
 
-export const getCustomerToken = async ({ username, password }) => {
+type LoginPayload = {
+  username: string
+  password: string
+}
+
+export const getCustomerToken = async ({ username, password }: LoginPayload) => {
   const response = await fetch(`${config.apiUrl}/oauth/token`, {
     method: 'POST',
     headers: {
