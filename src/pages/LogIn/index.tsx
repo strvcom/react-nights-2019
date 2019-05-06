@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Formik } from 'formik'
+import React, { useState, FC } from 'react'
+import { Formik, FormikBag, FormikActions } from 'formik'
 import { connect } from 'react-redux'
 import { toast } from 'react-toastify'
 
@@ -16,10 +16,17 @@ const initialValues = {
   password: '',
 }
 
-const LogInPage = ({ login }) => {
+type Values = {
+  email: string
+  password: string
+}
+
+type Props = typeof mapDispatchToProps
+
+const LogInPage: FC<Props> = ({ login }) => {
   const [formAsyncError, setFormAsyncError] = useState('')
 
-  const handleSubmit = async ({ email, password }, { setSubmitting }) => {
+  const handleSubmit = async ({ email, password }: Values, { setSubmitting }: FormikActions<Values>) => {
     try {
       setSubmitting(true)
 

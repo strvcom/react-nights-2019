@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { ChangeEvent, FC } from 'react'
 import { PAGE_SIZE_OPTIONS } from '../../constants'
 
-const SizeSelect = ({ onChange, value }) => {
-  const handleChange = event => {
-    const newValue = event.target.value
+type Props = {
+  value: number
+  onChange: (value: number) => void
+}
+
+const SizeSelect: FC<Props> = ({ onChange, value }) => {
+  const handleChange = (event: ChangeEvent<HTMLSelectElement>) => {
+    const newValue = parseInt(event.target.value, 10)
 
     if (newValue !== value) {
       onChange(newValue)

@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
   margin-bottom: 1.6rem;
 `
 
-export const StyledInput = styled.input`
+export const StyledInput = styled.input<{ hasError?: boolean }>`
   border: 2px solid
     ${({ hasError }) => (hasError ? theme.color.red : theme.color.gray)};
   border-radius: ${theme.radius.basic};

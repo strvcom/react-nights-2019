@@ -1,6 +1,9 @@
-import { LOAD_PRODUCTS, LOAD_PRODUCT } from './actions'
+import { ProductType } from '../../common/types'
+import { LOAD_PRODUCTS, LOAD_PRODUCT, ProductAction } from './actions'
 
-const reducer = (state = [], action) => {
+type ProductState = ReadonlyArray<ProductType>
+
+const reducer = (state: ProductState = [], action: ProductAction): ProductState => {
   switch (action.type) {
     case LOAD_PRODUCTS:
       return action.payload

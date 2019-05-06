@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { textAlign } from 'styled-system'
+import { textAlign, TextAlignProps } from 'styled-system'
 import theme from '../../common/theme'
 
 const headerFonts = css`
@@ -10,7 +10,7 @@ const headerFonts = css`
   ${textAlign}
 `
 
-export const H1 = styled.h1`
+export const H1 = styled.h1<TextAlignProps>`
   ${headerFonts}
 `
 

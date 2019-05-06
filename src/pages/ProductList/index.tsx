@@ -14,9 +14,9 @@ import { Product } from './Product'
 import { ProductsWrap } from './styled'
 import { PAGE_DEFAULT, PAGE_SIZE_DEFAULT } from '../../constants'
 
-const Products = ({ res, match, page, size, addProduct, isLoading }) => {
-  const handleAddToCart = productId => addProduct(productId)
-  const handleSizeChange = newSize => {
+const Products = ({ res, page, size, addProduct, isLoading }) => {
+  const handleAddToCart = (productId: string) => addProduct(productId)
+  const handleSizeChange = (newSize: number) => {
     Router.push(`/products?page=${page}&size=${newSize}`)
   }
 
@@ -28,7 +28,6 @@ const Products = ({ res, match, page, size, addProduct, isLoading }) => {
         <>
           <Pagination
             pages={res.meta.page_count}
-            activePage={page}
             size={size}
             onSizeChange={handleSizeChange}
           />

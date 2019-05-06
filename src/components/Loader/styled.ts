@@ -22,7 +22,7 @@ const dash = keyframes`
   }
 `
 
-const LoaderWrap = styled.div`
+const LoaderWrap = styled.div<{ small?: boolean }>`
   width: 100%;
 
   ${props =>
@@ -63,7 +63,7 @@ const Circular = styled.svg`
   width: 100%;
 `
 
-const Path = styled.circle`
+const Path = styled.circle<{ white?: boolean }>`
   stroke: ${props => (props.white ? '#fff' : theme.color.red)};
   stroke-dasharray: 1, 200;
   stroke-dashoffset: 0;

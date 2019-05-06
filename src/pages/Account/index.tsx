@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { connect } from 'react-redux'
 
 import { PrivatePage } from '../../components/PrivatePage'
 import { H1 } from '../../components/Typography'
+import { AppState } from '../../store'
 
-const AccountPage = ({ customer }) => (
+type Props = ReturnType<typeof mapStateToProps>
+
+const AccountPage: FC<Props> = ({ customer }) => (
   <PrivatePage>
     {() => (
       <main data-test-id="account-page">
@@ -14,8 +17,8 @@ const AccountPage = ({ customer }) => (
   </PrivatePage>
 )
 
-const mapStateToProps = state => ({
-  customer: state.customer,
+const mapStateToProps = (state: AppState) => ({
+  customer: state.customer!,
 })
 
 export const Account = connect(mapStateToProps)(AccountPage)

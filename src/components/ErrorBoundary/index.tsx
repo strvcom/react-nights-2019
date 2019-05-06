@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ErrorInfo } from 'react'
 import { toast } from 'react-toastify'
 
 export class ErrorBoundary extends React.Component {
@@ -12,7 +12,7 @@ export class ErrorBoundary extends React.Component {
     }
   }
 
-  componentDidCatch(error, info) {
+  componentDidCatch(error: Error, info: ErrorInfo) {
     toast.error(`Error: ${error.message}`)
     console.error('Error boundary error', error, info)
   }
