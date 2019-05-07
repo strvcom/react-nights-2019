@@ -1,7 +1,7 @@
-import React, { FC } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import Router from 'next/router'
-import { NextContext } from 'next'
+import { NextContext, NextFunctionComponent } from 'next'
 
 import { getProducts } from '../../api/products/get-products'
 
@@ -18,8 +18,18 @@ import { PAGE_DEFAULT, PAGE_SIZE_DEFAULT } from '../../constants'
 
 type InitialProps = UnPromisify<ReturnType<typeof getInitialProps>>
 type Props = typeof mapDispatchToProps & InitialProps
+type Context = { store: AppStore } & NextContext<{
+  page: string
+  size: string
+}>
 
-const Products: FC<Props> = ({ res, page, size, addProduct, isLoading }) => {
+const Products: NextFunctionComponent<Props, InitialProps, Context> = ({
+  res,
+  page,
+  size,
+  addProduct,
+  isLoading,
+}) => {
   const handleAddToCart = (productId: string) => addProduct(productId)
   const handleSizeChange = (newSize: number) => {
     Router.push(`/products?page=${page}&size=${newSize}`)
@@ -51,12 +61,7 @@ const Products: FC<Props> = ({ res, page, size, addProduct, isLoading }) => {
   )
 }
 
-type NextContextType = { store: AppStore } & NextContext<{
-  page: string
-  size: string
-}>
-
-const getInitialProps = async ({ store, query }: NextContextType) => {
+const getInitialProps = async ({ store, query }: Context) => {
   const page = query.page ? parseInt(query.page) : PAGE_DEFAULT
   const size = query.size ? parseInt(query.size) : PAGE_SIZE_DEFAULT
   const res = await getProducts({ page: { number: page, size } })
@@ -73,7 +78,6 @@ const ProductList = connect(
   mapDispatchToProps
 )(Products)
 
-// @ts-ignore
 ProductList.getInitialProps = getInitialProps
 
 export { ProductList }

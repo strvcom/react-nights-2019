@@ -1,10 +1,11 @@
-import React, { FC } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
-import { NextContext } from 'next'
+import { NextContext, NextFunctionComponent } from 'next'
 import Link from 'next/link'
 
 import { getProductById } from '../../api/products/get-product'
 
+import { AppStore } from '../../store'
 import Button from '../../components/Button'
 import Loader from '../../components/Loader'
 import { H1 } from '../../components/Typography'
@@ -21,11 +22,15 @@ import {
   Price,
 } from './styled'
 
-type Props = typeof mapDispatchToProps
 type InitialProps = UnPromisify<ReturnType<typeof getInitialProps>>
-type EnhancedProps = Props & InitialProps
+type Props = typeof mapDispatchToProps & InitialProps
+type Context = NextContext<{ id: string }> & { store: AppStore }
 
-const ProductView: FC<EnhancedProps> = ({ isLoading, product, addProduct }) => {
+const ProductView: NextFunctionComponent<Props, InitialProps, Context> = ({
+  isLoading,
+  product,
+  addProduct,
+}) => {
   return (
     <main>
       {isLoading && <Loader />}
@@ -49,9 +54,7 @@ const ProductView: FC<EnhancedProps> = ({ isLoading, product, addProduct }) => {
   )
 }
 
-type CTX = NextContext<{ id: string }> & { store: ReduxStore }
-
-const getInitialProps = async (ctx: CTX) => {
+const getInitialProps = async (ctx: Context) => {
   const product = await getProductById(ctx.query.id)
   ctx.store.dispatch(productsActions.loadProduct(product))
   return { product, isLoading: false }
@@ -66,7 +69,6 @@ const ProductDetail = connect(
   mapDispatchToProps
 )(ProductView)
 
-// @ts-ignore
 ProductDetail.getInitialProps = getInitialProps
 
 export { ProductDetail }

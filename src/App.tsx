@@ -10,11 +10,11 @@ import GlobalStyles from './globalStyles'
 import { ErrorBoundary } from './components/ErrorBoundary'
 import { configureStore, AppStore } from './store'
 
-interface Props {
+type Props = {
   store: AppStore
 }
 
-interface InitialProps {
+type InitialProps = {
   Component: NextComponentType | NextFunctionComponent
   ctx: NextContext
 }
