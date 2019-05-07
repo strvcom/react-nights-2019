@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { connect } from 'react-redux'
 
 import { H1 } from '../../components/Typography'
@@ -9,7 +9,7 @@ import { CartItem } from './CartItem'
 
 type Props = ReturnType<typeof mapStateToProps> & typeof mapDispatchToProps
 
-const CartView = ({ items, removeProduct }: Props) => {
+const CartView: FC<Props> = ({ items, removeProduct }) => {
   return (
     <main>
       <H1>Your cart</H1>

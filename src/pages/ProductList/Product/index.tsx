@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 
 import Button from '../../../components/Button'
 import { kebabCase } from '../../../utils/kebab-case'
@@ -12,7 +12,7 @@ interface Props {
   onAddToCart: (id: string) => void
 }
 
-const Product = ({ node, onAddToCart }: Props) => (
+const Product: FC<Props> = ({ node, onAddToCart }) => (
   <Wrapper data-testid="product-in-list">
     <Link
       href={`/product?id=${node.id}`}

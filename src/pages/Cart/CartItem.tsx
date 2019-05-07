@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React, { FC } from 'react'
 import flip from 'ramda/src/flip'
 import propOr from 'ramda/src/propOr'
 
@@ -26,7 +26,7 @@ interface Props {
   removeProduct: (id: string) => void
 }
 
-const CartItem = ({ productId, quantity, removeProduct }: Props) => {
+const CartItem: FC<Props> = ({ productId, quantity, removeProduct }) => {
   const { data: product, isLoading } = useApi(() => getProductById(productId), [
     productId,
   ])
