@@ -1,6 +1,6 @@
 import { ProductType } from '../../../common/types'
 
-type Data = {
+export type Data = {
   id: string
   attributes: {
     name: string
@@ -16,12 +16,22 @@ type Data = {
   }
 }
 
+type Meta = {
+  page_count: number
+}
+
 type Included = ReadonlyArray<{
   id: string
   attributes: {
     formatted_amount: string
   }
 }>
+
+export type ProductResponse<T = Data> = {
+  data: T
+  meta: Meta
+  included: Included
+}
 
 export const formatProduct = (data: Data, included: Included): ProductType => ({
   id: data.id,

@@ -9,7 +9,7 @@
     "format": "prettier --write '*/**/*.{js,css,md,json}'",
     "lint:js": "eslint --ext .js,.ts,.tsx . --ignore-path .gitignore --fix",
     "lint:css": "stylelint 'src/**/*.js'",
-    "type-check": "tsc --skipLibCheck",
+    "type-check": "tsc",
     "cypress:open": "cypress open"
   },
   "jest": {
@@ -30,9 +30,8 @@
     ],
     "*.{ts,tsx}": [
       "eslint --fix",
-      "prettier --write",
+      "prettier --parser typescript --write",
       "stylelint",
-      "yarn type-check",
       "git add"
     ],
     "*.{json,md}": [
@@ -42,7 +41,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged && yarn type-check"
     }
   },
   "browserslist": [
@@ -78,14 +77,20 @@
     "@strv/eslint-config-react": "^1.0.1",
     "@strv/eslint-config-typescript": "^1.0.4",
     "@strv/stylelint-config-styled-components": "^1.0.0",
+    "@types/isomorphic-fetch": "^0.0.35",
     "@types/jest": "^24.0.11",
     "@types/next": "^8.0.5",
+    "@types/next-redux-wrapper": "^2.0.2",
     "@types/node": "^11.13.8",
+    "@types/qs": "^6.5.3",
+    "@types/ramda": "^0.26.8",
     "@types/react": "^16.8.14",
     "@types/react-dom": "^16.8.4",
     "@types/react-redux": "^7.0.8",
     "@types/react-router-dom": "^4.3.2",
     "@types/styled-components": "^4.1.14",
+    "@types/styled-system": "^4.1.3",
+    "@types/yup": "^0.26.13",
     "@typescript-eslint/parser": "^1.7.0",
     "cypress": "^3.2.0",
     "eslint": "^5.16.0",

@@ -17,3 +17,10 @@ export type CustomerType = {
     }
   }
 }
+
+export type CartItem = {
+  quantity: number
+  product: {
+    id: string
+  }
+}
