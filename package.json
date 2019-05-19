@@ -9,6 +9,7 @@
     "format": "prettier --write '*/**/*.{js,css,md,json}'",
     "lint:js": "eslint --ext .js,.ts,.tsx . --ignore-path .gitignore --fix",
     "lint:css": "stylelint 'src/**/*.{js,ts,tsx}'",
+    "lint:text": "textlint",
     "type-check": "tsc",
     "cypress:open": "cypress open"
   },
@@ -99,6 +100,7 @@
     "react-testing-library": "^6.1.2",
     "stylelint": "^10.1.0",
     "stylelint-config-prettier": "^5.2.0",
+    "textlint": "^11.2.5",
     "typescript": "3.3.4000"
   }
 }
