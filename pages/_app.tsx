@@ -5,10 +5,10 @@ import { Provider } from 'react-redux'
 import withRedux from 'next-redux-wrapper'
 import { ToastContainer, toast } from 'react-toastify'
 
-import Layout from './components/Layout'
-import GlobalStyles from './globalStyles'
-import { ErrorBoundary } from './components/ErrorBoundary'
-import { configureStore, AppStore } from './store'
+import Layout from '../src/components/Layout'
+import GlobalStyles from '../src/globalStyles'
+import { ErrorBoundary } from '../src/components/ErrorBoundary'
+import { configureStore, AppStore } from '../src/store'
 
 type Props = {
   store: AppStore
@@ -34,7 +34,7 @@ class MyApp extends App<Props> {
     return (
       <Container>
         <Provider store={this.props.store}>
-          <React.Fragment>
+          <>
             <GlobalStyles />
             <ToastContainer position={toast.POSITION.BOTTOM_RIGHT} />
             <ErrorBoundary>
@@ -42,7 +42,7 @@ class MyApp extends App<Props> {
                 <Component {...pageProps} />
               </Layout>
             </ErrorBoundary>
-          </React.Fragment>
+          </>
         </Provider>
       </Container>
     )
