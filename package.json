@@ -30,7 +30,7 @@
     ],
     "*.{ts,tsx}": [
       "eslint --fix",
-      "prettier --parser typescript --write",
+      "prettier --write",
       "stylelint",
       "git add"
     ],
