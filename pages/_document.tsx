@@ -1,9 +1,14 @@
 import React from 'react'
-import Document, { Head, Main, NextScript } from 'next/document'
+import Document, {
+  Head,
+  Main,
+  NextScript,
+  NextDocumentContext,
+} from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
 
 class CustomDocument extends Document {
-  static async getInitialProps(ctx) {
+  static async getInitialProps(ctx: NextDocumentContext) {
     const sheet = new ServerStyleSheet()
     const originalRenderPage = ctx.renderPage
 

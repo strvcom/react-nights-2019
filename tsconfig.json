@@ -19,5 +19,5 @@
     "noEmit": true,
     "jsx": "preserve"
   },
-  "exclude": ["next.config.js", "server"]
+  "exclude": ["next.config.js", "server", "cypress"]
 }
