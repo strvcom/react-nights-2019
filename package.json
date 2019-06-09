@@ -8,7 +8,7 @@
     "dev": "node server/index.js",
     "format": "prettier --write '*/**/*.{js,css,md,json}'",
     "lint:js": "eslint --ext .js,.ts,.tsx . --ignore-path .gitignore --fix",
-    "lint:css": "stylelint 'src/**/*.js'",
+    "lint:css": "stylelint 'src/**/*.{js,ts,tsx}'",
     "type-check": "tsc",
     "cypress:open": "cypress open"
   },
@@ -22,13 +22,7 @@
     ]
   },
   "lint-staged": {
-    "*.js": [
-      "eslint --fix",
-      "prettier --write",
-      "stylelint",
-      "git add"
-    ],
-    "*.{ts,tsx}": [
+    "*.{js,ts,tsx}": [
       "eslint --fix",
       "prettier --write",
       "stylelint",
@@ -90,6 +84,7 @@
     "@types/styled-system": "^4.2.1",
     "@types/yup": "^0.26.14",
     "@typescript-eslint/parser": "^1.9.0",
+    "babel-eslint": "^10.0.1",
     "cypress": "^3.3.1",
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^4.3.0",
@@ -103,6 +98,6 @@
     "react-testing-library": "^6.1.2",
     "stylelint": "^10.1.0",
     "stylelint-config-prettier": "^5.2.0",
-    "typescript": "3.5.1"
+    "typescript": "3.3.4000"
   }
 }
