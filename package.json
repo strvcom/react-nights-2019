@@ -41,7 +41,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && yarn type-check"
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn type-check"
     }
   },
   "browserslist": [
