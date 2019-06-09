@@ -18,7 +18,7 @@ export const StyledLink = styled.a`
   width: 35rem;
 `
 
-interface LinkProps {
+type LinkProps = {
   href: string
   as: string
 }

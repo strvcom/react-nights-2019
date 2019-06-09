@@ -20,13 +20,13 @@ const initialValues = {
 
 type Props = ReturnType<typeof mapDispatchToProps>
 
-interface Submit {
+type Submit = {
   email: string
   password: string
   firstName: string
 }
 
-interface FormProps {
+type FormProps = {
   setSubmitting: (submitting: boolean) => void
 }
 

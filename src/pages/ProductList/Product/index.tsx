@@ -7,7 +7,7 @@ import { ProductType } from '../../../common/types'
 
 import { Wrapper, ImgWrap, Img, TitleWrap, Title, Price, Link } from './styled'
 
-interface Props {
+type Props = {
   node: ProductType
   onAddToCart: (id: string) => void
 }

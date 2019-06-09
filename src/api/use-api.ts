@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, DependencyList } from 'react'
 
 const useApi = <T>(
   fn: (...arg: any[]) => Promise<T>,
-  resolveCondition: ReadonlyArray<any> = []
+  deps: DependencyList = []
 ) => {
   const [data, setData] = useState<T | null>(null)
   const [isLoading, setLoading] = useState(false)
@@ -16,7 +16,7 @@ const useApi = <T>(
       .finally(() => setLoading(false))
   }
 
-  useEffect(request, resolveCondition)
+  useEffect(request, deps)
 
   return {
     request,

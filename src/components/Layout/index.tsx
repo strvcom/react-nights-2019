@@ -1,4 +1,4 @@
-import React, { Fragment, FC } from 'react'
+import React, { FC } from 'react'
 import { connect } from 'react-redux'
 
 import { AppState } from '../../store'
@@ -11,7 +11,7 @@ type Props = ReturnType<typeof mapStateToProps> & {
 }
 
 const Layout: FC<Props> = ({ isAuthenticated, children, dataTestId }) => (
-  <Fragment>
+  <>
     <Header>
       <HeaderSection>
         <HeaderLink href={routes.PRODUCT_LIST}>All Products</HeaderLink>
@@ -32,7 +32,7 @@ const Layout: FC<Props> = ({ isAuthenticated, children, dataTestId }) => (
       </HeaderSection>
     </Header>
     <Wrapper data-testid={dataTestId}>{children}</Wrapper>
-  </Fragment>
+  </>
 )
 
 const mapStateToProps = (state: AppState) => ({
