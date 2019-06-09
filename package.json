@@ -85,6 +85,7 @@
     "@types/yup": "^0.26.14",
     "@typescript-eslint/parser": "^1.9.0",
     "babel-eslint": "^10.0.1",
+    "babel-plugin-styled-components": "^1.10.0",
     "cypress": "^3.3.1",
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^4.3.0",
