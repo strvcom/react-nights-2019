@@ -1,17 +1,18 @@
 import { CustomerType } from '../common/types'
 import { isBrowser } from './is-browser'
+import { CustomerState } from '../store/customer/reducer'
 
-export const getCustomer = () => {
+export const getCustomer = (): CustomerState => {
   const customer = isBrowser() && window.localStorage.getItem('customer')
   if (customer) {
     try {
       return JSON.parse(customer)
     } catch (err) {
       console.log(err)
-      return {}
+      return null
     }
   }
-  return {}
+  return null
 }
 
 export const setCustomer = (customer: CustomerType) => {
