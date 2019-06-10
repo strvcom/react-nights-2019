@@ -6,7 +6,7 @@ module.exports = {
     'prettier',
     'prettier/react',
   ],
-  // plugins: ['cypress'],
+  plugins: ['cypress'],
   env: {
     jest: true,
   },
