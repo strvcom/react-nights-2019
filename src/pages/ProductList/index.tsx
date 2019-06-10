@@ -62,8 +62,8 @@ const Products: NextFunctionComponent<Props, InitialProps, Context> = ({
 }
 
 const getInitialProps = async ({ store, query }: Context) => {
-  const page = query.page ? parseInt(query.page) : PAGE_DEFAULT
-  const size = query.size ? parseInt(query.size) : PAGE_SIZE_DEFAULT
+  const page = query.page ? parseInt(query.page, 10) : PAGE_DEFAULT
+  const size = query.size ? parseInt(query.size, 10) : PAGE_SIZE_DEFAULT
   const res = await getProducts({ page: { number: page, size } })
   store.dispatch(productActions.loadProducts(res.data))
   return { page, size, isLoading: false, res }
