@@ -32,8 +32,6 @@ Each lecture is around 1 hour long. There are two lectures per week. Followed by
 
     If you have recommendations how to improve this knowledge base, feel free to submit a PR.
 
-    Link to the presentation (video?)
-
   - #### [01. Project Setup](#project-setup)
 
     As a project starter we choose create-react-app. Other great option could be Next.js or Gatsby. We would like to learn it right. So we need to ensure code quality, thus we implemented `Prettier` and `ESLint` and enforced it with precommit hook from combination of `husky` with `lint-staged`. Obviously as STRV developers we will use STRV's favourite configurations from [code-quality-tools](https://github.com/strvcom/code-quality-tools/).
@@ -46,6 +44,8 @@ Each lecture is around 1 hour long. There are two lectures per week. Followed by
 
     This all for now. Let's write a simple README about what we did and how to use this project.
 
+    [Lecture details](/lectures/01-project-setup/README.md) | [Video]() | [Presentation]() | [Pull Request]() | [Homework]()
+
 - [Week 2](#week-2)
 
   - #### [02. Project Architecture & React Router](#project-architecture-and-react-router)
@@ -55,6 +55,8 @@ Each lecture is around 1 hour long. There are two lectures per week. Followed by
     We will use another API endpoint so it's probably about the time to implement `a simple http API client`. We will use native [fetch](https://fetch.spec.whatwg.org/) for simplicity, but otherwise we highly recommend `ky` or `axios`.
 
     Now is everything set and ready. Let's go for the `Product Detail`!
+
+    [Lecture details](/lectures/02-project-architecture-and-react-router/README.md) | [Video]() | [Presentation]() | [Pull Request]() | [Homework]()
 
   - #### [03. Styling in React (styled-components)](#styling-in-react)
 
@@ -68,17 +70,23 @@ Each lecture is around 1 hour long. There are two lectures per week. Followed by
 
     If you are building a real project you should defenitely check out `Storybook`.
 
+    [Lecture details](/lectures/03-styled-components/README.md) | [Video]() | [Presentation]() | [Pull Request]() | [Homework]()
+
 - [Week 4](#week-4)
 
   - #### [04. Global State Management](#global-state-management)
 
     It's about the time to implement `Cart` and possibility to add products to it. We choose to demonstrate this functionality with Redux which is one of the most spread libraries in React ecosystem.
 
+    [Lecture details](/lectures/04-global-state-management/README.md) | [Video]() | [Presentation]() | [Pull Request]() | [Homework]()
+
   - #### [05. Context API & Redux Middlewares](#context-api-and-redux-middlewares)
 
     Redux comes with great middlewares. Let's briefly check what is it about. We will also leverage this gain knowledge in [Side Effects & Error Reporting](#side-effects-and-error-reporting) lecture.
 
     Besides that it's also our duty to showcase a `Context API`, which is more than suitable for many usecases. But without any contribution to the project.
+
+    [Lecture details](/lectures/04-global-state-management/README.md) | [Video]() | [Presentation]() | [Pull Request]() | [Homework]()
 
 - [Week 4](#week-4)
 
@@ -87,8 +95,13 @@ Each lecture is around 1 hour long. There are two lectures per week. Followed by
     A proper e-commerce should have a user profile, when our users can change their information or see the past orders.
     Let's implement `Sign Up` page with [Formik]() and do a client side validation with [yup]()
 
+    [Lecture details](/lectures/05-forms/README.md) | [Video]() | [Presentation]() | [Pull Request]() | [Homework]()
+
   - #### [07. Authentication & Routing in Depth](#authentication-and-routing-in-depth)
+
     Sign in, authentication, private routes, redirecting. With this lesson our app is almost ready.
+
+    [Lecture details](/lectures/06-authentication-and-routing-in-depth/README.md) | [Video]() | [Presentation]() | [Pull Request]() | [Homework]()
 
 - [Week 5](#week-5)
 
@@ -98,11 +111,15 @@ Each lecture is around 1 hour long. There are two lectures per week. Followed by
 
     React is functional, let's learn how to make our app also functional.
 
+    [Lecture details](/lectures/01-project-setup/README.md) | [Video]() | [Presentation]() | [Pull Request]() | [Homework]()
+
   - #### [09. HOCs, Render Props, Hooks](#hocs-renderprops-hooks)
 
     During previous lesson we had a lot of code repetitions, let's make it more DRY!
 
     > In this lesson we are doing a minor refactor from redux to hooks. On first sight it looks good and awesome, but it will backfire us in [Week 7](#week-7). This was done on purpose, so we can demonstrate that every decision in your codebase matters and requires a lot of thinking.
+
+    [Lecture details](/lectures/01-project-setup/README.md) | [Video]() | [Presentation]() | [Pull Request]() | [Homework]()
 
 - [Week 6](#week-6)
 
@@ -110,15 +127,21 @@ Each lecture is around 1 hour long. There are two lectures per week. Followed by
 
     So far we were following happy path of development, aka that everything should work just as expected. But in a real world it's not the case. From time to time API server is down, internet connection is weak, or there is just unexpected error in our code.
 
+    [Lecture details](/lectures/07-async-error-handling/README.md) | [Video]() | [Presentation]() | [Pull Request]() | [Homework]()
+
   - #### [11. Testing in React](#testing-in-react)
 
     Testing is a very important in any software development. Let's take a look, how does it work in React world.
+
+    [Lecture details](/lectures/01-project-setup/README.md) | [Video]() | [Presentation]() | [Pull Request]() | [Homework]()
 
 - [Week 7](#week-7)
 
   - #### [12. TypeScript](#typescript)
 
     TypeScript is really trendy these days. We love it in STRV. Hopefully you will love it too!
+
+    [Lecture details](/lectures/01-project-setup/README.md) | [Video](https://youtu.be/L9B4n4f0ibE) | [Presentation](https://docs.google.com/presentation/d/17-9y7PEbOhdM2hPm0xtvSe6WYxyg_WLFKgTE63WQgtk/) | [Pull Request]() | [Homework]()
 
   - #### [13. Server-side Rendering vs. Static Export](#ssr-vs-static-export)
 
@@ -128,14 +151,20 @@ Each lecture is around 1 hour long. There are two lectures per week. Followed by
 
     > This introduces a major refactor. We probably could choose `razzle` which has react-router under the hood. But still, usually it make sense to do these kind of decision in the very beginning of project.
 
+    [Lecture details](/lectures/01-project-setup/README.md) | [Video](https://youtu.be/_F_YbLNwkuE) | [Presentation](https://drive.google.com/file/d/1XEWNDDZ4Xw8ywGu-0Kn0rSq-jiRKmAAJ/view?usp=sharing) | [Pull Request]() | [Homework]()
+
 - [Week 8](#week-8)
 
   - #### [14. Optimizating React Apps](#optimizing-react-apps)
 
     Our apps seems to be working fine. Let's talk about optimization and bringing to users the best possible user experinece.
 
+    [Lecture details](/lectures/01-project-setup/README.md) | [Video](https://youtu.be/srxHbr346A4) | [Presentation](https://drive.google.com/file/d/12i45GV6_gNjCFnwKs23owjpGPwphc04-/view) | [Pull Request]() | [Homework]()
+
   - #### [15. Deployment](#deployment)
 
     Finally it's about the time to deploy our production ready app!
 
     > Again in real world (continuous) deployment could be set up in earlier stages of a project lifetime.
+
+    [Lecture details](#TODO) | [Video](https://youtu.be/srxHbr346A4?t=3771) | [Presentation](#TODO) | [Pull Request](#TODO) | [Homework]()
