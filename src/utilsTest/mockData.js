@@ -83,9 +83,7 @@ export const LOGIN_DATA = {
   id: USER.id,
   type: 'customers',
   links: {
-    self: `https://the-amber-brand-12.commercelayer.io/api/customers/${
-      USER.id
-    }`,
+    self: `https://the-amber-brand-12.commercelayer.io/api/customers/${USER.id}`,
   },
   attributes: {
     email: USER.email,

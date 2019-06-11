@@ -25,7 +25,7 @@ export const HeaderLink = ({
   children,
 }: {
   href: string
-  children: any
+  children: React.ReactNode
 }) => (
   <Link href={href}>
     <StyledLink>{children}</StyledLink>

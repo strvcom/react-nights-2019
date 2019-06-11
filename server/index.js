@@ -1,6 +1,8 @@
 /* eslint-env node */
 /* eslint-disable @typescript-eslint/no-var-requires */
 const express = require('express')
+const compression = require('compression')
+
 const next = require('next')
 
 const PORT = process.env.PORT || 3000
@@ -12,6 +14,9 @@ app
   .prepare()
   .then(() => {
     const server = express()
+
+    // https://github.com/zeit/next.js/wiki/Getting-ready-for-production
+    if (!dev) server.use(compression())
 
     server.get('/products/:id/:name', (req, res) => {
       return app.render(req, res, '/product', req.params)

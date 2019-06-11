@@ -1,7 +1,7 @@
-import * as React from 'react'
+import React from 'react'
 
 const NotFound = () => (
-  <div data-testid="not-found-page">{"Sorry, page doesn't exist"}</div>
+  <div data-testid="not-found-page">Sorry, page doesn't exist</div>
 )
 
 export { NotFound }

@@ -2,14 +2,14 @@ import React, { ErrorInfo } from 'react'
 import { toast } from 'react-toastify'
 
 export class ErrorBoundary extends React.Component {
-  state = {
-    error: false,
-  }
-
   static getDerivedStateFromError() {
     return {
       error: true,
     }
+  }
+
+  state = {
+    error: false,
   }
 
   componentDidCatch(error: Error, info: ErrorInfo) {

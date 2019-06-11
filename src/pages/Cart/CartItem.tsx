@@ -20,7 +20,7 @@ const getNameFallback = flip(propOr)('name')
 // const getNameFallback = (fallback, product) => product && product.name ? product.name : fallback
 // but it is less variable
 
-interface Props {
+type Props = {
   productId: string
   quantity: number
   removeProduct: (id: string) => void
