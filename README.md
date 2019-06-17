@@ -66,9 +66,9 @@ Our goal was to reveal some patterns incrementally. Some of the code was written
 
 Each lecture is around 1 hour long. There are two lectures per week. Followed by one mutual homework. You can follow commit history to see each lesson.
 
-### [Week 1](#week-1)
+### Week 1
 
-#### [00. Introduction](#00-introduction)
+#### 00. Introduction
 
 Introduction to the React Nights course. Please note that course was designed to do a lot of selfstudying during _homeworks_. If you are planning to try this XY hours course we highly recommend to find a mentor who will review your Pull Requests.
 
@@ -76,7 +76,7 @@ Introduction to the React Nights course. Please note that course was designed to
 
 If you have recommendations how to improve this knowledge base, feel free to submit a PR.
 
-#### [01. Project Setup](#01-project-setup)
+#### 01. Project Setup
 
 As a project starter we choose create-react-app. Other great option could be Next.js or Gatsby. We would like to learn it right. So we need to ensure code quality, thus we implemented `Prettier` and `ESLint` and enforced it with precommit hook from combination of `husky` with `lint-staged`. Obviously as STRV developers we will use STRV's favourite configurations from [code-quality-tools](https://github.com/strvcom/code-quality-tools/).
 
@@ -90,7 +90,7 @@ This all for now. Let's write a simple README about what we did and how to use t
 
 > [Video]() | [Presentation]() | [Pull Request]()
 
-#### [Homework #1](#homework-1)
+#### Homework #1
 
 - Setup [commercelayer.io](https://commercelayer.io/)
 - Project Setup
@@ -103,11 +103,11 @@ This all for now. Let's write a simple README about what we did and how to use t
 
 ---
 
-### [Week 2](#week-2)
+### Week 2
 
-#### [02. Project Architecture & React Router](#02-project-architecture--react-router)
+#### 02. Project Architecture & React Router
 
-The plan for this lecture is to implement `Product Detail`. For routing we will use [react-router](). But before we will start writing code, let's think how we will structure the whole project? In STRV we are fans of [grouping by features or routes](https://reactjs.org/docs/faq-structure.html#grouping-by-features-or-routes). This kind of decision should be done alredy in lecture [Project Setup](#project-setup). So we need to refactor our code a little bit.
+The plan for this lecture is to implement `Product Detail`. For routing we will use [react-router](). But before we will start writing code, let's think how we will structure the whole project? In STRV we are fans of [grouping by features or routes](https://reactjs.org/docs/faq-structure.html#grouping-by-features-or-routes). This kind of decision should be done alredy in lecture [01. Project Setup](#01-project-setup). So we need to refactor our code a little bit.
 
 We will use another API endpoint so it's probably about the time to implement `a simple http API client`. We will use native [fetch](https://fetch.spec.whatwg.org/) for simplicity, but otherwise we highly recommend `ky` or `axios`.
 
@@ -115,7 +115,7 @@ Now is everything set and ready. Let's go for the `Product Detail`!
 
 > [Video]() | [Presentation]() | [Pull Request]()
 
-#### [03. Styling in React](#03-styling-in-react)
+#### 03. Styling in React
 
 Now we have List of Products and Product Detail. Before we move further let's implement some decent styles, so the app is more pleasant to work with.
 
@@ -129,60 +129,60 @@ If you are building a real project you should defenitely check out `Storybook`.
 
 > [Video]() | [Presentation]() | [Pull Request]()
 
-#### [Homework #2](#homework-2)
+#### Homework #2
 
 ---
 
-### [Week 3](#week-3)
+### Week 3
 
-#### [04. Global State Management](#04-global-state-management)
+#### 04. Global State Management
 
 It's about the time to implement `Cart` and possibility to add products to it. We choose to demonstrate this functionality with Redux which is one of the most spread libraries in React ecosystem.
 
 > [Video]() | [Presentation]() | [Pull Request]()
 
-#### [05. Context API & Redux Middlewares](#05-context-api--redux-middlewares)
+#### 05. Context API & Redux Middlewares
 
-Redux comes with great middlewares. Let's briefly check what is it about. We will also leverage this gain knowledge in [Side Effects & Error Reporting](#side-effects-and-error-reporting) lecture.
+Redux comes with great middlewares. Let's briefly check what is it about. We will also leverage this gain knowledge in [10. Side Effects & Error Reporting](#10-side-effects--error-reporting) lecture.
 
 Besides that it's also our duty to showcase a `Context API`, which is more than suitable for many usecases. But without any contribution to the project.
 
 > [Video]() | [Presentation]() | [Pull Request]()
 
-#### [Homework #3](#homework-3)
+#### Homework #3
 
 ---
 
-### [Week 4](#week-4)
+### Week 4
 
-#### [06. Forms](#06-forms)
+#### 06. Forms
 
 A proper e-commerce should have a user profile, when our users can change their information or see the past orders.
 Let's implement `Sign Up` page with [Formik]() and do a client side validation with [yup]()
 
 > [Video]() | [Presentation]() | [Pull Request]()
 
-#### [07. Authentication & Routing in Depth](#authentication-and-routing-in-depth)
+#### 07. Authentication & Routing in Depth
 
 Sign in, authentication, private routes, redirecting. With this lesson our app is almost ready.
 
 > [Video]() | [Presentation]() | [Pull Request]()
 
-#### [Homework #4](#homework-4)
+#### Homework #4
 
 ---
 
-### [Week 5](#week-5)
+### Week 5
 
 > Our app is almost ready. Now it's about the time to properely tune it! Of course in the real world we should start with following "advanced" patterns right away. But for learning purposes we believe this is the easiest way how to get in touch with it.
 
-#### [08. Functional Programming](#08-functional-programming)
+#### 08. Functional Programming
 
 React is functional, let's learn how to make our app also functional.
 
 > [Video]() | [Presentation]() | [Pull Request]()
 
-#### [09. HOCs, Render Props, Hooks](#09-hocs-render-props-hooks)
+#### 09. HOCs, Render Props, Hooks
 
 During previous lesson we had a lot of code repetitions, let's make it more DRY!
 
@@ -190,37 +190,37 @@ During previous lesson we had a lot of code repetitions, let's make it more DRY!
 
 > [Video]() | [Presentation]() | [Pull Request]()
 
-#### [Homework #5](#homework-5)
+#### Homework #5
 
 ---
 
-### [Week 6](#week-6)
+### Week 6
 
-#### [10. Side Effects & Error Reporting](#10-side-effects--error-reporting)
+#### 10. Side Effects & Error Reporting
 
 So far we were following happy path of development, aka that everything should work just as expected. But in a real world it's not the case. From time to time API server is down, internet connection is weak, or there is just unexpected error in our code.
 
 > [Video]() | [Presentation]() | [Pull Request]()
 
-#### [11. Testing in React](#11-testing-in-react)
+#### 11. Testing in React
 
 Testing is a very important in any software development. Let's take a look, how does it work in React world.
 
 > [Video]() | [Presentation]() | [Pull Request]()
 
-#### [Homework #6](#homework-6)
+#### Homework #6
 
 ---
 
-### [Week 7](#week-7)
+### Week 7
 
-#### [12. TypeScript](#12-typescript)
+#### 12. TypeScript
 
 TypeScript is really trendy these days. We love it in STRV. Hopefully you will love it too!
 
 > [Video](https://youtu.be/L9B4n4f0ibE) | [Presentation](https://docs.google.com/presentation/d/17-9y7PEbOhdM2hPm0xtvSe6WYxyg_WLFKgTE63WQgtk/) | [Pull Request]()
 
-#### [13. Server-side Rendering vs. Static Export](#13-server-side-rendering-vs-static-export)
+#### 13. Server-side Rendering vs. Static Export
 
 Since we are going to production soon, let's think how our app should work there.
 
@@ -230,11 +230,11 @@ Because of numerous dynamic content it does make sense do a SSR. We choose next.
 
 > [Video](https://youtu.be/_F_YbLNwkuE) | [Presentation](https://drive.google.com/file/d/1XEWNDDZ4Xw8ywGu-0Kn0rSq-jiRKmAAJ/view?usp=sharing) | [Pull Request]()
 
-#### [Homework #7](#homework-7)
+#### Homework #7
 
 ---
 
-### [Week 8](#week-8)
+### Week 8
 
 #### [14. Optimizing React Apps](#14-optimizing-react-apps)
 
@@ -250,8 +250,8 @@ Finally it's about the time to deploy our production ready app!
 
 > [Video](https://youtu.be/srxHbr346A4?t=3771) | [Presentation](#TODO) | [Pull Request](#TODO)
 
-#### [Homework #8](#homework-8)
+#### Homework #8
 
-## [Used technologies](#used-technology)
+## Used technologies
 
-## [Speakers](#speakers)
+## Speakers
