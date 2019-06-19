@@ -227,7 +227,7 @@ So far we were following happy path of development, aka that everything should w
 
 Testing is a very important in any software development. Let's take a look, how does it work in React world.
 
-> [Video](https://www.youtube.com/watch?v=V5URcw_KYFM&list=PLfX7tWavkVjAz0fCSZn47RvbcsTwTfD0U&index=10&t=3263) | [Presentation]() | [Pull Request](https://github.com/strvcom/react-nights-2019/pull/12)
+> [Video](https://www.youtube.com/watch?v=V5URcw_KYFM&list=PLfX7tWavkVjAz0fCSZn47RvbcsTwTfD0U&index=10&t=3263) | [Presentation](https://docs.google.com/presentation/d/1ZCHj9FJabHUxmTw9U6cH9-Zgb3u7m7K9TxOt6MNqrYc/edit#slide=id.g5c04da16b1_1_0) | [Pull Request](https://github.com/strvcom/react-nights-2019/pull/12)
 
 #### Homework #6
 
@@ -273,7 +273,7 @@ Finally it's about the time to deploy our production ready app!
 
 > Again in real world (continuous) deployment could be set up in earlier stages of a project lifetime.
 
-> [Video](https://youtu.be/srxHbr346A4?t=3771) | [Presentation](#TODO) | [Pull Request](#TODO)
+> [Video](https://youtu.be/srxHbr346A4?t=3771) | [Presentation](https://docs.google.com/presentation/d/11LgJDc_-60a_88_joRmILd9ptYuO6yCYUlemmua-HpU/edit#slide=id.g554c03b836_0_0) | [Pull Request](#TODO)
 
 #### Homework #8
 
