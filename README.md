@@ -84,7 +84,7 @@ Our goal was to reveal some patterns incrementally. Some of the code was written
 
 Each lecture is around 1 hour long. There are two lectures per week. Followed by one mutual homework. You can follow commit history to see each lesson.
 
-A lecture was **recorded**, there is also link to the **presentation**, Pull Request representing the introduction to the lecture, link to the homework solution and finally some additional resources (also listed in presentatnion).
+A lecture was **recorded**, there is also link to the **presentation**, Pull Request representing the introduction to the lecture, link to the homework solution and finally some additional resources (also listed in presentation).
 
 ### Week 1
 
@@ -204,100 +204,63 @@ Besides that it's also our duty to showcase a `Context API`, which is more than 
 
 #### Additional Resources #3
 
-<details>
-  <summary>Immutability examples</summary>
-
-  <details>
-    <summary>Working with objects</summary>
-    <div>
-      <details open>
-      <summary>Object</summary>
-        ```js
-        const user = {
-          id: 1,
-          firstName: 'John',
-          lastName: 'Doe',
-        }
-        ```
-      </details>
-
-      <details>
-        <summary>Add property</summary>
-        ```js
-        user.age = 30 // wrong
-        const newUser = { ...user, age: 30 } // right
-        ```
-      </details>
-
-      <details>
-        <summary>Remove property</summary>
-        ```js
-        delete user.age // wrong
-        const { age, ...newUser } = user // right
-        ```
-      </details>
-      <details>
-        <summary>Update property</summary>
-        ```js
-        user.firstName = 'Jane' // wrong
-        const newUser = { ...user, firstName: 'Jane' } // right
-        ```
-      </details>
-    </div>
-
-  </details>
-  <details>
-    <summary>Working with arrays</summary>
-    <div>
-      <details>
-        <summary>Array</summary>
-
-        ```js
-        const users = []
-        ```
-      </details>
-      <details>
-        <summary>Add item</summary>
-
-      ```js
-      users.push(user) // wrong
-      const newUsers = [...users, user] // right
-      ```
-
-      </details>
-      <details>
-        <summary>Remove item</summary>
-
-      ```js
-      const users.pop() // wrong
-      const newUsers = users.filter(u => u.id !== user.id) // right
-      ```
-
-      </details>
-
-      <details>
-        <summary>Update item</summary>
-
-      ```js
-      users[0].firstName = 'Jane' // wrong
-      const newUsers = users.map(u => {
-        if (u.id === user.id) {
-          return {
-            ...user,
-            firstName: 'Jane',
-          }
-        }
-        return u
-      }) // right
-      ```
-
-      </details>
-    </div>
-
-  </details>
-</details>
-
 - https://overreacted.io/writing-resilient-components/#principle-4-keep-the-local-state-isolated
+- <details>
+    <summary>Immutability examples</summary>
+    <article class="markdown-body entry-content p-5" itemprop="text">
+      <h3>Working with objects</h3>
+      <div class="highlight highlight-source-js">
+        <pre>
+  <span class="pl-k">const</span> <span class="pl-c1">user</span> <span class="pl-k">=</span> {
+    id<span class="pl-k">:</span> <span class="pl-c1">1</span>,
+    firstName<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>John<span class="pl-pds">'</span></span>,
+    lastName<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>Doe<span class="pl-pds">'</span></span>,
+  }</pre>
+      </div>
+      <p><strong>Add property</strong></p>
+      <div class="highlight highlight-source-js">
+        <pre><span class="pl-smi">user</span>.<span class="pl-smi">age</span> <span class="pl-k">=</span> <span class="pl-c1">30</span> <span class="pl-c"><span class="pl-c">//</span> wrong</span>
+  <span class="pl-k">const</span> <span class="pl-c1">newUser</span> <span class="pl-k">=</span> { <span class="pl-k">...</span>user, age<span class="pl-k">:</span> <span class="pl-c1">30</span> } <span class="pl-c"><span class="pl-c">//</span> right</span></pre>
+      </div>
+      <p><strong>Remove property</strong></p>
+      <div class="highlight highlight-source-js">
+        <pre><span class="pl-k">delete</span> <span class="pl-smi">user</span>.<span class="pl-smi">age</span> <span class="pl-c"><span class="pl-c">//</span> wrong</span>
+  <span class="pl-k">const</span> { <span class="pl-c1">age</span>, <span class="pl-k">...</span><span class="pl-c1">newUser</span> } <span class="pl-k">=</span> user <span class="pl-c"><span class="pl-c">//</span> right</span></pre>
+      </div>
+      <p><strong>Update property</strong></p>
+      <div class="highlight highlight-source-js">
+        <pre><span class="pl-smi">user</span>.<span class="pl-smi">firstName</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>Jane<span class="pl-pds">'</span></span> <span class="pl-c"><span class="pl-c">//</span> wrong</span>
+  <span class="pl-k">const</span> <span class="pl-c1">newUser</span> <span class="pl-k">=</span> { <span class="pl-k">...</span>user, firstName<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>Jane<span class="pl-pds">'</span></span> } <span class="pl-c"><span class="pl-c">//</span> right</span></pre>
+      </div>
+      <h3>Working with arrays</h3>
+      <div class="highlight highlight-source-js">
+        <pre><span class="pl-k">const</span> <span class="pl-c1">users</span> <span class="pl-k">=</span> []</pre>
+      </div>
+      <p><strong>Add item</strong></p>
+      <div class="highlight highlight-source-js">
+        <pre><span class="pl-smi">users</span>.<span class="pl-c1">push</span>(user) <span class="pl-c"><span class="pl-c">//</span> wrong</span>
+  <span class="pl-k">const</span> <span class="pl-c1">newUsers</span> <span class="pl-k">=</span> [<span class="pl-k">...</span>users, user] <span class="pl-c"><span class="pl-c">//</span> right</span></pre>
+      </div>
+      <p><strong>Remove item</strong></p>
+      <div class="highlight highlight-source-js">
+        <pre><span class="pl-k">const</span> <span class="pl-c1">users</span>.<span class="pl-c1">pop</span>() <span class="pl-c"><span class="pl-c">//</span> wrong</span>
+  <span class="pl-k">const</span> <span class="pl-c1">newUsers</span> <span class="pl-k">=</span> <span class="pl-smi">users</span>.<span class="pl-en">filter</span>(<span class="pl-smi">u</span> <span class="pl-k">=&gt;</span> <span class="pl-smi">u</span>.<span class="pl-c1">id</span> <span class="pl-k">!==</span> <span class="pl-smi">user</span>.<span class="pl-c1">id</span>) <span class="pl-c"><span class="pl-c">//</span> right</span></pre>
+      </div>
+      <p><strong>Update item</strong></p>
+      <div class="highlight highlight-source-js">
+        <pre>users[<span class="pl-c1">0</span>].<span class="pl-smi">firstName</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>Jane<span class="pl-pds">'</span></span> <span class="pl-c"><span class="pl-c">//</span> wrong</span>
+  <span class="pl-k">const</span> <span class="pl-c1">newUsers</span> <span class="pl-k">=</span> <span class="pl-smi">users</span>.<span class="pl-en">map</span>(<span class="pl-smi">u</span> <span class="pl-k">=&gt;</span> {
+    <span class="pl-k">if</span> (<span class="pl-smi">u</span>.<span class="pl-c1">id</span> <span class="pl-k">===</span> <span class="pl-smi">user</span>.<span class="pl-c1">id</span>) {
+      <span class="pl-k">return</span> {
+        <span class="pl-k">...</span>user,
+        firstName<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>Jane<span class="pl-pds">'</span></span>,
+      }
+    }
+    <span class="pl-k">return</span> u
+  }) <span class="pl-c"><span class="pl-c">//</span> right</span></pre>
+      </div>
+    </article>
+  </details>
 
 ---
 
