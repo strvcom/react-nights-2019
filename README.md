@@ -207,60 +207,60 @@ Besides that it's also our duty to showcase a `Context API`, which is more than 
 
 - https://overreacted.io/writing-resilient-components/#principle-4-keep-the-local-state-isolated
 - <details>
-    <summary>Immutability examples</summary>
-    <article class="markdown-body entry-content p-5" itemprop="text">
-      <h3>Working with objects</h3>
-      <div class="highlight highlight-source-js">
-        <pre>
+  <summary>Immutability examples</summary>
+  <article class="markdown-body entry-content p-5" itemprop="text">
+  <h3>Working with objects</h3>
+  <div class="highlight highlight-source-js">
+  <pre>
   <span class="pl-k">const</span> <span class="pl-c1">user</span> <span class="pl-k">=</span> {
-    id<span class="pl-k">:</span> <span class="pl-c1">1</span>,
-    firstName<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>John<span class="pl-pds">'</span></span>,
-    lastName<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>Doe<span class="pl-pds">'</span></span>,
+  id<span class="pl-k">:</span> <span class="pl-c1">1</span>,
+  firstName<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>John<span class="pl-pds">'</span></span>,
+  lastName<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>Doe<span class="pl-pds">'</span></span>,
   }</pre>
-      </div>
-      <p><strong>Add property</strong></p>
-      <div class="highlight highlight-source-js">
-        <pre><span class="pl-smi">user</span>.<span class="pl-smi">age</span> <span class="pl-k">=</span> <span class="pl-c1">30</span> <span class="pl-c"><span class="pl-c">//</span> wrong</span>
+  </div>
+  <p><strong>Add property</strong></p>
+  <div class="highlight highlight-source-js">
+  <pre><span class="pl-smi">user</span>.<span class="pl-smi">age</span> <span class="pl-k">=</span> <span class="pl-c1">30</span> <span class="pl-c"><span class="pl-c">//</span> wrong</span>
   <span class="pl-k">const</span> <span class="pl-c1">newUser</span> <span class="pl-k">=</span> { <span class="pl-k">...</span>user, age<span class="pl-k">:</span> <span class="pl-c1">30</span> } <span class="pl-c"><span class="pl-c">//</span> right</span></pre>
-      </div>
-      <p><strong>Remove property</strong></p>
-      <div class="highlight highlight-source-js">
-        <pre><span class="pl-k">delete</span> <span class="pl-smi">user</span>.<span class="pl-smi">age</span> <span class="pl-c"><span class="pl-c">//</span> wrong</span>
+  </div>
+  <p><strong>Remove property</strong></p>
+  <div class="highlight highlight-source-js">
+  <pre><span class="pl-k">delete</span> <span class="pl-smi">user</span>.<span class="pl-smi">age</span> <span class="pl-c"><span class="pl-c">//</span> wrong</span>
   <span class="pl-k">const</span> { <span class="pl-c1">age</span>, <span class="pl-k">...</span><span class="pl-c1">newUser</span> } <span class="pl-k">=</span> user <span class="pl-c"><span class="pl-c">//</span> right</span></pre>
-      </div>
-      <p><strong>Update property</strong></p>
-      <div class="highlight highlight-source-js">
-        <pre><span class="pl-smi">user</span>.<span class="pl-smi">firstName</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>Jane<span class="pl-pds">'</span></span> <span class="pl-c"><span class="pl-c">//</span> wrong</span>
+  </div>
+  <p><strong>Update property</strong></p>
+  <div class="highlight highlight-source-js">
+  <pre><span class="pl-smi">user</span>.<span class="pl-smi">firstName</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>Jane<span class="pl-pds">'</span></span> <span class="pl-c"><span class="pl-c">//</span> wrong</span>
   <span class="pl-k">const</span> <span class="pl-c1">newUser</span> <span class="pl-k">=</span> { <span class="pl-k">...</span>user, firstName<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>Jane<span class="pl-pds">'</span></span> } <span class="pl-c"><span class="pl-c">//</span> right</span></pre>
-      </div>
-      <h3>Working with arrays</h3>
-      <div class="highlight highlight-source-js">
-        <pre><span class="pl-k">const</span> <span class="pl-c1">users</span> <span class="pl-k">=</span> []</pre>
-      </div>
-      <p><strong>Add item</strong></p>
-      <div class="highlight highlight-source-js">
-        <pre><span class="pl-smi">users</span>.<span class="pl-c1">push</span>(user) <span class="pl-c"><span class="pl-c">//</span> wrong</span>
+  </div>
+  <h3>Working with arrays</h3>
+  <div class="highlight highlight-source-js">
+  <pre><span class="pl-k">const</span> <span class="pl-c1">users</span> <span class="pl-k">=</span> []</pre>
+  </div>
+  <p><strong>Add item</strong></p>
+  <div class="highlight highlight-source-js">
+  <pre><span class="pl-smi">users</span>.<span class="pl-c1">push</span>(user) <span class="pl-c"><span class="pl-c">//</span> wrong</span>
   <span class="pl-k">const</span> <span class="pl-c1">newUsers</span> <span class="pl-k">=</span> [<span class="pl-k">...</span>users, user] <span class="pl-c"><span class="pl-c">//</span> right</span></pre>
-      </div>
-      <p><strong>Remove item</strong></p>
-      <div class="highlight highlight-source-js">
-        <pre><span class="pl-k">const</span> <span class="pl-c1">users</span>.<span class="pl-c1">pop</span>() <span class="pl-c"><span class="pl-c">//</span> wrong</span>
+  </div>
+  <p><strong>Remove item</strong></p>
+  <div class="highlight highlight-source-js">
+  <pre><span class="pl-k">const</span> <span class="pl-c1">users</span>.<span class="pl-c1">pop</span>() <span class="pl-c"><span class="pl-c">//</span> wrong</span>
   <span class="pl-k">const</span> <span class="pl-c1">newUsers</span> <span class="pl-k">=</span> <span class="pl-smi">users</span>.<span class="pl-en">filter</span>(<span class="pl-smi">u</span> <span class="pl-k">=&gt;</span> <span class="pl-smi">u</span>.<span class="pl-c1">id</span> <span class="pl-k">!==</span> <span class="pl-smi">user</span>.<span class="pl-c1">id</span>) <span class="pl-c"><span class="pl-c">//</span> right</span></pre>
-      </div>
-      <p><strong>Update item</strong></p>
-      <div class="highlight highlight-source-js">
-        <pre>users[<span class="pl-c1">0</span>].<span class="pl-smi">firstName</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>Jane<span class="pl-pds">'</span></span> <span class="pl-c"><span class="pl-c">//</span> wrong</span>
+  </div>
+  <p><strong>Update item</strong></p>
+  <div class="highlight highlight-source-js">
+  <pre>users[<span class="pl-c1">0</span>].<span class="pl-smi">firstName</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>Jane<span class="pl-pds">'</span></span> <span class="pl-c"><span class="pl-c">//</span> wrong</span>
   <span class="pl-k">const</span> <span class="pl-c1">newUsers</span> <span class="pl-k">=</span> <span class="pl-smi">users</span>.<span class="pl-en">map</span>(<span class="pl-smi">u</span> <span class="pl-k">=&gt;</span> {
-    <span class="pl-k">if</span> (<span class="pl-smi">u</span>.<span class="pl-c1">id</span> <span class="pl-k">===</span> <span class="pl-smi">user</span>.<span class="pl-c1">id</span>) {
-      <span class="pl-k">return</span> {
-        <span class="pl-k">...</span>user,
-        firstName<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>Jane<span class="pl-pds">'</span></span>,
-      }
-    }
-    <span class="pl-k">return</span> u
+  <span class="pl-k">if</span> (<span class="pl-smi">u</span>.<span class="pl-c1">id</span> <span class="pl-k">===</span> <span class="pl-smi">user</span>.<span class="pl-c1">id</span>) {
+  <span class="pl-k">return</span> {
+  <span class="pl-k">...</span>user,
+  firstName<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>Jane<span class="pl-pds">'</span></span>,
+  }
+  }
+  <span class="pl-k">return</span> u
   }) <span class="pl-c"><span class="pl-c">//</span> right</span></pre>
-      </div>
-    </article>
+  </div>
+  </article>
   </details>
 
 ---
