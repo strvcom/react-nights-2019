@@ -170,6 +170,7 @@ If you are building a real project you should defenitely check out the [Storyboo
 - styled-components API docs: https://www.styled-components.com/docs/api
 - styled-system API: https://github.com/styled-system/styled-system
 - https://csstools.github.io/sanitize.css/
+- https://www.smashingmagazine.com/2017/01/styled-components-enforcing-best-practices-component-based-systems/
 
 ---
 
@@ -290,6 +291,14 @@ Sign in, authentication, private routes, redirecting. With this lesson our app i
 
 > [Pull Request](https://github.com/strvcom/react-nights-2019/pull/9)
 
+#### Additional Resources #4
+
+- [JSON Web Tokens vs Session Cookies](https://ponyfoo.com/articles/json-web-tokens-vs-session-cookies)
+- [Where to Store Your Tokens](https://stormpath.com/blog/where-to-store-your-jwts-cookies-vs-html5-web-storage)
+- [Security](http://www.redotheweb.com/2015/11/09/api-security.html)
+- [What are Refresh Tokens](https://auth0.com/blog/refresh-tokens-what-are-they-and-when-to-use-them/)
+- [JWT Open Standard](https://jwt.io/)
+
 ---
 
 ### Week 5
@@ -372,6 +381,12 @@ Because of numerous dynamic content it does make sense do a SSR. We choose next.
 - Move from create-react-app to Next.js
   - This is a huge refactor.
   - It reffers to a proper project setup. Aka you should know upfront what you are building, otherwise you can choose wrong and than spend extra time with unneeded refactor.
+  - Convert your codebase into SSR using STRV branch as reference
+  - Remove `react-scripts`
+  - Add `next` and related libraries (`@zeit/next-css`, `@zeit/next-typescript`, `express`, `isomorphic-fetch`, `next-redux-wrapper`, `@types/next`)
+  - Adjusts scripts section of your `package.json` to work with next instead of `react-scripts`, check the one defined in the project for reference.
+  - Replace `useApi` hook usage on products and products details with `getInitialProps`, you could either set the data in redux or show it right away as the hook did.
+  - If you are feeling like a ninja, implement the loading status in case you decide to go with the redux approach.
 
 > [Pull Request](https://github.com/strvcom/react-nights-2019/pull/19)
 
