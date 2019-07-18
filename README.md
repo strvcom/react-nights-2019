@@ -1,31 +1,28 @@
-> Please note, that README is under development 😅.
-> Sorry for that! It will be finished soon! :)
-
 # REACT NIGHTS 2019
 
-> This repository serves as an online course for learning React. It’s here to help those who want to learn more about React and frontend to develop a SPA.
+> This repository serves as an online course for learning React. It’s here to help those who want to learn more about React and frontend in order to develop a SPA.
 
 ## Introduction
 
-In STRV we believe that the best way of learning is by writing a real project. We come up with a simple e-commerce app using the [Commerce Layer API](https://commercelayer.io).
+At STRV, we believe that the best way of learning is by working on a real project. So, we’ve come up with a simple e-commerce app concept using the [Commerce Layer API](https://commercelayer.io).
 
-> Please take note that by learning React you won’t become a frontend developer. There are many other areas you should be able to handle. Stay tuned for `Frontend Nights`, where we are going to focus on everything except React :)
+> Please take note that by learning React, you will _not_ become a frontend developer. There are many other areas you should be able to handle. Stay tuned for `Frontend Nights`, where we are going to focus on everything except React. :)
 
 ### Goal
 
-To give you a fundamental understanding of how to build a production-ready React web app.
+The goal of this course is to give you a fundamental understanding of how to build a production-ready React web app.
 
-The presenters demonstrated the best practices in building React applications — the experience they gained by working on numerous projects.
+The presenters demonstrated the best practices in building React applications — experience they gained by working on numerous projects.
 
 ### Source
 
-This online course was created by utilizing material from React Nights — the free offline course with a focus on React created by [STRV](https://www.strv.com/).
+This online course was created by utilizing material from React Nights, the free offline course with a focus on React created by [STRV](https://www.strv.com/).
 
 ### Prerequisites
 
-This course requires at least junior-level knowledge of programming. The course is relying on fundamental knowledge of React. Following the [amazing official documentation](https://reactjs.org/docs/getting-started.html) should be enough.
+This course requires at least junior-level knowledge of programming, and relies on fundamental knowledge of React. Reading and understanding this [amazing official documentation](https://reactjs.org/docs/getting-started.html) should be enough to get you started.
 
-Overall frontend knowledge is welcomed, but not necessary. For more details, you can check _video_ and _presentation_ from [the first lecture](#00-introduction)
+General frontend knowledge is beneficial, but not necessary. For more details, you can check the [video and presentation from the first lecture](#00-introduction)
 
 ## Table of Contents
 
@@ -72,51 +69,53 @@ Overall frontend knowledge is welcomed, but not necessary. For more details, you
 
 ## Course Structure
 
-React Nights 2019 was designed for 8 weeks of studying, 16 lectures and 8 homework. During the period of teaching, STRV frontend team was contributing to this repository.
+React Nights 2019 encompasses 8 weeks of studying, 16 lectures and 8 homework assignments. The STRV Frontend Team contributed to this repository throughout the entire course.
 
-STRV team also had a dedicated team of mentors helping our students to get through homework and also do the homework review of course :)
+STRV also had a dedicated team of mentors helping our students do all of the homework. The team then reviewed the homework as well, of course. :)
 
-> We are highly opinionated when it comes to development. There are many other great approaches to how to write apps. But what you can see in this repository is something close to what we do in the real world.
+> We are highly opinionated when it comes to development. There are many great approaches to writing apps; this repository shows you a process that is very close to what we do in the real world.
 
-Our goal was to reveal some patterns incrementally. Some of the code was written in a way it supposed to be refactored later. Thus please don’t think of this repository as a recipe on how to build a React app. It’s more-likely a showcase of different topics, yet done in the same project.
+Our goal was to reveal some patterns incrementally. Some of the code was written in a way that required it to be refactored later. Therefore please don’t think of this repository as a recipe on how to build a React app. It’s more of a showcase of different topics all compiled into a single project.
 
 ## Lectures
 
-Each lecture is around 1 hour long. There are two lectures per week. Followed by one mutual homework. You can follow commit history to see each lesson.
+Each lecture is about 1 hour long. There are 2 lectures per week, followed by 1 homework assignment. You can follow _commit history_ to see each lesson.
 
-A lecture was **recorded**, there is also link to the **presentation**, Pull Request representing the introduction to the lecture, link to the homework solution and finally some additional resources (also listed in a presentation).
+You can find recordings of all lectures, as well as links to every presentation, a Pull Request representing the introduction to the lecture, a link to the homework solutions and, finally, some additional resources (also listed in the presentations).
 
 ### Week 1
 
 #### 00. Introduction
 
-Introduction to the React Nights course. Please note that the course was designed to do a lot of self studying during _homeworks_. If you are planning to try this XY hours course we highly recommend to find a mentor who will review your Pull Requests.
+Introduction to the React Nights course. Please note that the course was designed to require a lot of self-studying during homework assignments. If you are planning to take this 16-hours course, we highly recommend you find a mentor who will review your Pull Requests.
 
-> Of course, you don't need to wait the whole week to continue to the next lesson. But we highly recommend dedicating some extra time for studying of shared resources.
+> Of course, you don't need to wait the entire week before continuing on to the next lesson. But we do recommend dedicating some extra time to studying the shared resources.
 
-If you have recommendations on how to improve this knowledge base, feel free to submit a PR.
+If you have any recommendations regarding improvements to this knowledge base, feel free to submit a PR.
 
 > [Video](https://www.youtube.com/watch?v=mThOdIxdblg&list=PLfX7tWavkVjAz0fCSZn47RvbcsTwTfD0U&index=15&t=0s) | [Presentation](https://docs.google.com/presentation/d/1sqMv0K0DtEToOQ8W_8Ipwy_SML_HA88a1I7jhWBTGNg/edit#slide=id.g40dd3244bc_0_2)
 
 #### 01. Project Setup
 
-As a project starter, we choose create-react-app. Other great option could be Next.js or Gatsby. We would like to learn it right. So we need to ensure code quality, thus we implemented `Prettier` and `ESLint` and enforced it with pre-commit hook from a combination of `husky` with `lint-staged`. Obviously, as STRV developers we will use STRV's favorite configurations from [code-quality-tools](https://github.com/strvcom/code-quality-tools/).
+As a project starter, we choose create-react-app. (Other great options could be Next.js or Gatsby.) Effective learning requires high-quality code, so we implement `Prettier` and `ESLint` and enforce it with a `pre-commit hook` from a combination of `husky` with `lint-staged`. And of course, as STRV developers, we use STRV's favorite configurations from [code-quality-tools](https://github.com/strvcom/code-quality-tools/).
 
-> Note that we are not covering `stylelint` in this lesson, since it's a part of next weeks lesson - [Styling in React](#styling-in-react). Another decision that should be made from a very beginning is [TypeScript](#typescript) from [Week 7](#week-7). But to make a learning curve a bit easier, we decided to add it later. If you are brave enough, feel to start using it right away.
+> Note that we are not covering `stylelint` in this lesson, since it's a part of next week’s lesson - [Styling in React](#styling-in-react). Another decision that should be made from the very beginning is[TypeScript](#typescript) from [Week 7](#week-7). But to make the learning curve a bit easier, we decided to add that later. If you are brave enough, feel free to start using it right away.
 
-Before we will start to implement features, let’s get API communication get ready. Before any implementation, you should get familiar with API you are going to use. For our demo, we choose CommerceLayer API. By reading it’s [API Reference](https://commercelayer.io/api/reference/) we need to implement authentication to be able to get any resources. To do so we need to create an account in CommerceLayer and get a token from API.
+Before we start to implement features, let’s get the API communication ready. And before any implementation, you should get familiar with whichever API you are going to use.
 
-For a demonstration of correct implementation, we are fetching `List of Products`.
+For our demo, we choose CommerceLayer API. We first read its [API Reference](https://commercelayer.io/api/reference/) and see we need to implement authentication to be able to get any resources. To do that, we need to create an account in CommerceLayer and get a token from API.
 
-This all for now. Let's write a simple README about what we did and how to use this project.
+For a demonstration of correct implementation, we fetch `List of Products`.
+
+That’s all for now. Let's write a simple README about what we did, and how this project can be used.
 
 > [Video](https://www.youtube.com/watch?v=mThOdIxdblg&list=PLfX7tWavkVjAz0fCSZn47RvbcsTwTfD0U&index=15&t=1221) | [Presentation](https://docs.google.com/presentation/d/1sqMv0K0DtEToOQ8W_8Ipwy_SML_HA88a1I7jhWBTGNg/edit#slide=id.g50606751ee_0_0) | [Pull Request](https://github.com/strvcom/react-nights-2019/pull/1)
 
 #### Homework #1
 
-> This homework was implemented during the lecture, see it's Pull Request above.
+> This homework assignment was implemented during the lecture; see its Pull Request above.
 
-- Setup [commercelayer.io](https://commercelayer.io/)
+- Set up [commercelayer.io](https://commercelayer.io/)
 - Project Setup
   - Project starter
   - API & config
@@ -131,9 +130,9 @@ This all for now. Let's write a simple README about what we did and how to use t
 
 #### 02. Project Architecture & React Router
 
-The plan for this lecture is to implement `Product Detail`. For routing, we will use [react-router](https://github.com/ReactTraining/react-router). But before we will start writing code, let's think about how we will structure the whole project? In STRV we are fans of [grouping by features or routes](https://reactjs.org/docs/faq-structure.html#grouping-by-features-or-routes). This kind of decision should be done already in lecture [01. Project Setup](#01-project-setup). So we need to refactor our code a little bit.
+The plan for this lecture is to implement `Product Detail`. For routing, we use [react-router](https://github.com/ReactTraining/react-router). But before we start writing code, let's think about how we will structure the whole project. At STRV, we are fans of [grouping by features or routes](https://reactjs.org/docs/faq-structure.html#grouping-by-features-or-routes). This kind of decision should have already been made in lecture [01. Project Setup](#01-project-setup). So now, we need to refactor our code a little bit.
 
-We will use another API endpoint so it's probably about the time to implement `a simple http API client`. We will use native [fetch](https://fetch.spec.whatwg.org/) for simplicity, but otherwise we highly recommend [ky](https://github.com/sindresorhus/ky), tiny & elegant HTTP client based on `window.fetch`.
+We will use another API endpoint, so now’s probably a good time to implement `a simple http API client`. We will use native [fetch](https://fetch.spec.whatwg.org/) for simplicity, but otherwise we highly recommend [ky](https://github.com/sindresorhus/ky) (tiny & elegant HTTP client based on `window.fetch`) or [rest-hooks](https://github.com/coinbase/rest-hooks).
 
 Now everything is set and ready. Let's go for the `Product Detail`!
 
@@ -141,24 +140,24 @@ Now everything is set and ready. Let's go for the `Product Detail`!
 
 #### 03. Styling in React
 
-Now we have List of Products and Product Detail. Before we move further let's implement some decent styles, so the app is more pleasant to work with.
+We have a List of Products and Product Detail. Before we move further, let's implement some decent styles, so that the app is more pleasant to work with.
 
-In STRV we are big fans of CSS-in-JS namely `styled-components`. A brief introduction to history, benefits, and usage of styled-components. A showcase of `styled-system` and `@rebass/grid`
+At STRV, we are big fans of CSS-in-JS - namely `styled-components`. A brief introduction to history, benefits, and usage of styled-components. A showcase of `styled-system` and `@rebass/grid`
 
-We also are setting a first styleguide. Styles lives in `styled.js` file next to the component. The only exception is global styles and variables files.
+We also set up the first **styleguide**. Styles live in the `styled.js` file, next to the component. The only exception are global styles and variables files.
 
-With CSS comes huge responsibility. Friendly check put into pre-commit hook by `stylelint`. That's what you need.
+With CSS comes huge responsibility. A friendly check put into pre-commit hook by `stylelint` is what you need.
 
-If you are building a real project you should definitely check out the [Storybook](https://storybook.js.org/).
+And when building a real project, you should definitely check out the [Storybook](https://storybook.js.org/).
 
 > [Video]() | [Presentation](https://docs.google.com/presentation/d/1Mezt41vdpyLE5P9bHzHt299ES9DUPMM51dyASkMOuk0/edit#slide=id.g1454bd7dba_0_75) | [Commit](https://github.com/strvcom/react-nights-2019/pull/2/commits/f97d5b94d6787b0b6d800a5f62c754e36a7b3541)
 
 #### Homework #2
 
 - Set up React Router
-- Think and implement the rest of the project architecture
+- Think about and implement the rest of the project architecture
 - Fetch and display Product Detail
-- Add styles for Product Detail page
+- Add styles for Product Detail
 
 [Pull Request](https://github.com/strvcom/react-nights-2019/pull/4)
 
@@ -178,13 +177,13 @@ If you are building a real project you should definitely check out the [Storyboo
 
 #### 04. Global State Management
 
-It's about the time to implement `Cart` and the possibility to add products to it. We choose to demonstrate this functionality with Redux which is one of the most spread libraries in React ecosystem.
+Now is a great time to implement `Cart`, as well as the possibility to add products to it. We choose to demonstrate this functionality with Redux, which is one of the most widespread libraries in the React ecosystem.
 
 > [Video](https://www.youtube.com/watch?v=1okwf-6Ujug&list=PLfX7tWavkVjAz0fCSZn47RvbcsTwTfD0U&index=1) | [Presentation](https://docs.google.com/presentation/d/1YItCqFTK-_SzD8sO_uTrae9tw_naE29pl287QITvu1Y/edit#slide=id.p1) | [Pull Request](https://github.com/strvcom/react-nights-2019/pull/3)
 
 #### 05. Context API & Redux Middlewares
 
-Redux comes with great middlewares. Let's briefly check what is it about. We will also leverage this gain knowledge in [10. Async Effects & Error Reporting](#10-async-effects--error-reporting) lecture.
+Redux comes with great middlewares. Let's briefly check what it’s all about. We will leverage this knowledge in the [10. Async Effects & Error Reporting](#10-async-effects--error-reporting) lecture.
 
 Besides that, it's also our duty to showcase a `Context API`, which is more than suitable for many use cases. But without any contribution to the project.
 
@@ -192,14 +191,14 @@ Besides that, it's also our duty to showcase a `Context API`, which is more than
 
 #### Homework #3
 
-- “Add to Cart” feature on Product Detail page
-- “Remove from Cart” feature on Cart page
+- `Add to Cart` feature on Product Detail page
+- `Remove from Cart` feature on Cart page
 - Implement [redux-devtools](https://github.com/reduxjs/redux-devtools) and use it with [extension](https://github.com/zalmoxisus/redux-devtools-extension)
-- we extracted `Button` component to make it reusable
-- added `Layout` to Product Detail page
-- updated API for getting a list and a single product to return response in the same format
+- Extract `Button` component to make it reusable
+- Add `Layout` to Product Detail page
+- Update API for getting a list and a single product to return response in the same format
 - `onAddToCart` function expects only productId as an argument. Calling `event.preventDefault()` is done internally now to avoid leaking implementation details to outside components
-- we removed pseudo-caching logic in ProductList component
+- Remove pseudo-caching logic in ProductList component
 
 > [Pull Request](https://github.com/strvcom/react-nights-2019/pull/5)
 
@@ -284,8 +283,7 @@ Besides that, it's also our duty to showcase a `Context API`, which is more than
 
 #### 06. Forms
 
-Proper e-commerce should have a user profile when our users can change their information or see the past orders.
-Let's implement `Sign Up` page with [Formik](https://github.com/jaredpalmer/formik) and do a client side validation with [yup](https://github.com/jquense/yup)
+Proper e-commerce should have a user profile, where our users can change their information or see their past orders. Let's implement a `Sign Up` page with [Formik](https://github.com/jaredpalmer/formik) and do a client-side validation with [yup](https://github.com/jquense/yup)
 
 > [Video](https://www.youtube.com/watch?v=DcNhRhm9MwI&list=PLfX7tWavkVjAz0fCSZn47RvbcsTwTfD0U&index=2) | [Presentation](https://docs.google.com/presentation/d/1mSpqe7AWG8ofkxUxKIDB4_Az2qBS8S_Z3FVdPhTdESw/edit#slide=id.g5521228db6_0_28) | [Pull Request](https://github.com/strvcom/react-nights-2019/pull/6)
 
@@ -297,12 +295,12 @@ Sign in, authentication, private routes, redirecting. With this lesson, our app 
 
 #### Homework #4
 
-- Create the login page with a login form
+- Create the login page with a `login form`
 - Connect login form to API
 - Get customer information and store it in Redux
 - Determine in `PrivateRoute` whether a user is authenticated
 - Show/hide `MyProfile` link according to the authenticated state
-- Add logout functionality
+- Add `log out` functionality
 
 > [Pull Request](https://github.com/strvcom/react-nights-2019/pull/9)
 
@@ -318,29 +316,29 @@ Sign in, authentication, private routes, redirecting. With this lesson, our app 
 
 ### Week 5
 
-> Our app is almost ready. Now it's about the time to properly tune it! Of course in the real world, we should start with following "advanced" patterns right away. But for learning purposes, we believe this is the easiest way how to get in touch with it.
+> Our app is almost ready. Now is the time to properly tune it! Of course, in the real world, we should start following "advanced" patterns right away. But for learning purposes, we believe that this is the easiest way how to understand it.
 
 #### 08. Functional Programming
 
-React is functional, let's learn how to make our app also functional. More theoretical lecture with great examples in Observable notebook.
+React is functional, so let's learn how to make our app functional as well. This is more of a theoretical lecture, with great examples in the Observable notebook.
 
 > [Video](https://www.youtube.com/watch?v=P7sW_-zCQog&list=PLfX7tWavkVjAz0fCSZn47RvbcsTwTfD0U&index=3) | [Observable notebook](https://observablehq.com/@varholak-peter/react-nights-playground) | [Pull Request]()
 
 #### 09. HOCs, Render Props, Hooks
 
-During the previous lesson we had a lot of code repetitions, let's make it more DRY!
+During the previous lesson, we saw many code repetitions. Let's make it more DRY!
 
-> In this lesson we are doing a minor refactor from redux to hooks. On first sight, it looks good and awesome, but it will backfire us in ### [Week 7](#week-7). This was done on purpose, so we can demonstrate that every decision in your codebase matters and requires a lot of thinking.
+> In this lesson we are doing a minor refactor from redux to hooks. On first sight, it looks good and awesome, but it will backfire us in ### [Week 7](#week-7). This was done on purpose; it allows us to demonstrate that every decision in your codebase matters and requires a lot of thinking.
 
 > [Video](https://www.youtube.com/watch?v=P7sW_-zCQog&list=PLfX7tWavkVjAz0fCSZn47RvbcsTwTfD0U&index=3&t=2652) | [Presentation](https://docs.google.com/presentation/d/1Hy0bWktlaEzYI0-AYFa_6X4BQr4rG__tgLjasEMBSmA/edit) | [Pull Request](https://github.com/strvcom/react-nights-2019/pull/10)
 
 #### Homework #5
 
-We did there a major refactor in favor to display how Hooks can safe us a lot of typing.
+We’ve now done a major refactor to display how Hooks can save us a lot of typing.
 
-- product list and product detail has been moved to a different route and root route redirects to Product List
-- route paths have been moved in constants in separate file `src/routes.js`
-- new route for 404 error was added, it will be shown in case that none of the other routes in will be matched: https://github.com/strvcom/react-nights-2019/blob/320178fb8afd3799066c02d364b46089aeb29c7d/src/App.js#L38
+- Product List and Product Detail have been moved to a different route, and root route redirects to Product List
+- Route paths have been moved in constants into separate file `src/routes.js`
+- New route for 404 error was added; it will be shown in case none of the other routes are matched: https://github.com/strvcom/react-nights-2019/blob/320178fb8afd3799066c02d364b46089aeb29c7d/src/App.js#L38
 
 > [Pull Request](https://github.com/strvcom/react-nights-2019/pull/11)
 
@@ -350,23 +348,23 @@ We did there a major refactor in favor to display how Hooks can safe us a lot of
 
 #### 10. Async Effects & Error Reporting
 
-So far we were following a happy path of development, aka that everything should work just as expected. But in the real world, it's not the case. From time to time API server is down, internet connection is weak, or there is just unexpected error in our code.
+So far we were following a happy path of development, meaning that everything should be working as expected. But in the real world, that’s never the case. From time to time, the API server is down, internet connection is weak or there is an unexpected error in our code.
 
 > [Video](https://www.youtube.com/watch?v=V5URcw_KYFM&list=PLfX7tWavkVjAz0fCSZn47RvbcsTwTfD0U&index=10) | [Presentation](https://docs.google.com/presentation/d/1JCvCloP-MmZAFA6oY0tCUs6jVs_pIzUavwJMl5UYtPY/edit#slide=id.g51136236ec_0_25) | [Pull Request](https://github.com/strvcom/react-nights-2019/pull/13)
 
 #### 11. Testing in React
 
-Testing is very important in any software development. Let's take a look, how does it work in React world. Pull request comes with a lot of practical examples.
+Testing is very important in the development of any software. Let's take a look at how it works in the React world. Pull Request comes with a lot of practical examples.
 
 > [Video](https://www.youtube.com/watch?v=V5URcw_KYFM&list=PLfX7tWavkVjAz0fCSZn47RvbcsTwTfD0U&index=10&t=3263) | [Presentation](https://docs.google.com/presentation/d/1ZCHj9FJabHUxmTw9U6cH9-Zgb3u7m7K9TxOt6MNqrYc/edit#slide=id.g5c04da16b1_1_0) | [Pull Request](https://github.com/strvcom/react-nights-2019/pull/12)
 
 #### Homework #6
 
-- - move logic to chosen async solution _(default: redux-thunks, advanced: redux-sagas, redux-observables)_
-- handle refresh tokens
-- notify a user about errors `server/network` and `success` _(product added to cart/deleted from cart/logged in)_
+- Move logic to chosen async solution _(default: redux-thunks, advanced: redux-sagas, redux-observables)_
+- Handle refresh tokens
+- Notify a user about errors from `server/network` and `success` _(product added to cart/deleted from cart/logged in)_
 - To mock server responses `401/500` you can use https://www.charlesproxy.com/
-- If you found homework too easy, please refer to `Up for the challenge?` slide for [problem inspiration](https://docs.google.com/presentation/d/1JCvCloP-MmZAFA6oY0tCUs6jVs_pIzUavwJMl5UYtPY/edit#slide=id.g56a65efc51_0_57)
+- If you find this homework too easy, please refer to `Up for the challenge?` slide for [problem inspiration](https://docs.google.com/presentation/d/1JCvCloP-MmZAFA6oY0tCUs6jVs_pIzUavwJMl5UYtPY/edit#slide=id.g56a65efc51_0_57)
 
 > [Pull Request](https://github.com/strvcom/react-nights-2019/pull/14)
 
@@ -376,17 +374,17 @@ Testing is very important in any software development. Let's take a look, how do
 
 #### 12. TypeScript
 
-TypeScript is really trendy these days. We love it in STRV. Hopefully, you will love it too!
+TypeScript is really trendy these days. We love it at STRV. Hopefully, you will love it too!
 
 > [Video](https://youtu.be/L9B4n4f0ibE) | [Presentation](https://docs.google.com/presentation/d/17-9y7PEbOhdM2hPm0xtvSe6WYxyg_WLFKgTE63WQgtk/) | [Pull Request](https://github.com/strvcom/react-nights-2019/pull/15)
 
 #### 13. Server-side Rendering vs. Static Export
 
-Since we are going to production soon, let's think about how our app should work there.
+Since we are going to production soon, let's think about how our app should work there.Since we are going to production soon, let's think about how our app should work once it’s live.
 
-Because of numerous dynamic content, it does make sense do a SSR. We choose next.js
+Because of widely dynamic content, it does make sense to do a SSR. We choose Next.js.
 
-> This introduces a major refactor. We probably could choose `razzle` which has react-router under the hood. But still, usually, it makes sense to do this kind of decision in the very beginning of the project.
+> This introduces a major refactor. We could probably choose `razzle`, which has a react-router under the hood. But still, it usually makes sense to make this kind of decision at the very beginning of the project.
 
 > [Video](https://youtu.be/_F_YbLNwkuE) | [Presentation](https://drive.google.com/file/d/1XEWNDDZ4Xw8ywGu-0Kn0rSq-jiRKmAAJ/view?usp=sharing) | [Pull Request](https://github.com/strvcom/react-nights-2019/pull/18)
 
@@ -395,13 +393,13 @@ Because of numerous dynamic content, it does make sense do a SSR. We choose next
 - TypeScript
 - Move from create-react-app to Next.js
   - This is a huge refactor.
-  - It refers to proper project setup. Aka you should know upfront what you are building, otherwise, you can choose wrong and then spend extra time with unneeded refactor.
+  - It refers to proper project setup. Meaning you should know what you are building from the very beginning; otherwise, you can choose incorrectly and then spend extra time with an **unneeded refactor**.
   - Convert your codebase into SSR using STRV branch as reference
   - Remove `react-scripts`
   - Add `next` and related libraries (`@zeit/next-css`, `@zeit/next-typescript`, `express`, `isomorphic-fetch`, `next-redux-wrapper`, `@types/next`)
   - Adjusts scripts section of your `package.json` to work with next instead of `react-scripts`, check the one defined in the project for reference.
-  - Replace `useApi` hook usage on products and products details with `getInitialProps`, you could either set the data in redux or show it right away as the hook did.
-  - If you are feeling like a ninja, implement the loading status in case you decide to go with the redux approach.
+  - Replace `useApi` hook usage on Products List and Products Details with `getInitialProps`, you could either set the data in redux or show it right away as the hook did.
+  - If you’re feeling like a ninja, implement the loading status in case you decide to go with the redux approach.
 
 > [Pull Request](https://github.com/strvcom/react-nights-2019/pull/19)
 
@@ -411,21 +409,23 @@ Because of numerous dynamic content, it does make sense do a SSR. We choose next
 
 #### 14. Optimizing React Apps
 
-Our app seems to be working fine. Let's talk about optimization and bringing to users the best possible user experience.
+Our app seems to be working fine. Let's talk about optimization and bringing users the best user experience possible.
 
 > [Video](https://youtu.be/srxHbr346A4) | [Presentation](https://drive.google.com/file/d/12i45GV6_gNjCFnwKs23owjpGPwphc04-/view)
 
 #### 15. Deployment
 
-Finally, it's about the time to deploy our production ready app!
+Finally, it's time to deploy our production-ready app!
 
-> Again in the real world (continuous) deployment could be set up in earlier stages of a project lifetime.
+> Again: in the real world, (continuous) deployment could be set up in earlier stages of a project’s lifetime.
 
 > [Video](https://youtu.be/srxHbr346A4?t=3771) | [Presentation](https://docs.google.com/presentation/d/11LgJDc_-60a_88_joRmILd9ptYuO6yCYUlemmua-HpU/edit#slide=id.g554c03b836_0_0)
 
 #### Homework #8
 
 Optimize and deploy!
+
+---
 
 ## Used technologies
 
@@ -471,6 +471,6 @@ Optimize and deploy!
 - [14.](#14-optimizing-react-apps) Optimizing React Apps - [Luis Felipe Roman](https://github.com/Zaggen)
 - [15.](#15-deployment) Deployment - [Soo Jae Hwang](https://github.com/misoguy)
 
-Big kudos to the whole Open Source community who make it possible to create such a course! ❤️
+Big kudos to the whole Open Source community for making it possible to create this type of course! ❤️
 
-And of course thanks to the STRV Frontend Team who participated in the course and helped with the preparation. Finally big thanks to our brave students, who took the course and provided us with feedback!
+Of course, thanks to the STRV Frontend Team for participating in the course and helping with the preparation. And finally a huge thanks to our brave students, who took the course and provided us with feedback!
