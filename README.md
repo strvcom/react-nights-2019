@@ -177,7 +177,7 @@ And when building a real project, you should definitely check out the [Storybook
 
 #### 04. Global State Management
 
-Now is a great time to implement `Cart`, as well as the possibility to add products to it. We choose to demonstrate this functionality with Redux, which is one of the most widespread libraries in the React ecosystem.
+Now is a great time to implement `Cart`, as well as the possibility to add products to it. We choose to demonstrate this functionality with Redux, which is one of the most widespread libraries in the React ecosystem. In this lesson, we start by understanding state management problem, explore some concepts crucial for implementing robust state management solution, and get to build it into our project using Redux best practices.
 
 > [Video](https://www.youtube.com/watch?v=1okwf-6Ujug&list=PLfX7tWavkVjAz0fCSZn47RvbcsTwTfD0U&index=1) | [Presentation](https://docs.google.com/presentation/d/1YItCqFTK-_SzD8sO_uTrae9tw_naE29pl287QITvu1Y/edit#slide=id.p1) | [Pull Request](https://github.com/strvcom/react-nights-2019/pull/3)
 
@@ -374,7 +374,7 @@ Testing is very important in the development of any software. Let's take a look 
 
 #### 12. TypeScript
 
-TypeScript is really trendy these days. We love it at STRV. Hopefully, you will love it too!
+TypeScript is really trendy these days. We love it at STRV. Hopefully, you will love it too! In this lesson we'll start from basics of static typing and move up to more advanced topics such as derived types and type guards. We're going to bring the power of TypeScript into our application and see how we can type components, reducers, and API calls.
 
 > [Video](https://youtu.be/L9B4n4f0ibE) | [Presentation](https://docs.google.com/presentation/d/17-9y7PEbOhdM2hPm0xtvSe6WYxyg_WLFKgTE63WQgtk/) | [Pull Request](https://github.com/strvcom/react-nights-2019/pull/15)
 
