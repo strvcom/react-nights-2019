@@ -1,4 +1,4 @@
-# REACT NIGHTS 2019
+# <img src="./.github/readme.png" alt="React Nights 2019" />
 
 > This repository serves as an online course for learning React. It’s here to help those who want to learn more about React and frontend in order to develop a SPA.
 
