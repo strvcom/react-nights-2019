@@ -150,7 +150,7 @@ With CSS comes huge responsibility. A friendly check put into pre-commit hook by
 
 And when building a real project, you should definitely check out the [Storybook](https://storybook.js.org/).
 
-> [Video]() | [Presentation](https://docs.google.com/presentation/d/1Mezt41vdpyLE5P9bHzHt299ES9DUPMM51dyASkMOuk0/edit#slide=id.g1454bd7dba_0_75) | [Commit](https://github.com/strvcom/react-nights-2019/pull/2/commits/f97d5b94d6787b0b6d800a5f62c754e36a7b3541)
+> [Commit](https://github.com/strvcom/react-nights-2019/pull/2/commits/f97d5b94d6787b0b6d800a5f62c754e36a7b3541)
 
 #### Homework #2
 
@@ -187,7 +187,7 @@ Redux comes with great middlewares. Let's briefly check what it’s all about. W
 
 Besides that, it's also our duty to showcase a `Context API`, which is more than suitable for many use cases. But without any contribution to the project.
 
-> [Video](https://www.youtube.com/watch?v=1okwf-6Ujug&list=PLfX7tWavkVjAz0fCSZn47RvbcsTwTfD0U&index=1&t=3229) | [Presentation](https://docs.google.com/presentation/d/1u5Q7e-jK5RRUKVk-6enS3EaxxBHlXRy0_0uz6FUiOWU/edit#slide=id.g40dd3244bc_0_9) | [Pull Request]()
+> [Video](https://www.youtube.com/watch?v=1okwf-6Ujug&list=PLfX7tWavkVjAz0fCSZn47RvbcsTwTfD0U&index=1&t=3229) | [Presentation](https://docs.google.com/presentation/d/1u5Q7e-jK5RRUKVk-6enS3EaxxBHlXRy0_0uz6FUiOWU/edit#slide=id.g40dd3244bc_0_9)
 
 #### Homework #3
 
@@ -291,7 +291,7 @@ Proper e-commerce should have a user profile, where our users can change their i
 
 Sign in, authentication, private routes, redirecting. With this lesson, our app is almost ready.
 
-> [Video](https://www.youtube.com/watch?v=DcNhRhm9MwI&list=PLfX7tWavkVjAz0fCSZn47RvbcsTwTfD0U&index=2&t=3015) | [Presentation](https://docs.google.com/presentation/d/1rFz7ptZ73SQ638lizShn9R3y8WSbPQqE95HBGJDuV_I/edit) | [Pull Request]()
+> [Video](https://www.youtube.com/watch?v=DcNhRhm9MwI&list=PLfX7tWavkVjAz0fCSZn47RvbcsTwTfD0U&index=2&t=3015) | [Presentation](https://docs.google.com/presentation/d/1rFz7ptZ73SQ638lizShn9R3y8WSbPQqE95HBGJDuV_I/edit) | [Pull Request](https://github.com/strvcom/react-nights-2019/pull/6)
 
 #### Homework #4
 
@@ -322,7 +322,7 @@ Sign in, authentication, private routes, redirecting. With this lesson, our app 
 
 React is functional, so let's learn how to make our app functional as well. This is more of a theoretical lecture, with great examples in the Observable notebook.
 
-> [Video](https://www.youtube.com/watch?v=P7sW_-zCQog&list=PLfX7tWavkVjAz0fCSZn47RvbcsTwTfD0U&index=3) | [Observable notebook](https://observablehq.com/@varholak-peter/react-nights-playground) | [Pull Request]()
+> [Video](https://www.youtube.com/watch?v=P7sW_-zCQog&list=PLfX7tWavkVjAz0fCSZn47RvbcsTwTfD0U&index=3) | [Observable notebook](https://observablehq.com/@varholak-peter/react-nights-playground)
 
 #### 09. HOCs, Render Props, Hooks
 
@@ -378,7 +378,7 @@ TypeScript is really trendy these days. We love it at STRV. Hopefully, you will 
 
 In this lesson, we start with the basics of static typing and move on to more advanced topics, such as derived types and type guards. The aim is to bring the power of TypeScript into our application and see how we can type components, reducers and API calls.
 
-> [Video](https://youtu.be/L9B4n4f0ibE) | [Presentation](https://docs.google.com/presentation/d/17-9y7PEbOhdM2hPm0xtvSe6WYxyg_WLFKgTE63WQgtk/) | [Pull Request](https://github.com/strvcom/react-nights-2019/pull/15)
+> [Video](https://youtu.be/PbLPPEL5pAU) | [Presentation](https://docs.google.com/presentation/d/17-9y7PEbOhdM2hPm0xtvSe6WYxyg_WLFKgTE63WQgtk/) | [Pull Request](https://github.com/strvcom/react-nights-2019/pull/15)
 
 #### 13. Server-side Rendering vs. Static Export
 
@@ -413,7 +413,7 @@ Because of widely dynamic content, it does make sense to do a SSR. We choose Nex
 
 Our app seems to be working fine. Let's talk about optimization and bringing users the best user experience possible.
 
-> [Video](https://youtu.be/srxHbr346A4) | [Presentation](https://drive.google.com/file/d/12i45GV6_gNjCFnwKs23owjpGPwphc04-/view)
+> [Video](https://youtu.be/NMVtJdtmRWk) | [Presentation](https://drive.google.com/file/d/12i45GV6_gNjCFnwKs23owjpGPwphc04-/view)
 
 #### 15. Deployment
 
@@ -421,7 +421,7 @@ Finally, it's time to deploy our production-ready app!
 
 > Again: in the real world, (continuous) deployment could be set up in earlier stages of a project’s lifetime.
 
-> [Video](https://youtu.be/srxHbr346A4?t=3771) | [Presentation](https://docs.google.com/presentation/d/11LgJDc_-60a_88_joRmILd9ptYuO6yCYUlemmua-HpU/edit#slide=id.g554c03b836_0_0)
+> [Video](https://youtu.be/oNqEOx3GktA) | [Presentation](https://docs.google.com/presentation/d/11LgJDc_-60a_88_joRmILd9ptYuO6yCYUlemmua-HpU/edit#slide=id.g554c03b836_0_0)
 
 #### Homework #8
 
