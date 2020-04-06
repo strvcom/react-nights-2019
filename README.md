@@ -136,7 +136,7 @@ We will use another API endpoint, so now’s probably a good time to implement `
 
 Now everything is set and ready. Let's go for the `Product Detail`!
 
-> [Video](https://www.youtube.com/watch?v=tLhApVdlZaQ) | [Presentation](https://docs.google.com/presentation/d/1tKTUkn4MtT5_ahwp2nfWijNWvplboi015tdbUx98Wis/edit#slide=id.g5521228db6_0_28) | [Pull Request](https://github.com/strvcom/react-nights-2019/pull/2)
+> [Video](https://www.youtube.com/watch?v=4SrttnyTQn4&list=PLH7l6h4alq1Os-e7Aj92jnhhr07EmNhUf&index=2) | [Presentation](https://docs.google.com/presentation/d/1tKTUkn4MtT5_ahwp2nfWijNWvplboi015tdbUx98Wis/edit#slide=id.g5521228db6_0_28) | [Pull Request](https://github.com/strvcom/react-nights-2019/pull/2)
 
 #### 03. Styling in React
 
@@ -179,7 +179,7 @@ And when building a real project, you should definitely check out the [Storybook
 
 Now is a great time to implement `Cart`, as well as the possibility to add products to it. We choose to demonstrate this functionality with Redux, which is one of the most widespread libraries in the React ecosystem. In this lesson, we start with gaining an understanding regarding the state management problem, we explore a number of concepts crucial for implementing the robust state management solution, and we get to build it into our project using Redux best practices.
 
-> [Video](https://www.youtube.com/watch?v=1okwf-6Ujug&list=PLfX7tWavkVjAz0fCSZn47RvbcsTwTfD0U&index=1) | [Presentation](https://docs.google.com/presentation/d/1YItCqFTK-_SzD8sO_uTrae9tw_naE29pl287QITvu1Y/edit#slide=id.p1) | [Pull Request](https://github.com/strvcom/react-nights-2019/pull/3)
+> [Video](https://www.youtube.com/watch?v=1mzzqRIw67A&list=PLH7l6h4alq1Os-e7Aj92jnhhr07EmNhUf&index=3) | [Presentation](https://docs.google.com/presentation/d/1YItCqFTK-_SzD8sO_uTrae9tw_naE29pl287QITvu1Y/edit#slide=id.p1) | [Pull Request](https://github.com/strvcom/react-nights-2019/pull/3)
 
 #### 05. Context API & Redux Middlewares
 
@@ -187,7 +187,7 @@ Redux comes with great middlewares. Let's briefly check what it’s all about. W
 
 Besides that, it's also our duty to showcase a `Context API`, which is more than suitable for many use cases. But without any contribution to the project.
 
-> [Video](https://www.youtube.com/watch?v=1okwf-6Ujug&list=PLfX7tWavkVjAz0fCSZn47RvbcsTwTfD0U&index=1&t=3229) | [Presentation](https://docs.google.com/presentation/d/1u5Q7e-jK5RRUKVk-6enS3EaxxBHlXRy0_0uz6FUiOWU/edit#slide=id.g40dd3244bc_0_9)
+> [Video](https://www.youtube.com/watch?v=svZvjVJuiYs&list=PLH7l6h4alq1Os-e7Aj92jnhhr07EmNhUf&index=4) | [Presentation](https://docs.google.com/presentation/d/1u5Q7e-jK5RRUKVk-6enS3EaxxBHlXRy0_0uz6FUiOWU/edit#slide=id.g40dd3244bc_0_9)
 
 #### Homework #3
 
@@ -285,13 +285,13 @@ Besides that, it's also our duty to showcase a `Context API`, which is more than
 
 Proper e-commerce should have a user profile, where our users can change their information or see their past orders. Let's implement a `Sign Up` page with [Formik](https://github.com/jaredpalmer/formik) and do a client-side validation with [yup](https://github.com/jquense/yup)
 
-> [Video](https://www.youtube.com/watch?v=DcNhRhm9MwI&list=PLfX7tWavkVjAz0fCSZn47RvbcsTwTfD0U&index=2) | [Presentation](https://docs.google.com/presentation/d/1mSpqe7AWG8ofkxUxKIDB4_Az2qBS8S_Z3FVdPhTdESw/edit#slide=id.g5521228db6_0_28) | [Pull Request](https://github.com/strvcom/react-nights-2019/pull/6)
+> [Video](https://www.youtube.com/watch?v=w4dVp0Yi7is&list=PLH7l6h4alq1Os-e7Aj92jnhhr07EmNhUf&index=5) | [Presentation](https://docs.google.com/presentation/d/1mSpqe7AWG8ofkxUxKIDB4_Az2qBS8S_Z3FVdPhTdESw/edit#slide=id.g5521228db6_0_28) | [Pull Request](https://github.com/strvcom/react-nights-2019/pull/6)
 
 #### 07. Authentication & Routing in Depth
 
 Sign in, authentication, private routes, redirecting. With this lesson, our app is almost ready.
 
-> [Video](https://www.youtube.com/watch?v=DcNhRhm9MwI&list=PLfX7tWavkVjAz0fCSZn47RvbcsTwTfD0U&index=2&t=3015) | [Presentation](https://docs.google.com/presentation/d/1rFz7ptZ73SQ638lizShn9R3y8WSbPQqE95HBGJDuV_I/edit) | [Pull Request](https://github.com/strvcom/react-nights-2019/pull/6)
+> [Video](https://www.youtube.com/watch?v=KgTjjT8QkyM&list=PLH7l6h4alq1Os-e7Aj92jnhhr07EmNhUf&index=6) | [Presentation](https://docs.google.com/presentation/d/1rFz7ptZ73SQ638lizShn9R3y8WSbPQqE95HBGJDuV_I/edit) | [Pull Request](https://github.com/strvcom/react-nights-2019/pull/6)
 
 #### Homework #4
 
@@ -322,7 +322,7 @@ Sign in, authentication, private routes, redirecting. With this lesson, our app 
 
 React is functional, so let's learn how to make our app functional as well. This is more of a theoretical lecture, with great examples in the Observable notebook.
 
-> [Video](https://www.youtube.com/watch?v=P7sW_-zCQog&list=PLfX7tWavkVjAz0fCSZn47RvbcsTwTfD0U&index=3) | [Observable notebook](https://observablehq.com/@varholak-peter/react-nights-playground)
+> [Video](https://www.youtube.com/watch?v=dl61WDAizPE&list=PLH7l6h4alq1Os-e7Aj92jnhhr07EmNhUf&index=7) | [Observable notebook](https://observablehq.com/@varholak-peter/react-nights-playground)
 
 #### 09. HOCs, Render Props, Hooks
 
@@ -330,7 +330,7 @@ During the previous lesson, we saw many code repetitions. Let's make it more DRY
 
 > In this lesson we are doing a minor refactor from redux to hooks. On first sight, it looks good and awesome, but it will backfire us in ### [Week 7](#week-7). This was done on purpose; it allows us to demonstrate that every decision in your codebase matters and requires a lot of thinking.
 
-> [Video](https://www.youtube.com/watch?v=P7sW_-zCQog&list=PLfX7tWavkVjAz0fCSZn47RvbcsTwTfD0U&index=3&t=2652) | [Presentation](https://docs.google.com/presentation/d/1Hy0bWktlaEzYI0-AYFa_6X4BQr4rG__tgLjasEMBSmA/edit) | [Pull Request](https://github.com/strvcom/react-nights-2019/pull/10)
+> [Video](https://www.youtube.com/watch?v=X3gSLaRvt08&list=PLH7l6h4alq1Os-e7Aj92jnhhr07EmNhUf&index=8) | [Presentation](https://docs.google.com/presentation/d/1Hy0bWktlaEzYI0-AYFa_6X4BQr4rG__tgLjasEMBSmA/edit) | [Pull Request](https://github.com/strvcom/react-nights-2019/pull/10)
 
 #### Homework #5
 
@@ -350,13 +350,13 @@ We’ve now done a major refactor to display how Hooks can save us a lot of typi
 
 So far we were following a happy path of development, meaning that everything should be working as expected. But in the real world, that’s never the case. From time to time, the API server is down, internet connection is weak or there is an unexpected error in our code.
 
-> [Video](https://www.youtube.com/watch?v=V5URcw_KYFM&list=PLfX7tWavkVjAz0fCSZn47RvbcsTwTfD0U&index=10) | [Presentation](https://docs.google.com/presentation/d/1JCvCloP-MmZAFA6oY0tCUs6jVs_pIzUavwJMl5UYtPY/edit#slide=id.g51136236ec_0_25) | [Pull Request](https://github.com/strvcom/react-nights-2019/pull/13)
+> [Video](https://www.youtube.com/watch?v=Yxuc1Nmqn1M&list=PLH7l6h4alq1Os-e7Aj92jnhhr07EmNhUf&index=9) | [Presentation](https://docs.google.com/presentation/d/1JCvCloP-MmZAFA6oY0tCUs6jVs_pIzUavwJMl5UYtPY/edit#slide=id.g51136236ec_0_25) | [Pull Request](https://github.com/strvcom/react-nights-2019/pull/13)
 
 #### 11. Testing in React
 
 Testing is very important in the development of any software. Let's take a look at how it works in the React world. Pull Request comes with a lot of practical examples.
 
-> [Video](https://www.youtube.com/watch?v=V5URcw_KYFM&list=PLfX7tWavkVjAz0fCSZn47RvbcsTwTfD0U&index=10&t=3263) | [Presentation](https://docs.google.com/presentation/d/1ZCHj9FJabHUxmTw9U6cH9-Zgb3u7m7K9TxOt6MNqrYc/edit#slide=id.g5c04da16b1_1_0) | [Pull Request](https://github.com/strvcom/react-nights-2019/pull/12)
+> [Video](https://www.youtube.com/watch?v=dwMdyMdIk8c&list=PLH7l6h4alq1Os-e7Aj92jnhhr07EmNhUf&index=10) | [Presentation](https://docs.google.com/presentation/d/1ZCHj9FJabHUxmTw9U6cH9-Zgb3u7m7K9TxOt6MNqrYc/edit#slide=id.g5c04da16b1_1_0) | [Pull Request](https://github.com/strvcom/react-nights-2019/pull/12)
 
 #### Homework #6
 
@@ -378,7 +378,7 @@ TypeScript is really trendy these days. We love it at STRV. Hopefully, you will 
 
 In this lesson, we start with the basics of static typing and move on to more advanced topics, such as derived types and type guards. The aim is to bring the power of TypeScript into our application and see how we can type components, reducers and API calls.
 
-> [Video](https://youtu.be/PbLPPEL5pAU) | [Presentation](https://docs.google.com/presentation/d/17-9y7PEbOhdM2hPm0xtvSe6WYxyg_WLFKgTE63WQgtk/) | [Pull Request](https://github.com/strvcom/react-nights-2019/pull/15)
+> [Video](https://www.youtube.com/watch?v=PbLPPEL5pAU&list=PLH7l6h4alq1Os-e7Aj92jnhhr07EmNhUf&index=11) | [Presentation](https://docs.google.com/presentation/d/17-9y7PEbOhdM2hPm0xtvSe6WYxyg_WLFKgTE63WQgtk/) | [Pull Request](https://github.com/strvcom/react-nights-2019/pull/15)
 
 #### 13. Server-side Rendering vs. Static Export
 
@@ -388,7 +388,7 @@ Because of widely dynamic content, it does make sense to do a SSR. We choose Nex
 
 > This introduces a major refactor. We could probably choose `razzle`, which has a react-router under the hood. But still, it usually makes sense to make this kind of decision at the very beginning of the project.
 
-> [Video](https://youtu.be/_F_YbLNwkuE) | [Presentation](https://drive.google.com/file/d/1XEWNDDZ4Xw8ywGu-0Kn0rSq-jiRKmAAJ/view?usp=sharing) | [Pull Request](https://github.com/strvcom/react-nights-2019/pull/18)
+> [Video](https://www.youtube.com/watch?v=oYXAxRspycs&list=PLH7l6h4alq1Os-e7Aj92jnhhr07EmNhUf&index=12) | [Presentation](https://drive.google.com/file/d/1XEWNDDZ4Xw8ywGu-0Kn0rSq-jiRKmAAJ/view?usp=sharing) | [Pull Request](https://github.com/strvcom/react-nights-2019/pull/18)
 
 #### Homework #7
 
@@ -413,7 +413,7 @@ Because of widely dynamic content, it does make sense to do a SSR. We choose Nex
 
 Our app seems to be working fine. Let's talk about optimization and bringing users the best user experience possible.
 
-> [Video](https://youtu.be/NMVtJdtmRWk) | [Presentation](https://drive.google.com/file/d/12i45GV6_gNjCFnwKs23owjpGPwphc04-/view)
+> [Video](https://www.youtube.com/watch?v=NMVtJdtmRWk&list=PLH7l6h4alq1Os-e7Aj92jnhhr07EmNhUf&index=13) | [Presentation](https://drive.google.com/file/d/12i45GV6_gNjCFnwKs23owjpGPwphc04-/view)
 
 #### 15. Deployment
 
@@ -421,7 +421,7 @@ Finally, it's time to deploy our production-ready app!
 
 > Again: in the real world, (continuous) deployment could be set up in earlier stages of a project’s lifetime.
 
-> [Video](https://youtu.be/oNqEOx3GktA) | [Presentation](https://docs.google.com/presentation/d/11LgJDc_-60a_88_joRmILd9ptYuO6yCYUlemmua-HpU/edit#slide=id.g554c03b836_0_0)
+> [Video](https://www.youtube.com/watch?v=oNqEOx3GktA&list=PLH7l6h4alq1Os-e7Aj92jnhhr07EmNhUf&index=14) | [Presentation](https://docs.google.com/presentation/d/11LgJDc_-60a_88_joRmILd9ptYuO6yCYUlemmua-HpU/edit#slide=id.g554c03b836_0_0)
 
 #### Homework #8
 
